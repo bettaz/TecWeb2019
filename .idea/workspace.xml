@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b21b47d3-2cfc-4a74-932d-447cca72ef15" name="Default Changelist" comment="" />
+    <list default="true" id="b21b47d3-2cfc-4a74-932d-447cca72ef15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/bettaz.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/lib/mainView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lib/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lib/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lib/db_info.ini" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lib/db_config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +39,9 @@
   </component>
   <component name="ProjectId" id="1RbUD3tGd50jXJ8vfUxNACQcLsq" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="duplicates.index" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -58,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1569935165279</updated>
       <workItem from="1569935168340" duration="760000" />
+      <workItem from="1571669826318" duration="1430000" />
     </task>
     <servers />
   </component>
@@ -69,7 +78,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
