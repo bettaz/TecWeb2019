@@ -1,2 +1,1 @@
-<html>
-</html>
+require_once "./bin/view/Index.php";
