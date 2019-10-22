@@ -5,6 +5,12 @@ class Index{
 	private $conn;
 	public function __construct(){
 		$this->conn=new Connection();
+		
 	}
 }
+$data=array(
+	'title'=>'Home',
+	'fName'=>'index',
+	'descr'=>'Homepage di SleekParadise'
+);
 require_once "./bin/view/Index.php";
