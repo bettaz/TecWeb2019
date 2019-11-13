@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21b47d3-2cfc-4a74-932d-447cca72ef15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/angryBirds_gridLayout/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/angryBirds_gridLayout/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/infoVarie.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/print.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/protagonisti.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TecWeb2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TecWeb2019.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,13 +40,15 @@
     <select />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web" />
   </component>
   <component name="ProjectId" id="1RbUD3tGd50jXJ8vfUxNACQcLsq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="duplicates.index" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -65,6 +75,11 @@
       <workItem from="1569935168340" duration="760000" />
       <workItem from="1571669826318" duration="1430000" />
       <workItem from="1571726050138" duration="638000" />
+      <workItem from="1572194092051" duration="201000" />
+      <workItem from="1572263717530" duration="3881000" />
+      <workItem from="1572269855855" duration="5119000" />
+      <workItem from="1572427832255" duration="6375000" />
+      <workItem from="1573033080885" duration="696000" />
     </task>
     <servers />
   </component>

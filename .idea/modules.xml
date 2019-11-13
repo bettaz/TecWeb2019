@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TecWeb2019.iml" filepath="$PROJECT_DIR$/.idea/TecWeb2019.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/.idea/Tech_web.iml" filepath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/.idea/Tech_web.iml" />
     </modules>
   </component>
 </project>
