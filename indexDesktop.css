@@ -15,7 +15,7 @@ body {
 
 #header{
     background-color: #2A6c9c;
-    padding:1.0em;
+    padding: 1%;
     color: white;
     text-align: center;
 }
@@ -23,44 +23,74 @@ body {
 #breadcrumb{
     background-color: #031A2B;
     color: white;
-    padding: 0.5em 0 0.5em 1em;
+    padding: 0.5% 0 0.5% 1%;
+    font-size: small;
 }
 
 #menu{
     float:left;
     width: 19%;
-    padding:0 0 1em 0.5em;
+    padding:0 0 1% 1%;
     overflow:hidden;
 }
 
 #menu ul{
-    margin-top: 0.3em;
-    padding:0.2em;
+    margin-top: 5%;
+    padding:1%;
     list-style-type:none;
 }
 
 #menu li{
-    margin-top: 0.7em;
+    margin-top: 5%;
 }
 
 #content{
     float: left;
-    width: 78%;
+    width: 60%;
     border-left: solid;
 }
 
 #content img{
-    max-width: 100%;
-    margin-right: -2%; /* fixare bordo immagine */
-    margin-bottom: 1em;
+    position: absolute;
+    width: 59.6%;
 }
 
 #content .text{
-    padding-left: 0.5em;
+    margin-top: 35%;
+    padding-left: 2%;
+    width: 60%;
+}
+
+#content .text p{
+    margin-bottom: 4%;
+    line-height: 120%;
+}
+
+#content .text h2{
+    margin-bottom: 2%;
+}
+
+#news{
+    float: right;
+    width: 17%;
+    border: dotted;
+    text-align: center;
+    margin-top: 22%;
+    margin-right: 2%;
+}
+
+#news ul{
+    padding-left: 17%;
 }
 
 #footer{
     clear: left;
     border-top: solid;
     text-align: center;
+}
+
+#footer img{
+    max-width: 100%;
+    margin-top: 0.5%;
+    width: 7%;
 }
