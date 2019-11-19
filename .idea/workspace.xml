@@ -10,6 +10,11 @@
       <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lib/Connection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lib/db_config.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lib/mainView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/Index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/index.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/indexDesktop.css" beforeDir="false" afterPath="$PROJECT_DIR$/indexDesktop.css" afterDir="false" />
     </list>
@@ -48,6 +53,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1RbUD3tGd50jXJ8vfUxNACQcLsq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
