@@ -7,11 +7,14 @@
       <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/infoVarie.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/print.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/protagonisti.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/azienda.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aziendaDesktop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indexDesktop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preventivatore.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preventivatoreDesktop.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TecWeb2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TecWeb2019.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,15 +42,25 @@
     <expand />
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="XHTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RbUD3tGd50jXJ8vfUxNACQcLsq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
