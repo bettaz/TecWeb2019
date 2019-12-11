@@ -58,3 +58,82 @@ body {
     border-top: solid;
     text-align: center;
 }
+
+.contenitore{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.linea{
+    margin: 2%;
+}
+
+#nomeC{
+    margin-left: 8%;
+}
+
+#cognomeC{
+    margin-left: 4.3%;
+}
+
+
+#nomeD{
+    margin-left: 5.2%;
+}
+
+#cognomeD{
+    margin-left: 1.5%;
+}
+
+#via{
+    margin-left: 5.6%;
+}
+
+#citta{
+    margin-left: 9.3%;
+}
+
+#provincia{
+    margin-left: 11.8%;
+}
+
+#cell{
+    margin-left: 2%;
+}
+
+#bara{
+    margin-left: 11%;
+}
+
+#sicremazione{
+    margin-right: 20%;
+    margin-left: 1%;
+}
+
+#nocremazione{
+    margin-left: 1%;
+}
+
+#urna{
+    margin-left: 11.3%;
+}
+
+#auto{
+    margin-left: 11.3%;
+}
+
+#fiori{
+    margin-left: 2%;
+}
+
+#risultati{
+    margin-left: 4%;
+    margin-top: 2%;
+}
+
+#risultati p{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
