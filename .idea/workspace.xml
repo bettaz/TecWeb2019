@@ -7,18 +7,15 @@
       <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/infoVarie.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/print.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/protagonisti.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/siamonoi.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lib/Connection.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lib/db_config.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lib/mainView.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/Index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexDesktop.css" beforeDir="false" afterPath="$PROJECT_DIR$/indexDesktop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azienda.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/azienda.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aziendaDesktop.css" beforeDir="false" afterPath="$PROJECT_DIR$/aziendaDesktop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preventivatore.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/preventivatore.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preventivatoreDesktop.css" beforeDir="false" afterPath="$PROJECT_DIR$/preventivatoreDesktop.css" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,8 +53,16 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1RbUD3tGd50jXJ8vfUxNACQcLsq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -65,15 +70,15 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -95,6 +100,9 @@
       <workItem from="1572269855855" duration="5119000" />
       <workItem from="1572427832255" duration="6375000" />
       <workItem from="1573033080885" duration="696000" />
+      <workItem from="1574682429738" duration="17000" />
+      <workItem from="1575996962495" duration="44000" />
+      <workItem from="1575997020423" duration="16974000" />
     </task>
     <servers />
   </component>
@@ -113,5 +121,22 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="366" y="124" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575996990625">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="366" y="124" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1366.741@0.27.1366.741" timestamp="1575996990625" />
+    <state x="100" y="125" width="1166" height="543" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1576074526159">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="100" y="125" width="1166" height="543" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.27.1366.741@0.27.1366.741" timestamp="1576074526159" />
+    <state x="347" y="175" key="run.anything.popup" timestamp="1576055446280">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="347" y="175" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1576055446280" />
   </component>
 </project>
