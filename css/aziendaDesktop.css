@@ -1,0 +1,33 @@
+@import "css_base.css";
+@import "header.css";
+@import "menu.css";
+@import "footer.css";
+
+#noi{
+    float: left;
+    width: 80%;
+}
+
+#noi img{
+    width: 100.1%;
+}
+
+#content{
+    float: left;
+    width: 78%;
+    border-left: solid;
+}
+
+#content .text{
+    padding-left: 0.5em;
+}
+
+#content h2{
+    margin: 2%;
+}
+
+#content p{
+    padding-right: 30%;
+    margin-bottom: 2%;
+    margin-left: 3%
+}

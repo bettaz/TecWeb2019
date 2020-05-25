@@ -1,0 +1,13 @@
+#header{
+    background-color: #2A6c9c;
+    padding: 1%;
+    color: white;
+    text-align: center;
+}
+
+#breadcrumb{
+    background-color: #031A2B;
+    color: white;
+    padding: 0.5% 0 0.5% 1%;
+    font-size: small;
+}
