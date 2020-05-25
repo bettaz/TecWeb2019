@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21b47d3-2cfc-4a74-932d-447cca72ef15" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/angryBirds_gridLayout/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/angryBirds_gridLayout/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/infoVarie.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/protagonisti.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/siamonoi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web/lavoro.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azienda.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/azienda.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aziendaDesktop.css" beforeDir="false" afterPath="$PROJECT_DIR$/aziendaDesktop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preventivatore.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/preventivatore.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preventivatoreDesktop.css" beforeDir="false" afterPath="$PROJECT_DIR$/preventivatoreDesktop.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,29 +46,18 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Universita/TecnologieWeb/Laboratorio/Tech_web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -103,40 +80,36 @@
       <workItem from="1574682429738" duration="17000" />
       <workItem from="1575996962495" duration="44000" />
       <workItem from="1575997020423" duration="16974000" />
+      <workItem from="1590394611387" duration="797000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="366" y="124" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575996990625">
+    <state x="141" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590394679129">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="366" y="124" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1366.741@0.27.1366.741" timestamp="1575996990625" />
-    <state x="100" y="125" width="1166" height="543" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1576074526159">
+    <state x="141" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1590394679129" />
+    <state x="172" y="31" key="SettingsEditor" timestamp="1590394635187">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="100" y="125" width="1166" height="543" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.27.1366.741@0.27.1366.741" timestamp="1576074526159" />
-    <state x="347" y="175" key="run.anything.popup" timestamp="1576055446280">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state x="347" y="175" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1576055446280" />
+    <state x="172" y="31" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1590394635187" />
   </component>
 </project>
