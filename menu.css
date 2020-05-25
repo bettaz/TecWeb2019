@@ -1,0 +1,16 @@
+#menu{
+    float:left;
+    width: 19%;
+    padding:0 0 1% 1%;
+    overflow:hidden;
+}
+
+#menu ul{
+    margin-top: 5%;
+    padding:1%;
+    list-style-type:none;
+}
+
+#menu li{
+    margin-top: 5%;
+}
