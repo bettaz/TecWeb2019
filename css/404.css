@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+	max-width: 1024px;
+    margin: auto;
+}
+
+/* html {
+	background: rgb(29,25,101);
+	background: linear-gradient(90deg, rgba(29,25,101,1) 0%, rgba(75,75,172,1) 35%, rgba(95,95,157,1) 100%);
+} */
+
+#coffin {
+	padding-top: 15%;
+	height: 60%;
+	width: 60%;
+}
+
+h1 {
+	color: black;
+	/* text-shadow: 0 0 1rem #fefefe; */
+	font-size: 6em; 
+	padding-bottom: 2%;
+}
+
+h2 {
+	color: black;
+}
+
+.text {
+	margin: auto;
+	display: block;
+	width: 70%;
+	text-align: center;
+	margin-top: 7%;
+}
