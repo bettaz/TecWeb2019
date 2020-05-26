@@ -1,0 +1,15 @@
+@import "print_base.css";
+
+button{
+    visibility: hidden;
+    display: none;
+}
+
+.linea{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.contenitore{
+    margin-top: 1%;
+}
