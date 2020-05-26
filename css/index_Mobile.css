@@ -1,0 +1,6 @@
+@import "mobile_base.css";
+
+#menu{
+    visibility: hidden;
+    display: none;
+}

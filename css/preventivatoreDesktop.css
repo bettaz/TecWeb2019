@@ -23,7 +23,21 @@
 }
 
 .linea{
-    margin: 2%;
+    margin: 3%;
+}
+
+input{
+    margin-top: 2%;
+    font-size: 120%;
+}
+
+input[type=radio]{
+    transform: scale(2);
+}
+
+select{
+    margin-top: 1%;
+    font-size: 120%;
 }
 
 #nomeC{
@@ -44,7 +58,7 @@
 }
 
 #via{
-    margin-left: 5.6%;
+    margin-left: 4.6%;
 }
 
 #citta{
@@ -73,7 +87,7 @@
 }
 
 #urna{
-    margin-left: 11.3%;
+    margin-left: 9.3%;
 }
 
 #auto{
@@ -81,7 +95,7 @@
 }
 
 #fiori{
-    margin-left: 2%;
+    margin-left: 1%;
 }
 
 #risultati{
@@ -99,6 +113,6 @@
     margin-right: 50%;
     margin-bottom: 2%;
     margin-left: 22%;
-    width: 23%;
-    font-size: 150%;
+    width: 32%;
+    font-size: 140%;
 }
