@@ -12,7 +12,7 @@
 }
 
 #content .text{
-    padding-left: 0.5em;
+    padding-left: 1%;
 }
 
 .contenitore{
@@ -92,4 +92,13 @@
 #risultati p{
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+#content button{
+    margin-top: 3%;
+    margin-right: 50%;
+    margin-bottom: 2%;
+    margin-left: 22%;
+    width: 23%;
+    font-size: 150%;
 }
