@@ -1,0 +1,48 @@
+@import "css_base.css";
+@import "menu.css";
+@import "header.css";
+@import "footer.css";
+
+#content{
+    float: left;
+    padding-top: 2%;
+    padding-left: 4%;
+    padding-bottom: 2%;
+    width: 74%;
+    border-left: solid;
+}
+
+#content h2{
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#content li {
+    line-height: 180%;
+}
+
+#content .contenitore{
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+#content .linea{
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+#content label{
+    margin-left: 1%;
+}
+
+#content input{
+    margin-left: 2%;
+}
+
+#content button{
+    margin-top: 3%;
+    margin-right: 50%;
+    margin-left: 22%;
+    width: 23%;
+    font-size: 150%;
+}
