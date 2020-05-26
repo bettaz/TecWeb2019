@@ -33,12 +33,16 @@ body {
 input[type=text], button {
 	width: 100%;
 	padding: 4% 0 4% 2%;
-	margin: 5%;
 	display: inline-block;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	box-sizing: border-box;
 	outline: none;
+}
+
+.linea {
+	margin-top: 0%;
+	margin-bottom: 5%;
 }
 
 button:hover, button:active, button:focus {
@@ -52,7 +56,9 @@ button {
 #enter {
 	text-transform: uppercase;
 	color: white;
+	margin-top:2%;
 }
+
 
 
 
