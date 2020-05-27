@@ -1,6 +1,5 @@
 #header{
     background-color: #2A6c9c;
-    /*padding: 1%;*/
     padding-top: 2%;
     padding-bottom: 2%;
     color: white;
@@ -8,7 +7,7 @@
 }
 
 #breadcrumb{
-    background-color: #031A2B;
+        background-color: #031A2B;
     color: white;
     padding: 0.5% 0 0.5% 1%;
     font-size: 85%;

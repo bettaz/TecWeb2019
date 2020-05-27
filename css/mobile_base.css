@@ -10,18 +10,68 @@ html, body {
 
 body {
     border: 1px solid #000;
-    font-size: 150%;
+    font-size: 135%;
     font-family: Verdana, Geneva, sans-serif;
 }
 
 #header{
     width: 100%;
+    background-color: #2A6c9c;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+    text-align: center;
 }
 
 #breadcrumb p{
-    font-size: 180%;
+    background-color: #031A2B;
+    color: white;
+    padding: 0.5% 0 0.5% 1%;
+    font-size: 105%;
 }
 
-/*#menu{*/
-/*    width: 99% ;*/
-/*}*/
+#menu{
+    width: 100% ;
+}
+
+#menu ul{
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #2A6c9c;
+}
+
+#menu li{
+    float: left;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    width: 44%;
+    background-color: #FFCC00;
+    text-align: center;
+}
+
+#menu li a{
+    display: block;
+}
+
+#footer{
+    width: 100%;
+}
+
+#footer img{
+    width: 22%;
+    margin-top: 2%;
+    margin-right: 4%;
+    margin-left: 20%;
+}
+
+#footer em{
+    visibility: hidden;
+    display: none;
+    /*margin-left: 26%;*/
+    /*font-size: 90%;*/
+}
