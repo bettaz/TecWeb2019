@@ -1,28 +1,5 @@
 @import "mobile_base.css";
 
-img{
-    width: 100%;
-}
-
-#content{
-    clear: left;
-}
-
-.text{
-    margin-right: 5%;
-    margin-left: 5%;
-}
-
-.text h2{
-    background-color: #FFCC00;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-.text p{
-    line-height: 140%;
-}
-
 #news{
     padding: 3%;
     background-color: #FFCC00;

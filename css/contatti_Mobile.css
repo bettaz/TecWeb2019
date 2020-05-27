@@ -1,0 +1,6 @@
+@import "mobile_base.css";
+
+#phone{
+    visibility: hidden;
+    display: none;
+}
