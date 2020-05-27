@@ -14,3 +14,20 @@ body {
     font-family: Verdana, Geneva, sans-serif;
     line-height: 140%;
 }
+
+input{
+    width: 50%;
+    margin-top: 2%;
+    font-size: 120%;
+}
+
+input[type=radio]{
+    width: 5%;
+    transform: scale(2);
+}
+
+select{
+    width: 50%;
+    margin-top: 1%;
+    font-size: 120%;
+}

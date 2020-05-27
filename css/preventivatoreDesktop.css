@@ -26,20 +26,6 @@
     margin: 3%;
 }
 
-input{
-    margin-top: 2%;
-    font-size: 120%;
-}
-
-input[type=radio]{
-    transform: scale(2);
-}
-
-select{
-    margin-top: 1%;
-    font-size: 120%;
-}
-
 #nomeC{
     margin-left: 8%;
 }
@@ -110,7 +96,7 @@ select{
 
 #content button{
     margin-top: 3%;
-    margin-right: 50%;
+    /*margin-right: 50%;*/
     margin-bottom: 2%;
     margin-left: 22%;
     width: 32%;

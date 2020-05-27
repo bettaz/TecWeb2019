@@ -1,6 +1,8 @@
 #header{
     background-color: #2A6c9c;
-    padding: 1%;
+    /*padding: 1%;*/
+    padding-top: 2%;
+    padding-bottom: 2%;
     color: white;
     text-align: center;
 }

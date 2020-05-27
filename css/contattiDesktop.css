@@ -5,10 +5,10 @@
 
 #phone{
     float: right;
-    margin-top: 1.5%;
-    margin-right: 5%;
+    margin-top: 2%;
+    margin-right: 4%;
     padding-left: 2%;
-    width: 16%;
+    width: 23%;
 }
 
 #phone img {
@@ -21,13 +21,9 @@
     padding-bottom: 2%;
     padding-left: 2%;
     margin-left: 20%;
-    width: 50%;
+    /*width: 50%;*/
     border-left: solid;
 }
-
-/*#content p{*/
-/*    line-height: 140%;*/
-/*}*/
 
 #footer{
     clear: right;
