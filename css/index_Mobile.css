@@ -5,7 +5,12 @@
     background-color: #FFCC00;
 }
 
+#news ul{
+    list-style-type: none;
+}
+
 #news li {
+    background-color: white;
     border: solid;
     margin-top: 2%;
     padding: 2%;
