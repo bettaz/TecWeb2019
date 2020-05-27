@@ -1,0 +1,33 @@
+@import "css_base.css";
+@import "header.css";
+@import "menu.css";
+@import "footer.css";
+
+#viale img{
+    width: 100%;
+}
+
+#menu{
+    width: 100% ;
+    padding: 0% 0% 0% 0%;
+}
+
+#menu ul{
+    overflow: hidden;
+    background-color: #2A6c9c;
+    margin-top: 0%;
+}
+
+#menu li{
+    float: left;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    width: 19%;
+    background-color: #FFCC00;
+    text-align: center;
+}
