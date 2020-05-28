@@ -1,16 +1,29 @@
-/**{
-    margin: @em;
-    padding: @em;
-}*/
+img{
+    visibility: hidden;
+    display: none;
+}
 
-html, body{
-    margin: auto;
+#menu{
+    visibility: hidden;
+    display: none;
+}
+
+#footer{
+    visibility: hidden;
+    display: none;
 }
 
 body{
     font-family: Verdana, Geneva, serif;
-    /*border: 1px solid #000*/
+    font-size: 140%;
+    margin-top: 1%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+    margin-left: 3%;
 }
+
+
+
 
 
 
