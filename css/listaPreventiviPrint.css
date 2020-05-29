@@ -1,9 +1,12 @@
-#menu{
+@import "print_base.css";
+
+button{
     visibility: hidden;
     display: none;
 }
 
-#footer{
-    visibility: hidden;
-    display: none;
+.linea{
+    border: solid;
+    margin-bottom: 2%;
+    line-height: 140%;
 }
