@@ -1,0 +1,58 @@
+@import "css_base.css";
+@import "header.css";
+@import "menu.css";
+@import "footer.css";
+
+#content{
+    float: left;
+    padding-top: 2%;
+    padding-left: 1%;
+    width: 78%;
+    border-left: solid;
+}
+
+#content .text{
+    padding-left: 1%;
+}
+
+.contenitore{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.linea{
+    margin: 3%;
+}
+
+#tipoAddP{
+    margin-left: 1%;
+}
+
+#nomeP{
+    margin-left: 10.2%;
+}
+
+
+#prezzoP{
+    margin-left: 9.2%;
+}
+
+#tipoRemoveP{
+    margin-left: 1%;
+}
+
+#nomeRemoveP{
+    margin-left: 10%;
+}
+
+
+#content button{
+    margin-top: 3%;
+    /*margin-right: 50%;*/
+    margin-bottom: 2%;
+    margin-left: 22%;
+    width: 32%;
+    font-size: 140%;
+}
