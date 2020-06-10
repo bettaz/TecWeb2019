@@ -1,0 +1,64 @@
+/*@import "css_base.css"; */
+@import "header.css";
+@import "footer.css";
+
+* {
+	padding: 0%;
+    margin: 0;
+}
+
+
+html {
+	max-width: 720px;
+    margin: auto;
+    padding-top: 5%;
+}
+
+body {
+    border: 1px solid #000;
+    font-family: Verdana, Geneva, sans-serif;
+    max-width:720px;
+    margin: auto;
+}
+
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3% 0 3% 0;
+}
+
+
+input[type=text], button {
+	width: 100%;
+	padding: 4% 0 4% 2%;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.linea {
+	margin-top: 0%;
+	margin-bottom: 5%;
+}
+
+button:hover, button:active, button:focus {
+	background: #2a2c9c;
+}
+
+button {
+	background: #2A6c9c;
+}
+
+#enter {
+	text-transform: uppercase;
+	color: white;
+	margin-top:2%;
+}
+
+
+
+
