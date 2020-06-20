@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Home</title>
+    <title>Login</title>
 
     <meta name="title" content="SleekParadise, sito di onoranze funebri" />
     <meta name="description" content="Home page del sito di SleekParadise, fornisce informazioni utili e brevi sulle nostre offerte" />
@@ -15,8 +15,8 @@
     <meta name="author" content="Alessio Bettarello, Mattia Gottardello, Olivier Utshudi, Nicolo Sartor" />
     <!-- link dei css -->
     <link rel="stylesheet" href="css/login.css" media="screen" />
- 
- 
+    <link rel="stylesheet" href="css/loginPrint.css" media="print" />
+    <link rel="stylesheet" href="css/login.css" media="screen" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -29,7 +29,7 @@
 
 
 <div class="container">
-	<form>
+	<form action="" method="get">
 				<div class="linea">
                     <label for="uname" id="username">Username</label>
                     <input name="uname" id="uname" type="text"/>
@@ -39,10 +39,10 @@
                     <label for="password">Password</label>
                     <input name="password" id="password" type="text"/>
                 </div>
-			
+			    <div>
 					<button type="submit" value="Enter" id="enter">Enter</button>
-				                               
-</form>
+				</div>
+    </form>
 </div>
 
 
