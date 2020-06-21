@@ -1,0 +1,6 @@
+@import "print_base.css";
+
+button{
+    visibility: hidden;
+    display: none;
+}

@@ -1,0 +1,36 @@
+@import "mobile_base.css";
+
+.contenitore{
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.linea{
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+p{
+    line-height: 140%;
+}
+
+#content ul{
+    margin-left: 2%;
+    line-height: 130%;
+}
+
+input {
+    width: 98%;
+    margin-top: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 120%;
+}
+
+button{
+    background-color: #FFCC00;
+    width: 100%;
+    font-size: 120%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
