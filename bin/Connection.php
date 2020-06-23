@@ -18,8 +18,9 @@ class Connection{
 		$this->conn->close();
 	}
 	public function Query($query){
-		$query=$this->conn->real_escape_string($query);
+		//$query=$this->conn->real_escape_string($query);
 		$res=$this->conn->query($query);
+		error_log('Executing query '.$query);
 		if($res&&$res->num_rows>0){
 			return $res;
 		}
