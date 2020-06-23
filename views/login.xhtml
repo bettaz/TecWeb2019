@@ -14,7 +14,7 @@
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessio Bettarello, Mattia Gottardello, Olivier Utshudi, Nicolo Sartor" />
     <!-- link dei css -->
-    <link rel="stylesheet" href="./css/login.css" media="screen" />
+    <link rel="stylesheet" href="css/login.css" media="screen" />
     <link rel="stylesheet" href="css/loginPrint.css" media="print" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,16 +28,17 @@
 
 
 <div class="container">
-	<form action="./bin/login.php" method="post" id="frmLogin">
+	<form action="login.php" method="post" id="frmLogin">
+        <error/>
         <fieldset name="credentials" form="frmLogin">
             <div class="linea">
                 <label for="uname" id="username">Username</label>
-                <input name="uname" id="uname" type="text"/>
+                <input name="uname" id="uname" type="text" value="<olduname/>"/>
             </div>
 
             <div class="linea">
                 <label for="password">Password</label>
-                <input name="password" id="password" type="text"/>
+                <input name="password" id="password" type="password"/>
             </div>
             <div>
                 <button type="submit" value="Enter" id="enter">Enter</button>
@@ -55,9 +56,9 @@
 
 
 <div id="footer">
-    <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
+    <img src="../img/valid-xhtml10.png" alt="XHTML valido"/>
     <em xml:lang="en">Improved by <span xml:lang="it">Tta</span>'s Team Solutions</em>
-    <img src="img/vcss-blue.gif" alt="CSS valido" />
+    <img src="../img/vcss-blue.gif" alt="CSS valido" />
 </div>
 
 </body>
