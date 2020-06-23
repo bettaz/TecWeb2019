@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Giu 23, 2020 alle 15:50
+-- Creato il: Giu 23, 2020 alle 17:10
 -- Versione del server: 10.1.40-MariaDB
 -- Versione PHP: 7.3.5
 
@@ -30,14 +30,21 @@ USE `preventivo`;
 -- Struttura della tabella `auto`
 --
 
-CREATE TABLE `auto` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `auto`;
+CREATE TABLE IF NOT EXISTS `auto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `marca` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `modello` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `costoBase` decimal(13,2) NOT NULL,
-  `cilindrata` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `cilindrata` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `auto`
+--
+
+TRUNCATE TABLE `auto`;
 --
 -- Dump dei dati per la tabella `auto`
 --
@@ -52,13 +59,20 @@ INSERT INTO `auto` (`id`, `marca`, `modello`, `costoBase`, `cilindrata`) VALUES
 -- Struttura della tabella `bare`
 --
 
-CREATE TABLE `bare` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `bare`;
+CREATE TABLE IF NOT EXISTS `bare` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `versione` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `materiale` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `costoBase` decimal(13,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `costoBase` decimal(13,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `bare`
+--
+
+TRUNCATE TABLE `bare`;
 --
 -- Dump dei dati per la tabella `bare`
 --
@@ -75,12 +89,19 @@ INSERT INTO `bare` (`id`, `versione`, `materiale`, `costoBase`) VALUES
 -- Struttura della tabella `cerimonie`
 --
 
-CREATE TABLE `cerimonie` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `cerimonie`;
+CREATE TABLE IF NOT EXISTS `cerimonie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tipologia` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `costoBase` decimal(13,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `costoBase` decimal(13,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `cerimonie`
+--
+
+TRUNCATE TABLE `cerimonie`;
 --
 -- Dump dei dati per la tabella `cerimonie`
 --
@@ -96,12 +117,19 @@ INSERT INTO `cerimonie` (`id`, `tipologia`, `costoBase`) VALUES
 -- Struttura della tabella `composizioni`
 --
 
-CREATE TABLE `composizioni` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `composizioni`;
+CREATE TABLE IF NOT EXISTS `composizioni` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `costoBase` decimal(13,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `costoBase` decimal(13,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `composizioni`
+--
+
+TRUNCATE TABLE `composizioni`;
 --
 -- Dump dei dati per la tabella `composizioni`
 --
@@ -118,7 +146,8 @@ INSERT INTO `composizioni` (`id`, `nome`, `costoBase`) VALUES
 -- Struttura della tabella `defunti`
 --
 
-CREATE TABLE `defunti` (
+DROP TABLE IF EXISTS `defunti`;
+CREATE TABLE IF NOT EXISTS `defunti` (
   `cf` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nomeDefunto` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `cognomeDefunto` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -132,16 +161,27 @@ CREATE TABLE `defunti` (
   `idCerimonia` int(11) NOT NULL,
   `idBara` int(11) DEFAULT NULL,
   `idUrna` int(11) DEFAULT NULL,
-  `idAuto` int(11) NOT NULL
+  `idAuto` int(11) NOT NULL,
+  `isPublic` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`cf`),
+  KEY `cerimonia` (`idCerimonia`),
+  KEY `bara` (`idBara`),
+  KEY `urna` (`idUrna`),
+  KEY `auto` (`idAuto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `defunti`
+--
+
+TRUNCATE TABLE `defunti`;
 --
 -- Dump dei dati per la tabella `defunti`
 --
 
-INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `dataDecesso`, `residenza`, `nomeCliente`, `cognomeCliente`, `numeroTelefono`, `data`, `idCerimonia`, `idBara`, `idUrna`, `idAuto`) VALUES
-('BTTLSS91H02A459X', 'Alessio', 'Bettarello', '1991-06-02', '2020-06-20', 'Padova', 'Mattia', 'Gottardello', '3098754671', '2020-06-23 10:09:24', 1, NULL, 1, 1),
-('DNOBRN57H22A459X', 'Don', 'Barbano', '1957-06-22', '2020-05-13', 'Via della Speranza - S.Maria di Sala', 'Widspots', 'Pacchettino', '1234134123', '2020-05-14 18:00:00', 3, 4, NULL, 2);
+INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `dataDecesso`, `residenza`, `nomeCliente`, `cognomeCliente`, `numeroTelefono`, `data`, `idCerimonia`, `idBara`, `idUrna`, `idAuto`, `isPublic`) VALUES
+('BTTLSS91H02A459X', 'Alessio', 'Bettarello', '1991-06-02', '2020-06-20', 'Padova', 'Mattia', 'Gottardello', '3098754671', '2020-06-23 10:09:24', 1, NULL, 1, 1, 0),
+('DNOBRN57H22A459X', 'Don', 'Barbano', '1957-06-22', '2020-05-13', 'Via della Speranza - S.Maria di Sala', 'Widspots', 'Pacchettino', '1234134123', '2020-05-14 18:00:00', 3, 4, NULL, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -149,13 +189,22 @@ INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `da
 -- Struttura della tabella `defunti_composizioni`
 --
 
-CREATE TABLE `defunti_composizioni` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `defunti_composizioni`;
+CREATE TABLE IF NOT EXISTS `defunti_composizioni` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idDefunto` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
   `idComposizione` int(11) NOT NULL,
-  `quantita` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `quantita` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `defunto` (`idDefunto`),
+  KEY `composizione` (`idComposizione`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `defunti_composizioni`
+--
+
+TRUNCATE TABLE `defunti_composizioni`;
 --
 -- Dump dei dati per la tabella `defunti_composizioni`
 --
@@ -170,13 +219,20 @@ INSERT INTO `defunti_composizioni` (`id`, `idDefunto`, `idComposizione`, `quanti
 -- Struttura della tabella `urne`
 --
 
-CREATE TABLE `urne` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `urne`;
+CREATE TABLE IF NOT EXISTS `urne` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `versione` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `materiale` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `costoBase` decimal(13,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `costoBase` decimal(13,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `urne`
+--
+
+TRUNCATE TABLE `urne`;
 --
 -- Dump dei dati per la tabella `urne`
 --
@@ -186,98 +242,6 @@ INSERT INTO `urne` (`id`, `versione`, `materiale`, `costoBase`) VALUES
 (2, 'Samurai', 'Ceramica', '4500.00'),
 (3, 'Hardended', 'Acciaio INOX', '400.00'),
 (4, 'Luxury', 'Oro 25 Carati', '45000.35');
-
---
--- Indici per le tabelle scaricate
---
-
---
--- Indici per le tabelle `auto`
---
-ALTER TABLE `auto`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `bare`
---
-ALTER TABLE `bare`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `cerimonie`
---
-ALTER TABLE `cerimonie`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `composizioni`
---
-ALTER TABLE `composizioni`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `defunti`
---
-ALTER TABLE `defunti`
-  ADD PRIMARY KEY (`cf`),
-  ADD KEY `cerimonia` (`idCerimonia`),
-  ADD KEY `bara` (`idBara`),
-  ADD KEY `urna` (`idUrna`),
-  ADD KEY `auto` (`idAuto`);
-
---
--- Indici per le tabelle `defunti_composizioni`
---
-ALTER TABLE `defunti_composizioni`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `defunto` (`idDefunto`),
-  ADD KEY `composizione` (`idComposizione`);
-
---
--- Indici per le tabelle `urne`
---
-ALTER TABLE `urne`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT per le tabelle scaricate
---
-
---
--- AUTO_INCREMENT per la tabella `auto`
---
-ALTER TABLE `auto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT per la tabella `bare`
---
-ALTER TABLE `bare`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT per la tabella `cerimonie`
---
-ALTER TABLE `cerimonie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT per la tabella `composizioni`
---
-ALTER TABLE `composizioni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT per la tabella `defunti_composizioni`
---
-ALTER TABLE `defunti_composizioni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT per la tabella `urne`
---
-ALTER TABLE `urne`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Limiti per le tabelle scaricate
