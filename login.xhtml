@@ -14,9 +14,8 @@
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessio Bettarello, Mattia Gottardello, Olivier Utshudi, Nicolo Sartor" />
     <!-- link dei css -->
-    <link rel="stylesheet" href="../css/login.css" media="screen" />
-    <link rel="stylesheet" href="../css/loginPrint.css" media="print" />
-    <link rel="stylesheet" href="../css/login.css" media="screen" />
+    <link rel="stylesheet" href="./css/login.css" media="screen" />
+    <link rel="stylesheet" href="css/loginPrint.css" media="print" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -29,19 +28,21 @@
 
 
 <div class="container">
-	<form action="" method="get">
-				<div class="linea">
-                    <label for="uname" id="username">Username</label>
-                    <input name="uname" id="uname" type="text"/>
-                </div>
+	<form action="./bin/login.php" method="post" id="frmLogin">
+        <fieldset name="credentials" form="frmLogin">
+            <div class="linea">
+                <label for="uname" id="username">Username</label>
+                <input name="uname" id="uname" type="text"/>
+            </div>
 
-                <div class="linea">
-                    <label for="password">Password</label>
-                    <input name="password" id="password" type="text"/>
-                </div>
-			    <div>
-					<button type="submit" value="Enter" id="enter">Enter</button>
-				</div>
+            <div class="linea">
+                <label for="password">Password</label>
+                <input name="password" id="password" type="text"/>
+            </div>
+            <div>
+                <button type="submit" value="Enter" id="enter">Enter</button>
+            </div>
+        </fieldset>
     </form>
 </div>
 
@@ -54,9 +55,9 @@
 
 
 <div id="footer">
-    <img src="../img/valid-xhtml10.png" alt="XHTML valido"/>
+    <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
     <em xml:lang="en">Improved by <span xml:lang="it">Tta</span>'s Team Solutions</em>
-    <img src="../img/vcss-blue.gif" alt="CSS valido" />
+    <img src="img/vcss-blue.gif" alt="CSS valido" />
 </div>
 
 </body>
