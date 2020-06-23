@@ -8,9 +8,14 @@ class Connection{
 		$this->conf['password']);
 		if ($this->conn->connect_error)
 		{
-		die("Connection failed: ".$this->conn->connect_error);
+		die("Connection failed: ".$this->conn->connect_errno
+			.$this->conn->connect_error);
 		}
 		$this->conn->select_db($this->conf['db_name']);
+	}
+	public function __destruct()
+	{
+		$this->conn->close();
 	}
 	public function Query($query){
 		$query=$this->conn->real_escape_string($query);
@@ -20,6 +25,9 @@ class Connection{
 		}
 		else
 			return false;
+	}
+	public function escape($string){
+		return $this->conn->real_escape_string($string);
 	}
 }
 ?>
