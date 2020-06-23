@@ -6,9 +6,10 @@ $news = '<div id="news">';
 if($result){
     $news = $news.' <h3 id="tnews">Necrologi</h3> <ul>';
     while ($row = $result->fetch_assoc()){
-        $news = $news.sprintf('<li>%s %s - %s</li>', $row['nome'], $row['cognome'], $row['data']);
+        $news = $news.sprintf('<li>%s %s %s</li>', $row['nome'], $row['cognome'], $row['data']);
     }
     $news = $news.'</ul>';
+    $result->free_result();
 }
 else
     $news = $news.'<h3 id="tnews">Impossibile caricare i necrologi</h3>';
