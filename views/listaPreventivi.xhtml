@@ -14,9 +14,9 @@
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessio Bettarello, Mattia Gottardello, Olivier Utshudi, Nicolo Sartor" />
     <!-- link dei css -->
-    <link rel="stylesheet" href="../css/listaPreventivi_Mobile.css" media="screen and (max-width:720px)" />
-    <link rel="stylesheet" href="../css/listaPreventiviDesktop.css" media="screen and (min-width: 721px)" />
-    <link rel="stylesheet" href="../css/listaPreventiviPrint.css" media="print"/>
+    <link rel="stylesheet" href="css/listaPreventivi_Mobile.css" media="screen and (max-width:720px)" />
+    <link rel="stylesheet" href="css/listaPreventiviDesktop.css" media="screen and (min-width: 721px)" />
+    <link rel="stylesheet" href="css/listaPreventiviPrint.css" media="print"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
@@ -36,8 +36,8 @@
 <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
 <!--        <li>Accedi come admin</li>-->
         <li>Lista Preventivi</li>
-        <li><a href="./gestioneForm.xhtml" tabindex="7" accesskey="G">Gestione form</a></li>
-        <li><a href="../index.xhtml" tabindex="8" accesskey="E">Esci</a> </li>
+        <li><a href="gestioneForm.php" tabindex="7" accesskey="G">Gestione form</a></li>
+        <li><a href="logout.php" tabindex="8" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
@@ -46,47 +46,13 @@
     <p>
         Qui è possibile visualizzare l'elenco dei preventivi richiesti dai visitatori.
     </p>
-
-    <!-- Da gestire con il php-->
-    <div class="linea">
-        <ul>
-            <li>Codice cliente: .... </li>
-            <li>Nome cliente: ....</li>
-            <li>Cognome cliente: ....</li>
-            <li>Codice preventivo: ....</li>
-            <li>Data preventivo: ....</li>
-        </ul>
-
-        <button type="button" onclick=""> Visualizza </button>
-    </div>
-    <div class="linea">
-        <ul>
-            <li>Codice cliente: .... </li>
-            <li>Nome cliente: ....</li>
-            <li>Cognome cliente: ....</li>
-            <li>Codice preventivo: ....</li>
-            <li>Data preventivo: ....</li>
-        </ul>
-
-        <button type="button" onclick=""> Visualizza </button>
-    </div>
-    <div class="linea">
-        <ul>
-            <li>Codice cliente: .... </li>
-            <li>Nome cliente: ....</li>
-            <li>Cognome cliente: ....</li>
-            <li>Codice preventivo: ....</li>
-            <li>Data preventivo: ....</li>
-        </ul>
-
-        <button type="button" onclick=""> Visualizza </button>
-    </div>
+    <prevlist/>
 </div>
 
 <div id="footer">
-    <img src="../img/valid-xhtml10.png" alt="XHTML valido"/>
+    <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
     <em xml:lang="en">Improved by <span xml:lang="it">Tta</span>'s Team Solutions</em>
-    <img src="../img/vcss-blue.gif" alt="CSS valido" />
+    <img src="img/vcss-blue.gif" alt="CSS valido" />
 </div>
 
 </body>

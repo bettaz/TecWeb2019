@@ -19,7 +19,7 @@ else{
 				$username = $connection->escape($_POST['uname']);
 				$password = $connection->escape($_POST['password']);
 				$res = $connection->Query("SELECT * FROM users WHERE username = '$username'");
-				echo "righe: ".($res?"true":"false");
+				//TODO add password hash check
 				if($res)
 					$_SESSION['logged'] = true;
 				else
@@ -30,11 +30,15 @@ else{
 	}
 }
 
-if(isset($_SESSION['logged']) && $_SESSION['logged'])
+if(isset($_SESSION['logged']) && $_SESSION['logged']){
 	header('Location: admin.php');
+	error_log('redirect to admin');
+}
 try {
-	if(!isset($error))
+	if(!isset($error)){
 		$error = 'log-in invalido';
+		error_log($error);
+	}
 	$file = fopen('views/login.xhtml','r');
 	$content = fread($file,filesize('views/login.xhtml'));
 	$loginpage_errored = str_replace('<error/>',isset($error)?$error:'',
