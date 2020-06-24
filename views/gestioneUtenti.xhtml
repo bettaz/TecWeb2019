@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Gestione Utenti</title>
+
+    <meta name="title" content="SleekParadise, sito di onoranze funebri" />
+    <meta name="description" content="Pagina che fornisce possibilità di gestire gli account degli admin" />
+    <meta name="keywords" content="SleekParadise, onoranze, funebri, funerali, azienda, contatti" />
+    <meta name="language" content="italian it" />
+    <meta name="author" content="Alessio Bettarello, Mattia Gottardello, Olivier Utshudi, Nicolo Sartor" />
+    <!-- link dei css -->
+    <link rel="stylesheet" href="css/gestioneFormMobile.css" media="screen and (max-width:720px)" />
+    <link rel="stylesheet" href="css/gestioneFormDesktop.css" media="screen and (min-width: 721px)" />
+    <link rel="stylesheet" href="css/listaPreventiviPrint.css" media="print"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="text/javascript" src="js/gestioneUtenti.js"></script>
+</head>
+<body>
+<div id="header">
+    <h1 xml:lang="en">SleekParadise</h1>
+</div>
+
+<div id="breadcrumb">
+    <p>Ti trovi in: Lista Preventivi </p>
+</div>
+
+<div id="menu">
+    <ul>
+        <!--        <li><a href="../index.php" tabindex="3" accesskey="H" xml:lang="eng">Home</a> </li>-->
+        <!--        <li><a href="../azienda.xhtml" tabindex="4" accesskey="A">Azienda</a></li>-->
+        <!--        <li><a href="../preventivatore.xhtml" tabindex="5" accesskey="P">Preventivatore</a></li>-->
+        <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
+        <!--        <li>Accedi come admin</li>-->
+        <li><a href="quotationList.xhtml" tabindex="7" accesskey="L">Lista Preventivi</a></li>
+        <li><a href="gestioneForm.php" tabindex="8" accesskey="G">Gestione form</a></li>
+        <li>Gestione Utenti</li>
+        <li><a href="logout.php" tabindex="9" accesskey="E">Esci</a> </li>
+    </ul>
+</div>
+
+<div id="content">
+    <h2>Gestione Utenti</h2>
+    <p>
+        Qui è possibile gestire gli utenti.
+    </p>
+    <!--
+    <form action="post">
+        <fieldset class="contenitore">
+            <legend>Aggiungi utente</legend>
+            <div>
+                <div class="linea">
+                    <label for="addUser">Username</label>
+                    <input name="addUser" id="addUser" type="text"/>
+                </div>
+                <div class="linea">
+                    <label for="superUser">Superuser?</label>
+                    <input name="superuser" id="superUser" type="checkbox"/>
+                </div>
+                <div class="linea">
+                    <label for="firstPassword">Digita password:</label>
+                    <input name="firstPassword" id="firstPassword" maxlength="64"/>
+                </div>
+                <div class="linea">
+                    <label for="confirmPassword">Conferma password:</label>
+                    <input name="confirmPassword" id="confirmPassword" maxlength="64"/>
+                </div>
+                <input type="submit" onclick="" value="Invia"/>
+            </div>
+        </fieldset>
+    </form> -->
+
+    <form action="post">
+        <fieldset class="contenitore">
+            <legend>Aggiorna password</legend>
+            <div>
+                <div class="linea">
+                    <label for="passwordAttuale">Password attuale:</label>
+                    <input name="passwordAttuale" id="passwordAttuale" maxlength="64"/>
+                </div>
+                <div class="linea">
+                    <label for="passwordNuova">Password nuova:</label>
+                    <input name="passwordNuova" id="passwordNuova" maxlength="64"/>
+                </div>
+                <div class="linea">
+                    <label for="confirmPwd">Conferma password:</label>
+                    <input name="confirmPassword" id="confirmPwd" maxlength="64"/>
+                </div>
+                <input type="submit" onclick="updatePassword()" value="Aggiorna"/>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+
+<div id="footer">
+    <img src="../img/valid-xhtml10.png" alt="XHTML valido"/>
+    <em xml:lang="en">Improved by <span xml:lang="it">Tta</span>'s Team Solutions</em>
+    <img src="../img/vcss-blue.gif" alt="CSS valido" />
+</div>
+
+</body>
+</html>
