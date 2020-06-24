@@ -29,7 +29,7 @@ if($res = $connection->Query("SELECT cf code, nomeCliente name, cognomeCliente s
 	}
 }
 $list .= "</div>";
-$view_file = fopen('views/listaPreventivi.xhtml','r');
-$placeholded = fread($view_file, filesize('views/listaPreventivi.xhtml'));
+$view_file = fopen('views/quotationList.xhtml','r');
+$placeholded = fread($view_file, filesize('views/quotationList.xhtml'));
 $content = str_replace('<prevlist/>',$list,$placeholded);
 echo $content;
