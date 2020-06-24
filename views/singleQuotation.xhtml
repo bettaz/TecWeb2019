@@ -49,9 +49,7 @@
         <li>Cognome cliente: <scustomer/></li>
         <li>Nome defunto: <ndead/></li>
         <li>Cognome defunto: <sdead/></li>
-        <li>Indirizzo cliente: <address/></li>
-        <li>Città cliente: <city/></li>
-        <li>Provincia: <provence/></li>
+        <li>Indirizzo cliente: <cusaddress/></li>
         <li>Numero di telefono: <mobile/></li>
     </ul>
     <h2>Dati Acquisto</h2>
@@ -64,21 +62,23 @@
     </ul>
     <h2>Totale</h2>
     <ul>
-        <li>Totale di base: <quotation/></li>
-        <li>Totale di base ivato: <finalquotation/></li>
+        <li>Totale da listino: <quotation/></li>
     </ul>
 
-    <form action="">
+    <form action="./viewDetail.php?code=<idquotation/>" method="post">
         <fieldset class="contenitore">
-            <legend>Inserimento totale finale</legend>
+            <legend>Gestione preventivo</legend>
             <div class="linea">
                 <label for="finalTot">Totale finale:</label>
-                <input name="finalTot" id="finalTot" maxlength="30"/>
+                <input name="finalTot" id="finalTot" maxlength="30" type="text"/>
             </div>
+            <div class="linea">
+                <label for="publicNecro">Pubblica su necrologio:</label>
+                <input name="publicNecro" id="publicNecro" type="checkbox"/>
+            </div>
+            <input type="submit" value="Aggiorna" />
         </fieldset>
     </form>
-
-    <button type="button" onclick=""> Visualizzato </button>
 </div>
 
 

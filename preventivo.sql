@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Giu 23, 2020 alle 17:09
+-- Creato il: Giu 24, 2020 alle 13:05
 -- Versione del server: 10.1.40-MariaDB
 -- Versione PHP: 7.3.5
 
@@ -128,7 +128,7 @@ CREATE TABLE `defunti` (
   `numeroTelefono` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `idCerimonia` int(11) NOT NULL,
-  `idBara` int(11) DEFAULT NULL,
+  `idBara` int(11) NOT NULL,
   `idUrna` int(11) DEFAULT NULL,
   `idAuto` int(11) NOT NULL,
   `isPublic` tinyint(1) NOT NULL DEFAULT '0'
@@ -140,7 +140,7 @@ CREATE TABLE `defunti` (
 
 INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `dataDecesso`, `residenza`, `nomeCliente`, `cognomeCliente`, `numeroTelefono`, `data`, `idCerimonia`, `idBara`, `idUrna`, `idAuto`, `isPublic`) VALUES
 ('BTTLSS91H02A459X', 'Alessio', 'Bettarello', '1991-06-02', '2020-06-20', 'Padova', 'Mattia', 'Gottardello', '3098754671', '2020-06-23 10:09:24', 1, NULL, 1, 1, 0),
-('DNOBRN57H22A459X', 'Don', 'Barbano', '1957-06-22', '2020-05-13', 'Via della Speranza - S.Maria di Sala', 'Widspots', 'Pacchettino', '1234134123', '2020-05-14 18:00:00', 3, 4, NULL, 2, 0);
+('DNOBRN57H22A459X', 'Don', 'Barbano', '1957-06-22', '2020-05-13', 'Via della Speranza - S.Maria di Sala', 'Widspots', 'Pacchettino', '1234134123', '2020-06-23 15:13:47', 3, 4, NULL, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -186,6 +186,25 @@ INSERT INTO `urne` (`id`, `versione`, `materiale`, `costoBase`) VALUES
 (3, 'Hardended', 'Acciaio INOX', '400.00'),
 (4, 'Luxury', 'Oro 25 Carati', '45000.35');
 
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `enc_password` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `enc_password`) VALUES
+(1, 'bettaz', 'ciao');
+
 --
 -- Indici per le tabelle scaricate
 --
@@ -220,7 +239,6 @@ ALTER TABLE `composizioni`
 ALTER TABLE `defunti`
   ADD PRIMARY KEY (`cf`),
   ADD KEY `cerimonia` (`idCerimonia`),
-  ADD KEY `bara` (`idBara`),
   ADD KEY `urna` (`idUrna`),
   ADD KEY `auto` (`idAuto`);
 
@@ -236,6 +254,12 @@ ALTER TABLE `defunti_composizioni`
 -- Indici per le tabelle `urne`
 --
 ALTER TABLE `urne`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indici per le tabelle `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -277,6 +301,12 @@ ALTER TABLE `defunti_composizioni`
 --
 ALTER TABLE `urne`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT per la tabella `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Limiti per le tabelle scaricate
