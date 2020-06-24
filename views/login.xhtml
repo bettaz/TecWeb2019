@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/loginPrint.css" media="print" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="text/javascript" src="js/check_login.js"></script>
 </head>
 <body>
 
@@ -41,7 +43,8 @@
                 <input name="password" id="password" type="password"/>
             </div>
             <div>
-                <button type="submit" value="Enter" id="enter">Enter</button>
+
+                <button type="submit" value="Enter" id="enter" onclick="check()">Enter</button>
             </div>
         </fieldset>
     </form>
