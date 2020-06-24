@@ -32,8 +32,9 @@ $content = str_replace('<mobile/>', $data['numeroTelefono'],$content);
 $content = str_replace('<coffin/>',$data['idBara'],$content);
 $content = str_replace('<cremation/>',$data['idUrna']!=null?$data['idUrna']:'senza cremazione',$content);
 $content = str_replace('<car/>',$data['idAuto'],$content);
-// TODO add flower, quotation calc and stored quotation fetch and print
+// TODO add flower, funeral, quotation calc and stored quotation fetch and print
 $calculated = 0;
+$content = str_replace('<funeral/>',$data['idCerimonia'],$content);
 $content = str_replace('<flowers/>','',$content);
 $content = str_replace('<quotation/>',$calculated,$content);
 $content = str_replace('<finalquotation/>',$data['proposta']?$data['proposta']:$calculated,$content);
