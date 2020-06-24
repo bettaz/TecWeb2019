@@ -2,10 +2,9 @@
 session_start(['cookie_lifetime' => 86400]);
 require_once 'bin/Connection.php';
 $connection = new Connection();
-if(!isset($_POST['uname']) || $_POST['uname']=='')
-	$error = '<div class="error">Inserire lo username!</div>';
-else{
-	if(!isset($_POST['password']) || $_POST['password']=='')
+
+if(isset($_POST['uname'])){
+	if(!isset($_POST['password']))
 		$error = '<div class="error">Inserire la password!</div>';
 	else{
 		if(isset($_POST['uname']) && $_POST['uname'] != $connection->escape
@@ -26,7 +25,14 @@ else{
 					$_SESSION['logged'] = false;
 			}
 		}
-		
+	}
+}
+else{
+	if(isset($_POST['password'])){
+		$error = '<div class="error">Inserire lo username!</div>';
+	}
+	else{
+		$error ='';
 	}
 }
 
