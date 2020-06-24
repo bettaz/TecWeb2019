@@ -16,7 +16,6 @@
     <!-- link dei css -->
     <link rel="stylesheet" href="css/gestioneFormMobile.css" media="screen and (max-width:720px)" />
     <link rel="stylesheet" href="css/gestioneFormDesktop.css" media="screen and (min-width: 721px)" />
-    <link rel="stylesheet" href="css/listaPreventiviPrint.css" media="print"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script type="text/javascript" src="js/gestioneForm.js"></script>
@@ -37,9 +36,9 @@
 <!--        <li><a href="../preventivatore.xhtml" tabindex="5" accesskey="P">Preventivatore</a></li>-->
 <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
 <!--        <li>Accedi come admin</li>-->
-        <li><a href="quotationList.xhtml" tabindex="7" accesskey="L">Lista Preventivi</a></li>
+        <li><a href="admin.php" tabindex="7" accesskey="L">Lista Preventivi</a></li>
         <li>Gestione Form</li>
-        <li><a href="logout.php" tabindex="8" accesskey="E">Esci</a> </li>
+        <li><a href="bin/logout.php" tabindex="8" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
@@ -49,64 +48,51 @@
         Qui è possibile gestire i prodotti offerti dall'azienda, aggiungendone di nuovi o rimuovendo quelli non più disponibili.
     </p>
 
-    <form action="">
+    <form action="gestioneForm.php" method="post" id="frmadd">
         <fieldset class="contenitore">
             <legend>Aggiungi prodotto</legend>
-            <div>
-                <div class="linea">
-                    <label for="tipoAddP">Tipo prodotto:</label>
-                    <select name="tipoAddP" id="tipoAddP">
-                        <option selected="selected">---</option>
-                        <option value="modBara">Bara</option>
-                        <option value="modUrna">Urna</option>
-                        <option value="modAuto">Auto</option>
-                        <option value="modComp">Composizione floreale</option>
-                    </select>
-                </div>
-                <div class="linea">
-                    <label for="nomeP">Nome:</label>
-                    <input name="nomeP" id="nomeP" maxlength="40"/>
-                </div>
-                <div class="linea">
-                    <label for="prezzoP">Prezzo:</label>
-                    <input name="prezzoP" id="prezzoP" maxlength="9"/>
-                </div>
-                <button type="button" onclick="checkInsert()">Invia</button>
+            <div class="linea">
+                <label for="tipoAddP">Tipo prodotto:</label>
+                <select name="tipoAddP" id="tipoAddP">
+                    <option selected="selected">---</option>
+                    <option value="modBara">Bara</option>
+                    <option value="modUrna">Urna</option>
+                    <option value="modAuto">Auto</option>
+                    <option value="modComp">Composizione floreale</option>
+                </select>
             </div>
+            <div class="linea">
+                <label for="nomeP">Nome:</label>
+                <input name="nomeP" id="nomeP" maxlength="40"/>
+            </div>
+            <div class="linea">
+                <label for="prezzoP">Prezzo:</label>
+                <input name="prezzoP" id="prezzoP" maxlength="9"/>
+            </div>
+            <input type="submit" onclick="checkInsert()" value="Aggiungi"/>
         </fieldset>
     </form>
 
-    <form action="">
+    <form action="gestioneForm.php" method="post">
         <fieldset class="contenitore">
             <legend>Rimuovi prodotto</legend>
-            <div>
-                <div class="linea">
-                    <label for="tipoRemoveP">Tipo prodotto:</label>
-                    <select name="tipoRemoveP" id="tipoRemoveP">
-                        <option selected="selected">---</option>
-                        <option value="remBara">Bara</option>
-                        <option value="remUrna">Urna</option>
-                        <option value="remAuto">Auto</option>
-                        <option value="remComp">Composizione floreale</option>
-                    </select>
-                </div>
-                <div class="linea">
-                    <label for="nomeRemoveP">Nome:</label>
-                    <select name="nomeRemoveP" id="nomeRemoveP">
-                        <option selected="selected">---</option>
-                    </select>
-                </div>
-                <button type="button" onclick="checkRemove()">Invia</button>
+            <div class="linea">
+                <label for="nomeRemoveP">Nome:</label>
+                <select name="nomeRemoveP" id="nomeRemoveP">
+                    <option selected="selected">---</option>
+                    <elementlist/>
+                </select>
             </div>
+            <input type="submit" onclick="checkRemove()" value="Rimuovi"/>
         </fieldset>
     </form>
 
 </div>
 
 <div id="footer">
-    <img src="../img/valid-xhtml10.png" alt="XHTML valido"/>
+    <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
     <em xml:lang="en">Improved by <span xml:lang="it">Tta</span>'s Team Solutions</em>
-    <img src="../img/vcss-blue.gif" alt="CSS valido" />
+    <img src="img/vcss-blue.gif" alt="CSS valido" />
 </div>
 
 </body>

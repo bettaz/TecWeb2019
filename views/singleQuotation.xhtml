@@ -26,15 +26,15 @@
 </div>
 
 <div id="breadcrumb">
-    <p>Ti trovi in: Preventivo IDPREVENTIVE</p>
+    <p>Ti trovi in: Preventivo <idquotation/></p>
 </div>
 
 <div id="menu">
     <ul>
         <li><a href="admin.php" tabindex="2" accesskey="L">Lista preventivi</a></li>
-        <li><a href="gestioneForm.xhtml" tabindex="3" accesskey="G">Gestione form</a></li>
+        <li><a href="gestioneForm.php" tabindex="3" accesskey="G">Gestione form</a></li>
         <li>Singolo Preventivo</li>
-        <li><a href="logout.php" tabindex="3" accesskey="E">Esci</a></li>
+        <li><a href="bin/logout.php" tabindex="3" accesskey="E">Esci</a></li>
     </ul>
 </div>
 
@@ -54,6 +54,7 @@
     </ul>
     <h2>Dati Acquisto</h2>
     <ul>
+        <li>Cerimonia: <funeral/></li>
         <li>Modello bara: <coffin/></li>
         <li>Cremazione: <cremation/></li>
         <li>Modello urna: <urn/></li>
@@ -70,11 +71,11 @@
             <legend>Gestione preventivo</legend>
             <div class="linea">
                 <label for="finalTot">Totale finale:</label>
-                <input name="finalTot" id="finalTot" maxlength="30" type="text"/>
+                <input name="finalTot" id="finalTot" maxlength="30" type="text" value="<finalquotation/>"/>
             </div>
             <div class="linea">
                 <label for="publicNecro">Pubblica su necrologio:</label>
-                <input name="publicNecro" id="publicNecro" type="checkbox"/>
+                <input name="publicNecro" id="publicNecro" type="checkbox" <necroCheck/>/>
             </div>
             <input type="submit" value="Aggiorna" />
         </fieldset>

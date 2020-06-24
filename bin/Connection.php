@@ -20,7 +20,7 @@ class Connection{
 	public function Query($query){
 		$res=$this->conn->query($query);
 		error_log('Executing query '.$query);
-		if($res&&$res->num_rows>0){
+		if($res){
 			return $res;
 		}
 		else
