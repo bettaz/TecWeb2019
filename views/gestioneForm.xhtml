@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/listaPreventiviPrint.css" media="print"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script type="text/javascript" src="./js/check_gestioneForm.js"></script>
+    <script type="text/javascript" src="js/gestioneForm.js"></script>
 </head>
 <body>
 <div id="header">
@@ -71,7 +71,7 @@
                     <label for="prezzoP">Prezzo:</label>
                     <input name="prezzoP" id="prezzoP" maxlength="9"/>
                 </div>
-                <button type="button" onclick="">Invia</button>
+                <button type="button" onclick="checkInsert()">Invia</button>
             </div>
         </fieldset>
     </form>
@@ -96,7 +96,7 @@
                         <option selected="selected">---</option>
                     </select>
                 </div>
-                <button type="button" onclick="checkInsert()">Invia</button>
+                <button type="button" onclick="checkRemove()">Invia</button>
             </div>
         </fieldset>
     </form>
