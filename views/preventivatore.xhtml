@@ -16,7 +16,7 @@
         <!-- link dei css -->
         <link rel="stylesheet" href="css/preventivatore_Mobile.css" media="screen and (max-width:720px)" />
         <link rel="stylesheet" href="css/preventivatoreDesktop.css" media="screen and (min-width: 721px)" />
-        <link rel="stylesheet" href="css/preventive_print.css" media="print"/>
+        <link rel="stylesheet" href="css/preventivatore_print.css" media="print"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script type="text/javascript" src="js/preventivatore.js"></script>
     </head>
@@ -47,7 +47,7 @@
         <p>
             Qui puoi inserire i dati per formulare il tuo preventivo.
         </p>
-        <form action="" method="post">
+        <form action="requireQuotation.php" method="post">
             <fieldset class="contenitore">
                 <legend>Dati Generali</legend>
 
@@ -386,14 +386,12 @@
                         </optgroup>
                     </select>
                 </div>
-
+            </fieldset>
+            <fieldset class="contenitore">
+                <legend>Inoltra</legend>
+                <input type="submit" onclick="check()" value="Invia preventivo"/>
             </fieldset>
         </form>
-
-        <div id="risultati">
-            <p><strong>Totale di base: ------€ </strong></p>
-        </div>
-        <button type="button" onclick="check()"> Invia preventivo </button>
     </div>
 
     <div id="footer">
