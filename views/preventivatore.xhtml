@@ -47,44 +47,59 @@
         <p>
             Qui puoi inserire i dati per formulare il tuo preventivo.
         </p>
-        <form action="requireQuotation.php" method="post">
+        <form action="quotator.php" method="post">
             <fieldset class="contenitore">
                 <legend>Dati Generali</legend>
-
+                <globalerr/>
+                <div class="linea">
+                    <label for="cf">Nome cliente:</label>
+                    <input name="cf" id="cf" maxlength="16"/>
+                </div>
+                <cferr/>
                 <div class="linea">
                     <label for="nomeC">Nome cliente:</label>
                     <input name="nomeC" id="nomeC" maxlength="30"/>
                 </div>
-
+                <nomecerr/>
                 <div class="linea">
                     <label for="cognomeC">Cognome cliente:</label>
                     <input name="cognomeC" id="cognomeC" maxlength="40"/>
                 </div>
-
+                <cognomecerr/>
                 <div class="linea">
                     <label for="nomeD">Nome defunto/a:</label>
                     <input name="nomeD" id="nomeD" maxlength="30"/>
                 </div>
-
+                <nomederr/>
                 <div class="linea">
                     <label for="cognomeD">Cognome defunto/a:</label>
                     <input name="cognomeD" id="cognomeD" maxlength="40"/>
                 </div>
-
+                <cognomederr/>
+                <div class="linea">
+                    <label for="nascita">Data nascita defunto/a:</label>
+                    <input name="nascita" id="nascita" maxlength="10"/>
+                </div>
+                <nascitaerr/>
+                <div class="linea">
+                    <label for="decesso">Data decesso:</label>
+                    <input name="decesso" id="decesso" maxlength="10"/>
+                </div>
+                <decessoerr/>
                 <div class="linea">
                     <label for="via">Indirizzo cliente:</label>
                     <input name="via" id="via" maxlength="80"/>
                 </div>
-
+                <viaerr/>
                 <div class="linea">
                     <label for="citta">Città cliente:</label>
                     <input name="citta" id="citta" maxlength="60"/>
                 </div>
-
+                <cittaerr/>
                 <div class="linea">
                     <label for="provincia">Provincia:</label>
                     <select name="provincia" id="provincia">
-                        <option selected="selected">---</option>
+                        <option value="false" selected="selected">---</option>
                         <optgroup label="Valle d'Aosta">
                             <option value="AO">AOSTA</option>
                         </optgroup>
@@ -259,133 +274,64 @@
                         </optgroup>
                     </select>
                 </div>
-
+                <proverr/>
                 <div class="linea">
                     <label for="cell">Numero di telefono:</label>
                     <input name="cell" id="cell" maxlength="10"/>
                 </div>
-
+                <cellerr/>
             </fieldset>
 
             <fieldset class="contenitore">
                 <legend>Dati acquisto</legend>
-
+                <div class="linea">
+                    <label for="cerimonia">Cerimonia:</label>
+                    <select name="cerimonia" id="cerimonia">
+                        <option value="false" selected="selected">---</option>
+                        <cerimoniaoptions/>
+                    </select>
+                </div>
+                <cerimoniaerr/>
                 <div class="linea">
                     <label for="bara">Modello bara:</label>
                     <select name="bara" id="bara">
-                        <option selected="selected">---</option>
-                        <optgroup label="Abete">
-                            <option value="Alara">Lara</option>
-                            <option value="Atorino">Torino</option>
-                            <option value="Agianmaria">Gianmaria</option>
-                        </optgroup>
-
-                        <optgroup label="Mogano">
-                            <option value="Mlara">Lara</option>
-                            <option value="Mannamaria">Annamaria</option>
-                            <option value="Mluigi">Luigi</option>
-                            <option value="Mginevra">Ginevra</option>
-                            <option value="Mluna">Luna</option>
-                            <option value="Mtorino">Torino</option>
-
-                        </optgroup>
-
-                        <optgroup label="Betulla">
-                            <option value="Bmario">Mario</option>
-                            <option value="Bluigi">Luigi</option>
-                            <option value="Bgina">Gina</option>
-                            <option value="Bsavona">Savona</option>
-                        </optgroup>
+                        <option value="false" selected="selected">---</option>
+                        <baraoptions/>
                     </select>
                 </div>
-
+                <baraerr/>
                 <div class="linea">
                     <label for="sicremazione">Desidero la cremazione </label>
-                    <input name="cremazione" id="sicremazione" value="sicremazione" type="radio"/>
+                    <input name="cremazione" id="sicremazione" value="true" type="radio" checked="checked()"/>
                     <br/>
                     <label for="nocremazione">Non desidero la cremazione </label>
-                    <input name="cremazione" id="nocremazione" value="nocremazione" type="radio"/>
+                    <input name="cremazione" id="nocremazione" value="false" type="radio"/>
                 </div>
-
+                <coerenzaerr/>
                 <div class="linea">
                     <label for="urna">Modello urna:</label>
                     <select name="urna" id="urna">
-                        <option selected="selected">---</option>
-                        <optgroup label="Marmo">
-                            <option value="Mciliegia">Ciliegia</option>
-                            <option value="Mbetulla">Betulla</option>
-                            <option value="Mlarice">Larice</option>
-                        </optgroup>
-
-                        <optgroup label="Acciaio">
-                            <option value="Atulipano">Tulipano</option>
-                            <option value="Arect">Torino</option>
-                        </optgroup>
-
-                        <optgroup label="Vetro">
-                            <option value="Vfrancesca">Francesca</option>
-                            <option value="Vrosa">Rosa</option>
-                            <option value="Vpalermo">Palermo</option>
-                            <option value="Vrect">Rect</option>
-                        </optgroup>
+                        <option value="false" selected="selected">---</option>
+                        <urnaoptions/>
                     </select>
                 </div>
-
+                <urnaerr/>
                 <div class="linea">
                     <label for="auto">Modello auto:</label>
                     <select name="auto" id="auto">
-                        <option selected="selected">---</option>
-                        <optgroup label="BMW">
-                            <option value="BMm3">M3</option>
-                            <option value="BMx6">X6</option>
-                            <option value="BMm8">M8</option>
-                        </optgroup>
-
-                        <optgroup label="Bentley">
-                            <option value="BEcontinental">Continental</option>
-                        </optgroup>
-
-                        <optgroup label="Mercedes">
-                            <option value="Mgle">GLE</option>
-                            <option value="Mgle">GLH</option>
-                        </optgroup>
-
-                        <optgroup label="Audi">
-                            <option value="Aa4">A4</option>
-                            <option value="Aa5">A5</option>
-                            <option value="Aa6">A6</option>
-                        </optgroup>
-
-                        <optgroup label="Fiat">
-                            <option value="Ffiorino">Fiorino</option>
-                        </optgroup>
+                        <option value="false" selected="selected">---</option>
+                        <autooptions/>
                     </select>
                 </div>
-
+                <autoerr/>
                 <div class="linea">
                     <label for="fiori">Composizione floreale:</label>
                     <select name="fiori" id="fiori">
                         <option selected="selected">---</option>
-                        <optgroup label="Corone">
-                            <option value="COgelsomino">Gelsolmino</option>
-                        </optgroup>
-
-                        <optgroup label="Cuscini">
-                            <option value="CUgirasoli">Girasoli</option>
-                        </optgroup>
-
-                        <optgroup label="Ceste">
-                            <option value="CEliliummisti">Lilium misti</option>
-                            <option value="CEliliumrossi">Lilium rossi</option>
-                        </optgroup>
-
-                        <optgroup label="Mazzi">
-                            <option value="Mrosebianche">Rose bianche</option>
-                            <option value="Mroseblu">Rose blu</option>
-                            <option value="Mroserosse">Rose rosse</option>
-                        </optgroup>
+                        <fiorioptions/>
                     </select>
                 </div>
+                <fiorierr/>
             </fieldset>
             <fieldset class="contenitore">
                 <legend>Inoltra</legend>
