@@ -4,3 +4,7 @@
     visibility: hidden;
     display: none;
 }
+
+#content{
+	padding-bottom: 4%;
+}

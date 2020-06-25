@@ -5,7 +5,7 @@
 
 html, body {
     max-width: 1024px;
-    font-size: 115%;
+    font-size: 100%;
     margin: auto;
 }
 
@@ -18,7 +18,7 @@ body {
 input{
     width: 50%;
     margin-top: 2%;
-    font-size: 120%;
+    font-size: 100%;
 }
 
 input[type=radio]{
@@ -29,5 +29,5 @@ input[type=radio]{
 select{
     width: 50%;
     margin-top: 1%;
-    font-size: 120%;
+    font-size: 100%;
 }
