@@ -1,0 +1,15 @@
+{
+  "name": "ttaTeam/TecWeb2019",
+  "description": "Tecweb 2019 project",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "bettaz",
+      "email": "bettaz.developer@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-mysqli": "*"
+  }
+}
