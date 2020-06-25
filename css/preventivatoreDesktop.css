@@ -30,37 +30,53 @@ h2 {
     margin: 3%;
 }
 
+#cf{
+    margin-left: 10%;
+}
+
 #nomeC{
-    margin-left: 9%;
+    margin-left: 11%;
 }
 
 #cognomeC{
-    margin-left: 5%;
+    margin-left: 7%;
 }
 
 
 #nomeD{
-    margin-left: 5.5%;
+    margin-left: 8.5%;
 }
 
 #cognomeD{
-    margin-left: 1.5%;
+    margin-left: 4.5%;
+}
+
+#nascita{
+    margin-left: 1%;
+}
+
+#decesso{
+    margin-left: 11%;
 }
 
 #via{
-    margin-left: 6%;
+    margin-left: 8%;
 }
 
 #citta{
-    margin-left: 10.3%;
+    margin-left: 12%;
 }
 
 #provincia{
-    margin-left: 14%;
+    margin-left: 15%;
 }
 
 #cell{
-    margin-left: 2%;
+    margin-left: 3%;
+}
+
+#cerimonia{
+    margin-left: 14%;
 }
 
 #bara{
