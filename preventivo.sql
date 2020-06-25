@@ -21,7 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `preventivo`
 --
-
 CREATE DATABASE IF NOT EXISTS `preventivo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `preventivo`;
 
@@ -31,15 +30,14 @@ USE `preventivo`;
 -- Struttura della tabella `auto`
 --
 
-
 DROP TABLE IF EXISTS `auto`;
 CREATE TABLE IF NOT EXISTS `auto` (
-                                      `id` int(11) NOT NULL AUTO_INCREMENT,
-                                      `marca` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                      `modello` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                      `costoBase` decimal(13,2) NOT NULL,
-                                      `cilindrata` int(11) NOT NULL,
-                                      PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `marca` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `modello` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `costoBase` decimal(13,2) NOT NULL,
+  `cilindrata` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -58,11 +56,11 @@ INSERT INTO `auto` (`id`, `marca`, `modello`, `costoBase`, `cilindrata`) VALUES
 
 DROP TABLE IF EXISTS `bare`;
 CREATE TABLE IF NOT EXISTS `bare` (
-                                      `id` int(11) NOT NULL AUTO_INCREMENT,
-                                      `versione` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                      `materiale` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                      `costoBase` decimal(13,2) NOT NULL,
-                                      PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `versione` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `materiale` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `costoBase` decimal(13,2) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -81,13 +79,12 @@ INSERT INTO `bare` (`id`, `versione`, `materiale`, `costoBase`) VALUES
 -- Struttura della tabella `cerimonie`
 --
 
-
 DROP TABLE IF EXISTS `cerimonie`;
 CREATE TABLE IF NOT EXISTS `cerimonie` (
-                                           `id` int(11) NOT NULL AUTO_INCREMENT,
-                                           `tipologia` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                           `costoBase` decimal(13,2) NOT NULL,
-                                           PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipologia` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `costoBase` decimal(13,2) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -107,10 +104,10 @@ INSERT INTO `cerimonie` (`id`, `tipologia`, `costoBase`) VALUES
 
 DROP TABLE IF EXISTS `composizioni`;
 CREATE TABLE IF NOT EXISTS `composizioni` (
-                                              `id` int(11) NOT NULL AUTO_INCREMENT,
-                                              `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                              `costoBase` decimal(13,2) NOT NULL,
-                                              PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `costoBase` decimal(13,2) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -131,35 +128,34 @@ INSERT INTO `composizioni` (`id`, `nome`, `costoBase`) VALUES
 
 DROP TABLE IF EXISTS `defunti`;
 CREATE TABLE IF NOT EXISTS `defunti` (
-                                         `cf` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `nomeDefunto` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `cognomeDefunto` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `dataNascita` date NOT NULL,
-                                         `dataDecesso` date NOT NULL,
-                                         `residenza` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `nomeCliente` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `cognomeCliente` text COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `numeroTelefono` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                         `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-                                         `idCerimonia` int(11) NOT NULL,
-                                         `idBara` int(11) NOT NULL,
-                                         `idUrna` int(11) DEFAULT NULL,
-                                         `idAuto` int(11) NOT NULL,
-                                         `isPublic` tinyint(1) NOT NULL DEFAULT '0',
-                                         `proposta` decimal(13,2) DEFAULT NULL,
-                                         `idFiori` int(11) NOT NULL,
-                                         PRIMARY KEY (`cf`),
-                                         KEY `cerimonia` (`idCerimonia`),
-                                         KEY `urna` (`idUrna`),
-                                         KEY `auto` (`idAuto`),
-                                         KEY `bara` (`idBara`),
-                                         KEY `idFiori` (`idFiori`)
+  `cf` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nomeDefunto` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cognomeDefunto` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dataNascita` date NOT NULL,
+  `dataDecesso` date NOT NULL,
+  `residenza` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nomeCliente` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cognomeCliente` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `numeroTelefono` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `idCerimonia` int(11) NOT NULL,
+  `idBara` int(11) NOT NULL,
+  `idUrna` int(11) DEFAULT NULL,
+  `idAuto` int(11) NOT NULL,
+  `isPublic` tinyint(1) NOT NULL DEFAULT '0',
+  `proposta` decimal(13,2) DEFAULT NULL,
+  `idFiori` int(11) NOT NULL,
+  PRIMARY KEY (`cf`),
+  KEY `cerimonia` (`idCerimonia`),
+  KEY `urna` (`idUrna`),
+  KEY `auto` (`idAuto`),
+  KEY `bara` (`idBara`),
+  KEY `idFiori` (`idFiori`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `defunti`
 --
-
 
 INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `dataDecesso`, `residenza`, `nomeCliente`, `cognomeCliente`, `numeroTelefono`, `data`, `idCerimonia`, `idBara`, `idUrna`, `idAuto`, `isPublic`, `proposta`, `idFiori`) VALUES
 ('BTTLSS91H02A459X', 'Alessio', 'Bettarello', '1991-06-02', '2020-06-20', 'Padova', 'Mattia', 'Gottardello', '3098754671', '2020-06-24 15:01:32', 1, 2, 1, 1, 1, '10022.00', 0),
@@ -173,11 +169,11 @@ INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `da
 
 DROP TABLE IF EXISTS `urne`;
 CREATE TABLE IF NOT EXISTS `urne` (
-                                      `id` int(11) NOT NULL AUTO_INCREMENT,
-                                      `versione` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                      `materiale` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-                                      `costoBase` decimal(13,2) NOT NULL,
-                                      PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `versione` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `materiale` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `costoBase` decimal(13,2) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -196,13 +192,12 @@ INSERT INTO `urne` (`id`, `versione`, `materiale`, `costoBase`) VALUES
 -- Struttura della tabella `users`
 --
 
-
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-                                       `id` int(11) NOT NULL AUTO_INCREMENT,
-                                       `username` varchar(30) NOT NULL,
-                                       `enc_password` varchar(64) NOT NULL,
-                                       PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `enc_password` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
@@ -213,97 +208,6 @@ INSERT INTO `users` (`id`, `username`, `enc_password`) VALUES
 (1, 'bettaz', 'a0b5d3e939ba85297973c12c8e0a256b7d6635d73fbe17650ea7c60662254a28'),
 (2, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
 
-
---
--- Indici per le tabelle scaricate
---
-
---
--- Indici per le tabelle `auto`
---
-ALTER TABLE `auto`
-    ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `bare`
---
-ALTER TABLE `bare`
-    ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `cerimonie`
---
-ALTER TABLE `cerimonie`
-    ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `composizioni`
---
-ALTER TABLE `composizioni`
-    ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `defunti`
---
-ALTER TABLE `defunti`
-    ADD PRIMARY KEY (`cf`),
-    ADD KEY `cerimonia` (`idCerimonia`),
-    ADD KEY `urna` (`idUrna`),
-    ADD KEY `auto` (`idAuto`);
-
---
--- Indici per le tabelle `urne`
---
-ALTER TABLE `urne`
-    ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `users`
---
-ALTER TABLE `users`
-    ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT per le tabelle scaricate
---
-
---
--- AUTO_INCREMENT per la tabella `auto`
---
-ALTER TABLE `auto`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT per la tabella `bare`
---
-ALTER TABLE `bare`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT per la tabella `cerimonie`
---
-ALTER TABLE `cerimonie`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT per la tabella `composizioni`
---
-ALTER TABLE `composizioni`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT per la tabella `urne`
---
-ALTER TABLE `urne`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT per la tabella `users`
---
-ALTER TABLE `users`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
->>>>>>> develop
-
 --
 -- Limiti per le tabelle scaricate
 --
@@ -312,11 +216,11 @@ ALTER TABLE `users`
 -- Limiti per la tabella `defunti`
 --
 ALTER TABLE `defunti`
-    ADD CONSTRAINT `auto` FOREIGN KEY (`idAuto`) REFERENCES `auto` (`id`),
-    ADD CONSTRAINT `bara` FOREIGN KEY (`idBara`) REFERENCES `bare` (`id`),
-    ADD CONSTRAINT `cerimonia` FOREIGN KEY (`idCerimonia`) REFERENCES `cerimonie` (`id`),
-    ADD CONSTRAINT `urna` FOREIGN KEY (`idUrna`) REFERENCES `urne` (`id`),
-    ADD CONSTRAINT `fiori` FOREIGN KEY (`idFiori`) REFERENCES `composizioni` (`id`);
+  ADD CONSTRAINT `auto` FOREIGN KEY (`idAuto`) REFERENCES `auto` (`id`),
+  ADD CONSTRAINT `bara` FOREIGN KEY (`idBara`) REFERENCES `bare` (`id`),
+  ADD CONSTRAINT `cerimonia` FOREIGN KEY (`idCerimonia`) REFERENCES `cerimonie` (`id`),
+  ADD CONSTRAINT `urna` FOREIGN KEY (`idUrna`) REFERENCES `urne` (`id`),
+  ADD CONSTRAINT `FIORI` FOREIGN KEY (`idFiori`) REFERENCES `composizioni` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
