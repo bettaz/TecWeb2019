@@ -19,11 +19,13 @@ if(isset($_POST['uname'])) {
 					$password = $connection->escape($_POST['password']);
 					$enc_pwd = hash('sha256',$password);
 					$res = $connection->Query("SELECT * FROM users WHERE username = '$username' AND enc_password = '$enc_pwd'");
-					if($res && $res->num_rows>0)
+					if($res && $res->num_rows>0){
+						$_SESSION['user'] = $username;
 						$_SESSION['logged'] = true;
+					}
 					else {
 						$_SESSION['logged'] = false;
-						$error = 'log-in invalido';
+						$error = '<div class="error">Log-in invalido</div>';
 					}
 				}
 			}
