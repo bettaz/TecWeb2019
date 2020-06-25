@@ -11,6 +11,10 @@
     border-left: solid;
 }
 
+h2 {
+    padding-bottom:1%;
+}
+
 #content .text{
     padding-left: 1%;
 }
