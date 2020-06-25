@@ -40,7 +40,7 @@
         <li><a href="quotationList.xhtml" tabindex="7" accesskey="L">Lista Preventivi</a></li>
         <li><a href="gestioneForm.php" tabindex="8" accesskey="G">Gestione Preventivatore</a></li>
         <li>Cambio Password</li>
-        <li><a href="logout.php" tabindex="9" accesskey="E">Esci</a> </li>
+        <li><a href="bin/logout.php" tabindex="9" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
@@ -74,22 +74,22 @@
             </div>
         </fieldset>
     </form> -->
-
-    <form action="post">
+    <message/>
+    <form action="manageUsers.php" method="post">
         <fieldset class="contenitore">
             <legend>Aggiorna password</legend>
             <div>
                 <div class="linea">
                     <label for="passwordAttuale">Password attuale:</label>
-                    <input name="passwordAttuale" id="passwordAttuale" maxlength="64"/>
+                    <input type="password" name="passwordAttuale" id="passwordAttuale" maxlength="64"/>
                 </div>
                 <div class="linea">
                     <label for="passwordNuova">Password nuova:</label>
-                    <input name="passwordNuova" id="passwordNuova" maxlength="64"/>
+                    <input type="password" name="passwordNuova" id="passwordNuova" maxlength="64"/>
                 </div>
                 <div class="linea">
                     <label for="confirmPwd">Conferma password:</label>
-                    <input name="confirmPassword" id="confirmPwd" maxlength="64"/>
+                    <input type="password" name="confirmPassword" id="confirmPwd" maxlength="64"/>
                 </div>
                 <input type="submit" onclick="updatePassword()" value="Aggiorna"/>
             </div>
