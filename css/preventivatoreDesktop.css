@@ -31,16 +31,16 @@ h2 {
 }
 
 #nomeC{
-    margin-left: 8%;
+    margin-left: 9%;
 }
 
 #cognomeC{
-    margin-left: 4.3%;
+    margin-left: 5%;
 }
 
 
 #nomeD{
-    margin-left: 5.2%;
+    margin-left: 5.5%;
 }
 
 #cognomeD{
@@ -48,15 +48,15 @@ h2 {
 }
 
 #via{
-    margin-left: 4.6%;
+    margin-left: 6%;
 }
 
 #citta{
-    margin-left: 9.3%;
+    margin-left: 10.3%;
 }
 
 #provincia{
-    margin-left: 11.8%;
+    margin-left: 14%;
 }
 
 #cell{
@@ -69,7 +69,7 @@ h2 {
 
 #sicremazione{
     margin-right: 20%;
-    margin-left: 1%;
+    margin-left: 5.7%;
 }
 
 #nocremazione{
@@ -77,7 +77,7 @@ h2 {
 }
 
 #urna{
-    margin-left: 9.3%;
+    margin-left: 11.3%;
 }
 
 #auto{
@@ -101,8 +101,8 @@ h2 {
 #content input[type='submit']{
     margin-top: 3%;
     /*margin-right: 50%;*/
-    margin-bottom: 2%;
-    margin-left: 22%;
+    margin-bottom: 3%;
+    margin-left: 29%;
     width: 32%;
     font-size: 140%;
 }
