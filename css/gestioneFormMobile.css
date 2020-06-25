@@ -30,7 +30,7 @@ select{
     font-size: 120%;
 }
 
-button{
+input[type='submit']{
     background-color: #FFCC00;
     width: 100%;
     font-size: 120%;

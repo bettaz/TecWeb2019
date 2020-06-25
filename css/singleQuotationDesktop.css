@@ -35,14 +35,13 @@
     margin-left: 1%;
 }
 
-#content input{
+#content input[type='text']{
     margin-left: 2%;
 }
 
-#content button{
+#content input[type='submit']{
     margin-top: 3%;
     margin-right: 50%;
     margin-left: 22%;
     width: 23%;
-    font-size: 150%;
 }

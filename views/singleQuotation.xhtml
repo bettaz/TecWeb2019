@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Home</title>
+
+    <meta name="title" content="SleekParadise, sito di onoranze funebri" />
+    <meta name="description" content="Pagina di visualizzazione del singolo preventivo, utilizzo riservato ai dipendenti" />
+    <meta name="keywords" content="SleekParadise, onoranze, funebri, funerali, preventivo, dettagli" />
+    <meta name="language" content="italian it" />
+    <meta name="author" content="Alessio Bettarello, Mattia Gottardello, Olivier Utshudi, Nicolo Sartor" />
+    <!-- link dei css -->
+    <link rel="stylesheet" href="css/singleQuotationMobile.css" media="screen and (max-width:720px)" />
+    <link rel="stylesheet" href="css/singleQuotationDesktop.css" media="screen and (min-width: 721px)" />
+    <link rel="stylesheet" href="css/singleQuotationPrint.css" media="print"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+<div id="header">
+    <h1 xml:lang="en">SleekParadise</h1>
+</div>
+
+<div id="breadcrumb">
+    <p>Ti trovi in: Preventivo <idquotation/></p>
+</div>
+
+<div id="menu">
+    <ul>
+        <li><a href="admin.php" tabindex="2" accesskey="L">Lista preventivi</a></li>
+        <li><a href="gestioneForm.php" tabindex="3" accesskey="G">Gestione Preventivatore</a></li>
+        <li>Singolo Preventivo</li>
+        <li><a href="manageUsers.php" tabindex="4" accesskey="U">Cambio Password</a> </li>
+        <li><a href="bin/logout.php" tabindex="5" accesskey="E">Esci</a></li>
+    </ul>
+</div>
+
+<div id="content">
+    <ul>
+        <li>ID Preventivo: <idquotation/></li>
+        <li>Data ricezione: <rdate/></li>
+    </ul>
+    <h2>Dati Generali</h2>
+    <ul>
+        <li>Nome cliente: <ncustomer/></li>
+        <li>Cognome cliente: <scustomer/></li>
+        <li>Nome defunto: <ndead/></li>
+        <li>Cognome defunto: <sdead/></li>
+        <li>Indirizzo cliente: <cusaddress/></li>
+        <li>Numero di telefono: <mobile/></li>
+    </ul>
+    <h2>Dati Acquisto</h2>
+    <ul>
+        <li>Cerimonia: <funeral/></li>
+        <li>Modello bara: <coffin/></li>
+        <li>Cremazione: <cremation/></li>
+        <li>Modello urna: <urn/></li>
+        <li>Modello auto: <car/></li>
+        <li>Composizione floreale: <flowers/></li>
+    </ul>
+    <h2>Totale</h2>
+    <ul>
+        <li>Totale da listino: <quotation/></li>
+    </ul>
+
+    <form action="./viewDetail.php?code=<idquotation/>" method="post">
+        <fieldset class="contenitore">
+            <legend>Gestione preventivo</legend>
+            <div class="linea">
+                <label for="finalTot">Totale finale:</label>
+                <input name="finalTot" id="finalTot" maxlength="30" type="text" value="<finalquotation/>"/>
+            </div>
+            <div class="linea">
+                <label for="publicNecro">Pubblica su necrologio:</label>
+                <input name="publicNecro" id="publicNecro" type="checkbox" <necroCheck/>/>
+            </div>
+            <input type="submit" value="Aggiorna" />
+        </fieldset>
+    </form>
+</div>
+
+
+<div id="footer">
+    <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
+    <em xml:lang="en">Improved by <span xml:lang="it">Tta</span>'s Team Solutions</em>
+    <img src="img/vcss-blue.gif" alt="CSS valido" />
+</div>
+
+</body>
+</html>

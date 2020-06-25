@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Giu 25, 2020 alle 14:32
+-- Creato il: Giu 24, 2020 alle 13:09
 -- Versione del server: 10.1.40-MariaDB
 -- Versione PHP: 7.3.5
 
@@ -21,7 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `preventivo`
 --
-
 CREATE DATABASE IF NOT EXISTS `preventivo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `preventivo`;
 
@@ -30,7 +29,6 @@ USE `preventivo`;
 --
 -- Struttura della tabella `auto`
 --
-
 
 DROP TABLE IF EXISTS `auto`;
 CREATE TABLE IF NOT EXISTS `auto` (
@@ -42,6 +40,11 @@ CREATE TABLE IF NOT EXISTS `auto` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `auto`
+--
+
+TRUNCATE TABLE `auto`;
 --
 -- Dump dei dati per la tabella `auto`
 --
@@ -66,6 +69,11 @@ CREATE TABLE IF NOT EXISTS `bare` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Svuota la tabella prima dell'inserimento `bare`
+--
+
+TRUNCATE TABLE `bare`;
+--
 -- Dump dei dati per la tabella `bare`
 --
 
@@ -81,7 +89,6 @@ INSERT INTO `bare` (`id`, `versione`, `materiale`, `costoBase`) VALUES
 -- Struttura della tabella `cerimonie`
 --
 
-
 DROP TABLE IF EXISTS `cerimonie`;
 CREATE TABLE IF NOT EXISTS `cerimonie` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -90,6 +97,11 @@ CREATE TABLE IF NOT EXISTS `cerimonie` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `cerimonie`
+--
+
+TRUNCATE TABLE `cerimonie`;
 --
 -- Dump dei dati per la tabella `cerimonie`
 --
@@ -113,6 +125,11 @@ CREATE TABLE IF NOT EXISTS `composizioni` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `composizioni`
+--
+
+TRUNCATE TABLE `composizioni`;
 --
 -- Dump dei dati per la tabella `composizioni`
 --
@@ -146,24 +163,54 @@ CREATE TABLE IF NOT EXISTS `defunti` (
   `idUrna` int(11) DEFAULT NULL,
   `idAuto` int(11) NOT NULL,
   `isPublic` tinyint(1) NOT NULL DEFAULT '0',
-  `proposta` decimal(13,2) DEFAULT NULL,
-  `idFiori` int(11) NOT NULL,
   PRIMARY KEY (`cf`),
   KEY `cerimonia` (`idCerimonia`),
   KEY `urna` (`idUrna`),
-  KEY `auto` (`idAuto`),
-  KEY `bara` (`idBara`),
-  KEY `idFiori` (`idFiori`)
+  KEY `auto` (`idAuto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Svuota la tabella prima dell'inserimento `defunti`
+--
+
+TRUNCATE TABLE `defunti`;
 --
 -- Dump dei dati per la tabella `defunti`
 --
 
+INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `dataDecesso`, `residenza`, `nomeCliente`, `cognomeCliente`, `numeroTelefono`, `data`, `idCerimonia`, `idBara`, `idUrna`, `idAuto`, `isPublic`) VALUES
+('BTTLSS91H02A459X', 'Alessio', 'Bettarello', '1991-06-02', '2020-06-20', 'Padova', 'Mattia', 'Gottardello', '3098754671', '2020-06-23 10:09:24', 1, 2, 1, 1, 0),
+('DNOBRN57H22A459X', 'Don', 'Barbano', '1957-06-22', '2020-05-13', 'Via della Speranza - S.Maria di Sala', 'Widspots', 'Pacchettino', '1234134123', '2020-06-23 15:13:47', 3, 4, NULL, 2, 1);
 
-INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `dataDecesso`, `residenza`, `nomeCliente`, `cognomeCliente`, `numeroTelefono`, `data`, `idCerimonia`, `idBara`, `idUrna`, `idAuto`, `isPublic`, `proposta`, `idFiori`) VALUES
-('BTTLSS91H02A459X', 'Alessio', 'Bettarello', '1991-06-02', '2020-06-20', 'Padova', 'Mattia', 'Gottardello', '3098754671', '2020-06-24 15:01:32', 1, 2, 1, 1, 1, '10022.00', 0),
-('DNOBRN57H22A459X', 'Don', 'Barbano', '1957-06-22', '2020-05-13', 'Via della Speranza - S.Maria di Sala', 'Widspots', 'Pacchettino', '1234134123', '2020-06-23 13:13:47', 3, 4, NULL, 2, 1, NULL, 0);
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `defunti_composizioni`
+--
+
+DROP TABLE IF EXISTS `defunti_composizioni`;
+CREATE TABLE IF NOT EXISTS `defunti_composizioni` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idDefunto` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idComposizione` int(11) NOT NULL,
+  `quantita` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `defunto` (`idDefunto`),
+  KEY `composizione` (`idComposizione`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Svuota la tabella prima dell'inserimento `defunti_composizioni`
+--
+
+TRUNCATE TABLE `defunti_composizioni`;
+--
+-- Dump dei dati per la tabella `defunti_composizioni`
+--
+
+INSERT INTO `defunti_composizioni` (`id`, `idDefunto`, `idComposizione`, `quantita`) VALUES
+(1, 'DNOBRN57H22A459X', 3, 5),
+(2, 'DNOBRN57H22A459X', 1, 8);
 
 -- --------------------------------------------------------
 
@@ -181,6 +228,11 @@ CREATE TABLE IF NOT EXISTS `urne` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Svuota la tabella prima dell'inserimento `urne`
+--
+
+TRUNCATE TABLE `urne`;
+--
 -- Dump dei dati per la tabella `urne`
 --
 
@@ -196,112 +248,25 @@ INSERT INTO `urne` (`id`, `versione`, `materiale`, `costoBase`) VALUES
 -- Struttura della tabella `users`
 --
 
-
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
   `enc_password` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
+--
+-- Svuota la tabella prima dell'inserimento `users`
+--
+
+TRUNCATE TABLE `users`;
 --
 -- Dump dei dati per la tabella `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `enc_password`) VALUES
-(1, 'bettaz', 'a0b5d3e939ba85297973c12c8e0a256b7d6635d73fbe17650ea7c60662254a28'),
-(2, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
-
-
---
--- Indici per le tabelle scaricate
---
-
---
--- Indici per le tabelle `auto`
---
-ALTER TABLE `auto`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `bare`
---
-ALTER TABLE `bare`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `cerimonie`
---
-ALTER TABLE `cerimonie`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `composizioni`
---
-ALTER TABLE `composizioni`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `defunti`
---
-ALTER TABLE `defunti`
-  ADD PRIMARY KEY (`cf`),
-  ADD KEY `cerimonia` (`idCerimonia`),
-  ADD KEY `urna` (`idUrna`),
-  ADD KEY `auto` (`idAuto`);
-  
---
--- Indici per le tabelle `urne`
---
-ALTER TABLE `urne`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indici per le tabelle `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT per le tabelle scaricate
---
-
---
--- AUTO_INCREMENT per la tabella `auto`
---
-ALTER TABLE `auto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT per la tabella `bare`
---
-ALTER TABLE `bare`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT per la tabella `cerimonie`
---
-ALTER TABLE `cerimonie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT per la tabella `composizioni`
---
-ALTER TABLE `composizioni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT per la tabella `urne`
---
-ALTER TABLE `urne`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT per la tabella `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+(1, 'bettaz', 'ciao');
 
 --
 -- Limiti per le tabelle scaricate
@@ -314,8 +279,14 @@ ALTER TABLE `defunti`
   ADD CONSTRAINT `auto` FOREIGN KEY (`idAuto`) REFERENCES `auto` (`id`),
   ADD CONSTRAINT `bara` FOREIGN KEY (`idBara`) REFERENCES `bare` (`id`),
   ADD CONSTRAINT `cerimonia` FOREIGN KEY (`idCerimonia`) REFERENCES `cerimonie` (`id`),
-  ADD CONSTRAINT `urna` FOREIGN KEY (`idUrna`) REFERENCES `urne` (`id`),
-  ADD CONSTRAINT `fiori` FOREIGN KEY (`idFiori`) REFERENCES `composizioni` (`id`);
+  ADD CONSTRAINT `urna` FOREIGN KEY (`idUrna`) REFERENCES `urne` (`id`);
+
+--
+-- Limiti per la tabella `defunti_composizioni`
+--
+ALTER TABLE `defunti_composizioni`
+  ADD CONSTRAINT `composizione` FOREIGN KEY (`idComposizione`) REFERENCES `composizioni` (`id`),
+  ADD CONSTRAINT `defunto` FOREIGN KEY (`idDefunto`) REFERENCES `defunti` (`cf`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
