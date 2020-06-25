@@ -1,7 +1,7 @@
 <?php
 session_start(['cookie_lifetime' => 86400]);
 if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
-	error_log('user non auth trying to access admin, redirected to login');
+	error_log('non auth user trying to access admin, redirected to login');
 	header('Location: login.php');
 }
 if(isset($_POST['tipoAddP'])){
