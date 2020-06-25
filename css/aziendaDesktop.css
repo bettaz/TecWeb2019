@@ -16,14 +16,16 @@
     float: left;
     width: 78%;
     border-left: solid;
+    padding-bottom: 4%;
 }
 
 #content .text{
-    padding-left: 0.5em;
+    padding-left: 1%;
 }
 
 #content h2{
     margin: 2%;
+    padding-left: 1%;
 }
 
 #content p{
