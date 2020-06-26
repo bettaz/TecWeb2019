@@ -13,7 +13,7 @@ SELECT cf, nomeDefunto AS namD, cognomeDefunto AS surD, dataNascita AS born,
        auto.marca AS carB, auto.modello AS carM, auto.cilindrata AS carCC,
        auto.costoBase AS carP, bare.versione AS cofV,
        bare.materiale AS cofM, bare.costoBase AS cofP,
-       composizioni.nome AS fioriN, composizioni.costoBase AS fioriP idUrna
+       composizioni.nome AS fioriN, composizioni.costoBase AS fioriP, idUrna
 FROM defunti JOIN cerimonie ON defunti.idCerimonia=cerimonie.id
 	JOIN auto ON defunti.idAuto=auto.id
 	    JOIN bare ON defunti.idBara=bare.id
