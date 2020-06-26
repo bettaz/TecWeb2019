@@ -37,10 +37,10 @@
         <!--        <li><a href="../preventivatore.xhtml" tabindex="5" accesskey="P">Preventivatore</a></li>-->
         <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
         <!--        <li>Accedi come admin</li>-->
-        <li><a href="admin.php" tabindex="7" accesskey="L">Lista Preventivi</a></li>
-        <li><a href="gestioneForm.php" tabindex="8" accesskey="G">Gestione Preventivatore</a></li>
+        <li><a href="admin.php" tabindex="1" accesskey="L">Lista Preventivi</a></li>
+        <li><a href="gestioneForm.php" tabindex="2" accesskey="G">Gestione Preventivatore</a></li>
         <li>Cambio Password</li>
-        <li><a href="bin/logout.php" tabindex="9" accesskey="E">Esci</a> </li>
+        <li><a href="bin/logout.php" tabindex="3" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
@@ -81,17 +81,17 @@
             <div>
                 <div class="linea">
                     <label for="passwordAttuale">Password attuale:</label>
-                    <input type="password" name="passwordAttuale" id="passwordAttuale" maxlength="64"/>
+                    <input type="password" name="passwordAttuale" id="passwordAttuale" maxlength="64" tabindex="4"/>
                 </div>
                 <div class="linea">
                     <label for="passwordNuova">Password nuova:</label>
-                    <input type="password" name="passwordNuova" id="passwordNuova" maxlength="64"/>
+                    <input type="password" name="passwordNuova" id="passwordNuova" maxlength="64" tabindex="5"/>
                 </div>
                 <div class="linea">
                     <label for="confirmPwd">Conferma password:</label>
-                    <input type="password" name="confirmPassword" id="confirmPwd" maxlength="64"/>
+                    <input type="password" name="confirmPassword" id="confirmPwd" maxlength="64" tabindex="6"/>
                 </div>
-                <input type="submit" onclick="updatePassword()" value="Aggiorna"/>
+                <input type="submit" onclick="updatePassword()" value="Aggiorna" tabindex="7"/>
             </div>
         </fieldset>
     </form>

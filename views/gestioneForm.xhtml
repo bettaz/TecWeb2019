@@ -36,10 +36,10 @@
 <!--        <li><a href="../preventivatore.xhtml" tabindex="5" accesskey="P">Preventivatore</a></li>-->
 <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
 <!--        <li>Accedi come admin</li>-->
-        <li><a href="admin.php" tabindex="7" accesskey="L">Lista Preventivi</a></li>
+        <li><a href="admin.php" tabindex="1" accesskey="L">Lista Preventivi</a></li>
         <li>Gestione Preventivatore</li>
-        <li><a href="manageUsers.php" tabindex="8" accesskey="U">Cambio Password</a> </li>
-        <li><a href="bin/logout.php" tabindex="9" accesskey="E">Esci</a> </li>
+        <li><a href="manageUsers.php" tabindex="2" accesskey="U">Cambio Password</a> </li>
+        <li><a href="bin/logout.php" tabindex="3" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
@@ -54,7 +54,7 @@
             <legend>Aggiungi prodotto</legend>
             <div class="linea">
                 <label for="tipoAddP">Tipo prodotto:</label>
-                <select name="tipoAddP" id="tipoAddP">
+                <select name="tipoAddP" id="tipoAddP" tabindex="4">
                     <option selected="selected">---</option>
                     <option value="modBara">Bara</option>
                     <option value="modUrna">Urna</option>
@@ -64,13 +64,13 @@
             </div>
             <div class="linea">
                 <label for="nomeP">Nome:</label>
-                <input name="nomeP" id="nomeP" maxlength="40"/>
+                <input name="nomeP" id="nomeP" maxlength="40" tabindex="5"/>
             </div>
             <div class="linea">
                 <label for="prezzoP">Prezzo:</label>
-                <input name="prezzoP" id="prezzoP" maxlength="9"/>
+                <input name="prezzoP" id="prezzoP" maxlength="9" tabindex="6"/>
             </div>
-            <input type="submit" onclick="checkInsert()" value="Aggiungi"/>
+            <input type="submit" onclick="checkInsert()" value="Aggiungi" tabindex="7"/>
         </fieldset>
     </form>
 
@@ -79,12 +79,12 @@
             <legend>Rimuovi prodotto</legend>
             <div class="linea">
                 <label for="nomeRemoveP">Nome:</label>
-                <select name="nomeRemoveP" id="nomeRemoveP">
+                <select name="nomeRemoveP" id="nomeRemoveP" tabindex="8">
                     <option selected="selected">---</option>
                     <elementlist/>
                 </select>
             </div>
-            <input type="submit" onclick="checkRemove()" value="Rimuovi"/>
+            <input type="submit" onclick="checkRemove()" value="Rimuovi" tabindex="9"/>
         </fieldset>
     </form>
 
