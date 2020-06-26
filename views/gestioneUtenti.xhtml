@@ -75,7 +75,7 @@
         </fieldset>
     </form> -->
     <message/>
-    <form action="manageUsers.php" method="post">
+    <form action="manageUsers.php" method="post" id="frmUtenti">
         <fieldset class="contenitore">
             <legend>Aggiorna password</legend>
             <div>
@@ -91,7 +91,7 @@
                     <label for="confirmPwd">Conferma password:</label>
                     <input type="password" name="confirmPassword" id="confirmPwd" maxlength="64"/>
                 </div>
-                <input type="submit" onclick="updatePassword()" value="Aggiorna"/>
+                <input type="submit" onclick="check()" value="Aggiorna"/>
             </div>
         </fieldset>
     </form>
