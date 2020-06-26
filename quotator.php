@@ -5,7 +5,7 @@ $connection = new Connection();
 $auto_error= $incoerenza=$urna_error = $bara_error= $cell_error= $prov_error=
 	$citta_error= $via_error= $surD_error= $namD_error= $surC_error=$namC_error=
 	$cf_error=$nascita_error=$decesso_error=$cerimonia_error= $global_error=
-	false;
+	$fiori_error= false;
 if(isset($_POST['cf'])){
 	$cf = $connection->escape($_POST['cf']);
 	$nomeC =$connection->escape($_POST['nomeC']);
