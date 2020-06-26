@@ -1,3 +1,9 @@
+window.addEventListener('load',(event)=>{
+    document.getElementById("frmpreventivo").addEventListener("submit",(event)=> {
+            event.preventDefault();
+            check(event.target);
+        }
+    )});
 function check0(){
     let cf = document.getElementById('cf').value;
     let nomeC= document.getElementById("nomeC").value;
@@ -88,8 +94,7 @@ function check0(){
         alert("Indicare il tipo di composizione floreale desiderata, riprova");
     }
 }
-
-function check(){
+function check(form){
     let suggest = ["Codice fiscale non corretto",
         "Il cognome cliente vuoto o contiene una cifra, riprova",
         'Il cognome cliente vuoto o contiene una cifra, riprova',
@@ -137,10 +142,16 @@ function check(){
     let expChar= new RegExp('^[a-z]+$','i');
     let expNumb = new RegExp('^[0-9]+$');
     let expDate = RegExp('^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$');
-
+    form.removeAttribute("action");
+    console.log("function");
     if(!expCf.test(cf)){
         document.getElementById('cfp').innerHTML=suggest[0];
-        return false;
+        form.preventDefault=true;
+    }
+    else {
+        form.setAttribute("action","quotator.php");
+        console.log()
+        form.submit();
     }
 
 }

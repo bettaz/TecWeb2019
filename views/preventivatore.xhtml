@@ -47,7 +47,7 @@
         <p>
             Qui puoi inserire i dati per formulare il tuo preventivo.
         </p>
-        <form onsubmit="check()" action="quotator.php" method="post">
+        <form method="post" id="frmpreventivo" action="quotator.php">
             <fieldset class="contenitore">
                 <legend>Dati Generali</legend>
                 <globalerr/>
@@ -336,7 +336,7 @@
             </fieldset>
             <fieldset class="contenitore">
                 <legend>Inoltra</legend>
-                <input type="submit" onclick="check()" value="Invia preventivo" tabindex="22"/>
+                <input type="submit" value="Invia preventivo" tabindex="22"/>
             </fieldset>
         </form>
     </div>
