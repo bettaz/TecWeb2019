@@ -6,6 +6,16 @@
 -- Creato il: Giu 25, 2020 alle 14:32
 -- Versione del server: 10.1.40-MariaDB
 -- Versione PHP: 7.3.5
+INSERT INTO `defunti` (`cf`,
+                       `nomeDefunto`, `cognomeDefunto`, `dataNascita`,
+                       `dataDecesso`, `residenza`, `nomeCliente`,
+                       `cognomeCliente`, `numeroTelefono`,
+                       `idCerimonia`, `idBara`, `idUrna`, `idAuto`,
+                       `isPublic`, `proposta`)
+VALUES ('ASDDSA92G26Z224N', 'asdf', 'asdf', '2020-12-11', '2020-12-11',
+        'kjhgjh - kjhgkjhg (AT)', 'gjhg', 'kjhgkjjhg',
+        '7658765', 2, 1, false, 2,
+        '0', NULL);
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;

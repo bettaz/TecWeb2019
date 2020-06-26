@@ -24,7 +24,7 @@ if(isset($_POST['cf'])){
 	$auto = $connection->escape($_POST['auto']);
 	$fiori=$connection->escape($_POST['fiori']);
 	$cerimonia = $connection->escape($_POST['cerimonia']);
-	$auto_error=$auto=='false';
+	$auto_error= ($auto=='false');
 	$incoerenza = $cremazione=='false' && $urna!='false';
 	$urna_error= $cremazione!='false' && $urna=='false';
 	$bara_error= $bara=='false';
@@ -32,19 +32,23 @@ if(isset($_POST['cf'])){
 	$prov_error= $provincia=='false';
 	$citta_error= $citta=='';
 	$via_error= $via=='';
+	$fiori_error = $fiori=='false';
+	error_log($nascita);
 	$nascita_error= !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$nascita);
+	error_log($nascita_error?"true":"false");
 	$decesso_error= !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$decesso);
 	$surD_error= $cognomeD=='';
 	$namD_error= $nomeD=='';
 	$surC_error=$cognomeC=='';
 	$namC_error=$nomeC=='';
-	//TODO regex tax code
-	$cf_error=$cf=='';
+	$cf_error=!preg_match("/^([A-Z]||[a-z]){6}[0-9]{2}([A-Z]||[a-z])(0[1-9]|[1-2][0-9]|3[0-1])([A-Z]||[a-z])[0-9]{3}([A-Z||[a-z])$/",$cf);
 	$cerimonia_error=$cerimonia=='false';
 	if(!$auto_error&&!$incoerenza&&!$urna_error&&!$bara_error&&!$cell_error
 		&&!$prov_error&&!$citta_error&&!$via_error&&!$surD_error
-		&&!$surC_error&&!$namC_error&&!$surD_error&&!$nascita_error
-		&&!$decesso_error&&!$cerimonia_error){
+		&&!$surC_error&&!$namC_error&&!$surC_error&&!$nascita_error
+		&&!$decesso_error&&!$cerimonia_error&&!$fiori_error){
+		$indirizzo= sprintf("%s - %s (%s)",$via,$citta,$provincia);
+		error_log("received_quotator_data");
 		$res=$connection->Query("INSERT INTO `defunti` (`cf`,
                        `nomeDefunto`, `cognomeDefunto`, `dataNascita`,
                        `dataDecesso`, `residenza`, `nomeCliente`,
@@ -52,9 +56,9 @@ if(isset($_POST['cf'])){
                        `idCerimonia`, `idBara`, `idUrna`, `idAuto`,
                        `isPublic`, `proposta`, `idFiori`)
                        VALUES ('$cf', '$nomeD', '$cognomeD', '$nascita', '$decesso',
-                               '$via , $citta ($provincia)', '$nomeC', '$cognomeC',
-                               '$cell', '$cerimonia', '$bara', '$urna', '$auto',
-                               '0', NULL, '$fiori')");
+                               '$indirizzo', '$nomeC', '$cognomeC',
+                               '$cell', $cerimonia, $bara, $urna, $auto,
+                               '0', NULL, $fiori)");
 		if($res){
 			$_SESSION['cf']= $cf;
 			header("Location: viewQuotation.php");
@@ -114,8 +118,8 @@ $quot_content=str_replace('<baraoptions/>',$bare,$quot_content);
 $quot_content=str_replace('<autooptions/>',$autos,$quot_content);
 $quot_content=str_replace('<urnaoptions/>',$urne,$quot_content);
 $quot_content=str_replace('<fiorioptions/>',$fiori,$quot_content);
-$quot_content = str_replace('<cferr/>',$cf_error?'Impostare il codice
-fiscale':'',$quot_content);
+$quot_content = str_replace('<cferr/>',$cf_error?'Il codice
+fiscale inserito non e\' corretto':'', $quot_content);
 $quot_content = str_replace('<nomecerr/>',$namC_error?'Impostare il nome cliente':'',
 	$quot_content);
 $quot_content = str_replace('<cognomecerr/>',$surC_error?'Impostare il cognome cliente':'',
@@ -151,5 +155,8 @@ $quot_content = str_replace('<autoerr/>',$auto_error?'Impostare un\'auto':'',
 $quot_content);
 $quot_content = str_replace('<globalerr/>',$global_error?'Impossibile
 inserire un preventivo':'',
+	$quot_content);
+$quot_content = str_replace('<fiorierr/>',$fiori_error?'Impostare una
+composizione floreale':'',
 	$quot_content);
 echo $quot_content;
