@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Preventivatore</title>
+
+    <meta name="title" content="SleekParadise, sito di onoranze funebri" />
+    <meta name="description" content="Pagina di visualizzazione dell'ultimo db inserito" />
+    <meta name="keywords" content="SleekParadise, onoranze, funebri, funerali, preventivo" />
+    <meta name="language" content="italian it" />
+    <meta name="author" content="Alessio Bettarello, Mattia Gottardello, Olivier Utshudi, Nicolo Sartor" />
+    <!-- link dei css -->
+    <link rel="stylesheet" href="css/preventivatore_Mobile.css" media="screen and (max-width:720px)" />
+    <link rel="stylesheet" href="css/preventivatoreDesktop.css" media="screen and (min-width: 721px)" />
+    <link rel="stylesheet" href="css/preventivatore_print.css" media="print"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+<div id="header">
+    <h1 xml:lang="en">SleekParadise</h1>
+</div>
+
+<div id="breadcrumb">
+    <p>Ti trovi in: Vista preventivo</p>
+</div>
+
+<div id="menu">
+    <ul>
+        <li><a href="index.php" xml:lang="en" tabindex="2" accesskey="H">Home</a></li>
+        <li><a href="azienda.xhtml" tabindex="3" accesskey="A">Azienda</a></li>
+        <li><a href="quotator.php" tabindex="4" accesskey="P">Preventivatore</a></li>
+        <li><a href="contatti.xhtml" tabindex="5" accesskey="C">Contatti</a></li>
+        <!--        <li><a href="login.xhtml" tabindex="5" accesskey="A">Accedi come admin</a></li>-->
+        <!--        <li><a href="xhtml/gestioneForm.xhtml" tabindex="6" accesskey="G">Gestione Form</a></li>-->
+        <!--        <li><a href="xhtml/quotationList.xhtml" tabindex="7" accesskey="L">Lista preventivi</a></li>-->
+        <!--        <li><a href="index.php" tabindex="8" accesskey="E">Esci</a></li>-->
+    </ul>
+</div>
+
+<div id="content">
+    <h2>Vista preventivo</h2>
+    <p>Stampa questa pagina oppure vieni in ufficio con il tuo codice fiscale per conoscere l'offerta che proponiamo</p>
+    <div class="contenitore">
+        <p>Dati Generali</p>
+        <div class="linea">
+            <label for="cf">Codice fiscale defunto:</label>
+            <input name="cf" id="cf" maxlength="16" disabled="disabled" value="<cf/>"/>
+        </div>
+        <div class="linea">
+            <label for="nomeD">Nome defunto/a:</label>
+            <input name="nomeD" id="nomeD" maxlength="30" disabled="disabled" value="<namD/>"/>
+        </div>
+        <div class="linea">
+            <label for="cognomeD">Cognome defunto/a:</label>
+            <input name="cognomeD" id="cognomeD" maxlength="40" disabled="disabled" value="<surD/>"/>
+        </div>
+        <div class="linea">
+            <label for="nascita">Data nascita defunto/a:</label>
+            <input name="nascita" id="nascita" maxlength="10" disabled="disabled" value="<borndate/>"/>
+        </div>
+        <div class="linea">
+            <label for="decesso">Data decesso:</label>
+            <input name="decesso" id="decesso" maxlength="10" disabled="disabled" value="<deathdate/>"/>
+        </div>
+        <div class="linea">
+            <label for="nomeC">Nome cliente:</label>
+            <input name="nomeC" id="nomeC" maxlength="30" disabled="disabled" value="<namC/>"/>
+        </div>
+        <div class="linea">
+            <label for="cognomeC">Cognome cliente:</label>
+            <input name="cognomeC" id="cognomeC" maxlength="40" disabled="disabled" value="<surC/>"/>
+        </div>
+        <div class="linea">
+            <label for="via">Indirizzo cliente:</label>
+            <input name="via" id="via" maxlength="80" disabled="disabled" value="<viavalue/>"/>
+        </div>
+        <div class="linea">
+            <label for="cell">Numero di telefono:</label>
+            <input name="cell" id="cell" maxlength="10" disabled="disabled" value="<cellvalue/>"/>
+        </div>
+    </div>
+
+    <div class="contenitore">
+        <p>Dati acquisto</p>
+        <div class="linea">
+            <label for="cerimonia">Cerimonia:</label>
+            <input id="cerimonia" value="<cerimoniaoptions/>" disabled="disabled"/>
+        </div>
+        <div class="linea">
+            <label for="bara">Modello bara:</label>
+            <input id="bara" disabled="disabled" value="<baraoptions/>"/>
+        </div>
+        <div class="linea">
+            <label for="sicremazione">Desidero la cremazione </label>
+            <input id="sicremazione" value="<cremazioneval/>" disabled="disabled"/>
+        </div>
+        <div class="linea">
+            <label for="urna">Modello urna:</label>
+            <input id="urna" value="<urnaoptions/> disabled="disabled""/>
+        </div>
+        <div class="linea">
+            <label for="auto">Modello auto:</label>
+            <input id="auto" value="<autooptions/> disabled="disabled""/>
+        </div>
+        <div class="linea">
+            <label for="fiori">Composizione floreale:</label>
+            <input id="fiori" value="<fiorioptions/> disabled="disabled""/>
+        </div>
+        <div class="linea">
+            <label for="importo">Importo</label>
+            <input id="importo" value="<calcimp/>" disabled="disabled"/>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
+    <em xml:lang="en">Improved by <span xml:lang="it">Tta</span>'s Team Solutions</em>
+    <img src="img/vcss-blue.gif" alt="CSS valido" />
+</div>
+
+</body>
+</html>

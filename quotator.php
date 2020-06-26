@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'bin/Connection.php';
 $connection = new Connection();
 $auto_error= $incoerenza=$urna_error = $bara_error= $cell_error= $prov_error=
@@ -54,13 +55,13 @@ if(isset($_POST['cf'])){
                                '$via , $citta ($provincia)', '$nomeC', '$cognomeC',
                                '$cell', '$cerimonia', '$bara', '$urna', '$auto',
                                '0', NULL, '$fiori')");
-		if($res)
-			header("Location: viewQuotation.php?cf=$cf");
+		if($res){
+			$_SESSION['cf']= $cf;
+			header("Location: viewQuotation.php");
+		}
 		else
 			$global_error=true;
 	}
-	
-	
 }
 $bara_res = $connection->Query("SELECT * FROM bare");
 $urna_res = $connection->Query("SELECT * FROM urne");
