@@ -1,4 +1,5 @@
 function check(){
+    var cf = document.getElementById('cf').value;
     var nomeC= document.getElementById("nomeC").value;
     var cognomeC= document.getElementById("cognomeC").value;
     var nomeD= document.getElementById("nomeD").value;
@@ -8,6 +9,8 @@ function check(){
     var provincia= document.getElementById('provincia');
     var optionP = provincia.options[provincia.selectedIndex].text;
     var cell= document.getElementById("cell").value;
+    var nascita = document.getElementById('nascita').value;
+    var decesso = document.getElementById('decesso').value;
 
     var baraSelect = document.getElementById('bara');
     var bara = baraSelect.options[baraSelect.selectedIndex].text;
@@ -24,8 +27,14 @@ function check(){
     var fioriSelect = document.getElementById('fiori');
     var fiori = fioriSelect.options[fioriSelect.selectedIndex].text;
 
+    var expCf= RegExp('^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$');
     var expChar= new RegExp('^[a-z]+$','i');
     var expNumb = new RegExp('^[0-9]+$');
+    var expDate = RegExp('^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$');
+
+    if(!expCf.test(cf)){
+        alert('Codice fiscale non corretto')
+    }
 
     if(!expChar.test(nomeC)){
         alert('Il nome cliente vuoto o contiene una cifra, riprova');
@@ -51,7 +60,7 @@ function check(){
         alert('Il nome della città vuoto o contiene una cifra, riprova');
     }
 
-    if(!expChar.test(optionP)){
+    if(optionP==="---"){
         alert('Non è stata selezionata la provincia, riprova');
     }
 

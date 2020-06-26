@@ -31,10 +31,10 @@
 
 <div id="menu">
     <ul>
-        <li><a href="index.php" xml:lang="en" tabindex="2" accesskey="H">Home</a></li>
-        <li><a href="azienda.xhtml" tabindex="3" accesskey="A">Azienda</a></li>
+        <li><a href="index.php" xml:lang="en" tabindex="1" accesskey="H">Home</a></li>
+        <li><a href="azienda.xhtml" tabindex="2" accesskey="A">Azienda</a></li>
         <li>Preventivatore</li>
-        <li><a href="contatti.xhtml" tabindex="4" accesskey="C">Contatti</a></li>
+        <li><a href="contatti.xhtml" tabindex="3" accesskey="C">Contatti</a></li>
 <!--        <li><a href="login.xhtml" tabindex="5" accesskey="A">Accedi come admin</a></li>-->
 <!--        <li><a href="xhtml/gestioneForm.xhtml" tabindex="6" accesskey="G">Gestione Form</a></li>-->
 <!--        <li><a href="xhtml/quotationList.xhtml" tabindex="7" accesskey="L">Lista preventivi</a></li>-->
@@ -53,27 +53,37 @@
                 <globalerr/>
                 <div class="linea">
                     <label for="cf">Codice fiscale defunto:</label>
-                    <input name="cf" id="cf" maxlength="16"/>
+                    <input name="cf" id="cf" maxlength="16" tabindex="4"/>
                 </div>
                 <cferr/>
                 <div class="linea">
+                    <label for="nomeC">Nome cliente:</label>
+                    <input name="nomeC" id="nomeC" maxlength="30" tabindex="5"/>
+                </div>
+                <nomecerr/>
+                <div class="linea">
+                    <label for="cognomeC">Cognome cliente:</label>
+                    <input name="cognomeC" id="cognomeC" maxlength="40" tabindex="6"/>
+                </div>
+                <cognomecerr/>
+                <div class="linea">
                     <label for="nomeD">Nome defunto/a:</label>
-                    <input name="nomeD" id="nomeD" maxlength="30"/>
+                    <input name="nomeD" id="nomeD" maxlength="30" tabindex="7"/>
                 </div>
                 <nomederr/>
                 <div class="linea">
                     <label for="cognomeD">Cognome defunto/a:</label>
-                    <input name="cognomeD" id="cognomeD" maxlength="40"/>
+                    <input name="cognomeD" id="cognomeD" maxlength="40" tabindex="8"/>
                 </div>
                 <cognomederr/>
                 <div class="linea">
                     <label for="nascita">Data nascita defunto/a:</label>
-                    <input name="nascita" id="nascita" maxlength="10"/>
+                    <input name="nascita" id="nascita" maxlength="10" tabindex="9"/>
                 </div>
                 <nascitaerr/>
                 <div class="linea">
                     <label for="decesso">Data decesso:</label>
-                    <input name="decesso" id="decesso" maxlength="10"/>
+                    <input name="decesso" id="decesso" maxlength="10" tabindex="10"/>
                 </div>
                 <decessoerr/>
                 <div class="linea">
@@ -88,17 +98,17 @@
                 <cognomecerr/>
                 <div class="linea">
                     <label for="via">Indirizzo cliente:</label>
-                    <input name="via" id="via" maxlength="80"/>
+                    <input name="via" id="via" maxlength="80" tabindex="11"/>
                 </div>
                 <viaerr/>
                 <div class="linea">
                     <label for="citta">Città cliente:</label>
-                    <input name="citta" id="citta" maxlength="60"/>
+                    <input name="citta" id="citta" maxlength="60" tabindex="12"/>
                 </div>
                 <cittaerr/>
                 <div class="linea">
                     <label for="provincia">Provincia:</label>
-                    <select name="provincia" id="provincia">
+                    <select name="provincia" id="provincia" tabindex="13">
                         <option value="false" selected="selected">---</option>
                         <optgroup label="Valle d'Aosta">
                             <option value="AO">AOSTA</option>
@@ -277,7 +287,7 @@
                 <proverr/>
                 <div class="linea">
                     <label for="cell">Numero di telefono:</label>
-                    <input name="cell" id="cell" maxlength="10"/>
+                    <input name="cell" id="cell" maxlength="10" tabindex="14"/>
                 </div>
                 <cellerr/>
             </fieldset>
@@ -286,7 +296,7 @@
                 <legend>Dati acquisto</legend>
                 <div class="linea">
                     <label for="cerimonia">Cerimonia:</label>
-                    <select name="cerimonia" id="cerimonia">
+                    <select name="cerimonia" id="cerimonia" tabindex="15">
                         <option value="false" selected="selected">---</option>
                         <cerimoniaoptions/>
                     </select>
@@ -294,31 +304,31 @@
                 <cerimoniaerr/>
                 <div class="linea">
                     <label for="bara">Modello bara:</label>
-                    <select name="bara" id="bara">
-                        <option value="false" selected="selected">---</option>
+                    <select name="bara" id="bara" tabindex="16">
+                        <option value="false" selected="selected" >---</option>
                         <baraoptions/>
                     </select>
                 </div>
                 <baraerr/>
                 <div class="linea">
                     <label for="sicremazione">Desidero la cremazione </label>
-                    <input name="cremazione" id="sicremazione" value="true" type="radio" checked="checked()"/>
+                    <input name="cremazione" id="sicremazione" value="true" type="radio" checked="checked" tabindex="17"/>
                     <br/>
                     <label for="nocremazione">Non desidero la cremazione </label>
-                    <input name="cremazione" id="nocremazione" value="false" type="radio"/>
+                    <input name="cremazione" id="nocremazione" value="false" type="radio" tabindex="18"/>
                 </div>
                 <coerenzaerr/>
                 <div class="linea">
                     <label for="urna">Modello urna:</label>
-                    <select name="urna" id="urna">
-                        <option value="false" selected="selected">---</option>
+                    <select name="urna" id="urna" tabindex="19">
+                        <option value="false" selected="selected" >---</option>
                         <urnaoptions/>
                     </select>
                 </div>
                 <urnaerr/>
                 <div class="linea">
                     <label for="auto">Modello auto:</label>
-                    <select name="auto" id="auto">
+                    <select name="auto" id="auto" tabindex="20">
                         <option value="false" selected="selected">---</option>
                         <autooptions/>
                     </select>
@@ -326,7 +336,7 @@
                 <autoerr/>
                 <div class="linea">
                     <label for="fiori">Composizione floreale:</label>
-                    <select name="fiori" id="fiori">
+                    <select name="fiori" id="fiori" tabindex="21">
                         <option selected="selected" value="false">---</option>
                         <fiorioptions/>
                     </select>
@@ -335,7 +345,7 @@
             </fieldset>
             <fieldset class="contenitore">
                 <legend>Inoltra</legend>
-                <input type="submit" onclick="check()" value="Invia preventivo"/>
+                <input type="submit" onclick="check()" value="Invia preventivo" tabindex="22"/>
             </fieldset>
         </form>
     </div>
