@@ -1,12 +1,12 @@
 function checkInsert(){
-    var tipoSelect = document.getElementById('tipoAddP');
-    var tipo = tipoSelect.options[tipoSelect.selectedIndex].text;
+    let tipoSelect = document.getElementById('tipoAddP');
+    let tipo = tipoSelect.options[tipoSelect.selectedIndex].text;
 
-    var nome = document.getElementById('nomeP').value;
-    var prezzo = document.getElementById('prezzoP');
+    let nome = document.getElementById('nomeP').value;
+    let prezzo = document.getElementById('prezzoP');
 
-    var expChar= new RegExp('^[a-z]+$','i');
-    var expNumb = new RegExp('^[0-9]+$');
+    let expChar= new RegExp('^[a-z]+$','i');
+    let expNumb = new RegExp('^[0-9]+$');
 
     if(tipo==="---"){
         alert("Selezionare il tipo di prodotto");
@@ -20,11 +20,11 @@ function checkInsert(){
 }
 
 function checkRemove(){
-    var tipoSelect = document.getElementById('tipoRemoveP');
-    var tipo = tipoSelect.options[tipoSelect.selectedIndex].text;
+    let tipoSelect = document.getElementById('tipoRemoveP');
+    let tipo = tipoSelect.options[tipoSelect.selectedIndex].text;
 
-    var nomeSelect = document.getElementById('nomeRemoveP');
-    var nome = nomeSelect.options[nomeSelect.selectedIndex].text;
+    let nomeSelect = document.getElementById('nomeRemoveP');
+    let nome = nomeSelect.options[nomeSelect.selectedIndex].text;
 
     if(tipo==="---"){
         alert("Tipo prodotto non selezionto");

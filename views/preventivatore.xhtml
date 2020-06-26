@@ -47,13 +47,14 @@
         <p>
             Qui puoi inserire i dati per formulare il tuo preventivo.
         </p>
-        <form action="quotator.php" method="post">
+        <form onsubmit="check()" action="quotator.php" method="post">
             <fieldset class="contenitore">
                 <legend>Dati Generali</legend>
                 <globalerr/>
                 <div class="linea">
                     <label for="cf">Codice fiscale defunto:</label>
                     <input name="cf" id="cf" maxlength="16" tabindex="4"/>
+                    <p id="cfp"></p>
                 </div>
                 <cferr/>
                 <div class="linea">

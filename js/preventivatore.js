@@ -1,39 +1,39 @@
-function check(){
-    var cf = document.getElementById('cf').value;
-    var nomeC= document.getElementById("nomeC").value;
-    var cognomeC= document.getElementById("cognomeC").value;
-    var nomeD= document.getElementById("nomeD").value;
-    var cognomeD= document.getElementById("cognomeD").value;
-    var via= document.getElementById("via").value;
-    var citta= document.getElementById("citta").value;
-    var provincia= document.getElementById('provincia');
-    var optionP = provincia.options[provincia.selectedIndex].text;
-    var cell= document.getElementById("cell").value;
-    var nascita = document.getElementById('nascita').value;
-    var decesso = document.getElementById('decesso').value;
+function check0(){
+    let cf = document.getElementById('cf').value;
+    let nomeC= document.getElementById("nomeC").value;
+    let cognomeC= document.getElementById("cognomeC").value;
+    let nomeD= document.getElementById("nomeD").value;
+    let cognomeD= document.getElementById("cognomeD").value;
+    let via= document.getElementById("via").value;
+    let citta= document.getElementById("citta").value;
+    let provincia= document.getElementById('provincia');
+    let optionP = provincia.options[provincia.selectedIndex].text;
+    let cell= document.getElementById("cell").value;
+    let nascita = document.getElementById('nascita').value;
+    let decesso = document.getElementById('decesso').value;
 
-    var baraSelect = document.getElementById('bara');
-    var bara = baraSelect.options[baraSelect.selectedIndex].text;
+    let baraSelect = document.getElementById('bara');
+    let bara = baraSelect.options[baraSelect.selectedIndex].text;
 
-    var sicremazione = document.getElementById('sicremazione').checked;
-    var nocremazione = document.getElementById('nocremazione').checked;
+    let sicremazione = document.getElementById('sicremazione').checked;
+    let nocremazione = document.getElementById('nocremazione').checked;
 
-    var urnaSelect = document.getElementById('urna');
-    var urna = urnaSelect.options[urnaSelect.selectedIndex].text;
+    let urnaSelect = document.getElementById('urna');
+    let urna = urnaSelect.options[urnaSelect.selectedIndex].text;
 
-    var autoSelect = document.getElementById('auto');
-    var auto = autoSelect.options[autoSelect.selectedIndex].text;
+    let autoSelect = document.getElementById('auto');
+    let auto = autoSelect.options[autoSelect.selectedIndex].text;
 
-    var fioriSelect = document.getElementById('fiori');
-    var fiori = fioriSelect.options[fioriSelect.selectedIndex].text;
+    let fioriSelect = document.getElementById('fiori');
+    let fiori = fioriSelect.options[fioriSelect.selectedIndex].text;
 
-    var expCf= RegExp('^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$');
-    var expChar= new RegExp('^[a-z]+$','i');
-    var expNumb = new RegExp('^[0-9]+$');
-    var expDate = RegExp('^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$');
+    let expCf= RegExp('^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$');
+    let expChar= new RegExp('^[a-z]+$','i');
+    let expNumb = new RegExp('^[0-9]+$');
+    let expDate = RegExp('^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$');
 
     if(!expCf.test(cf)){
-        alert('Codice fiscale non corretto')
+        alert('Codice fiscale non corretto');
     }
 
     if(!expChar.test(nomeC)){
@@ -87,7 +87,62 @@ function check(){
     if(fiori==='---'){
         alert("Indicare il tipo di composizione floreale desiderata, riprova");
     }
+}
 
+function check(){
+    let suggest = ["Codice fiscale non corretto",
+        "Il cognome cliente vuoto o contiene una cifra, riprova",
+        'Il cognome cliente vuoto o contiene una cifra, riprova',
+        'Il nome defunto/a vuoto o contiene una cifra, riprova',
+        'Il cognome defunto/a vuoto o contiene una cifra, riprova',
+        'Il nome della via vuoto o contiene una cifra, riprova',
+        'Il nome della città vuoto o contiene una cifra, riprova',
+        'Non è stata selezionata la provincia, riprova',
+        'Il numero non inserito o contiene delle lettere, riprova',
+        'Selezionare la bara desiderata, riprova',
+        'Indicare se si desidera o meno la cremazione, riprova',
+        "Indicare l'urna desiderata, riprova",
+        "Indicare il modello di carro funebre desiderato, riprova",
+        "Indicare il tipo di composizione floreale desiderata, riprova"];
 
+    let cf = document.getElementById('cf').value;
+    /*let nomeC= document.getElementById("nomeC").value;
+    let cognomeC= document.getElementById("cognomeC").value;
+    let nomeD= document.getElementById("nomeD").value;
+    let cognomeD= document.getElementById("cognomeD").value;
+    let via= document.getElementById("via").value;
+    let citta= document.getElementById("citta").value;
+    let provincia= document.getElementById('provincia');
+    let optionP = provincia.options[provincia.selectedIndex].text;
+    let cell= document.getElementById("cell").value;
+    let nascita = document.getElementById('nascita').value;
+    let decesso = document.getElementById('decesso').value;
+
+    let baraSelect = document.getElementById('bara');
+    let bara = baraSelect.options[baraSelect.selectedIndex].text;
+
+    let sicremazione = document.getElementById('sicremazione').checked;
+    let nocremazione = document.getElementById('nocremazione').checked;
+
+    let urnaSelect = document.getElementById('urna');
+    let urna = urnaSelect.options[urnaSelect.selectedIndex].text;
+
+    let autoSelect = document.getElementById('auto');
+    let auto = autoSelect.options[autoSelect.selectedIndex].text;
+
+    let fioriSelect = document.getElementById('fiori');
+    let fiori = fioriSelect.options[fioriSelect.selectedIndex].text;*/
+
+    let expCf= RegExp('^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$');
+    let expChar= new RegExp('^[a-z]+$','i');
+    let expNumb = new RegExp('^[0-9]+$');
+    let expDate = RegExp('^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$');
+
+    if(!expCf.test(cf)){
+        document.getElementById('cfp').innerHTML=suggest[0];
+        return false;
+    }
 
 }
+
+
