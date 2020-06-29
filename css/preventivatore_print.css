@@ -13,3 +13,7 @@ input[type='submit']{
 .contenitore{
     margin-top: 1%;
 }
+
+[hidden] {
+    display: none;
+}
