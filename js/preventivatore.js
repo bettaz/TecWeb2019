@@ -1,9 +1,12 @@
+let urnLineDefaultVisibility;
 window.addEventListener('load',(event)=>{
     document.getElementById("frmpreventivo").addEventListener("submit",(event)=> {
             event.preventDefault();
             check(event.target);
         }
-    )});
+    );
+    document.getElementsByName("cremazione").forEach(element => element.addEventListener("change", event => hideShowUrn(event)));
+});
 
 function check(form){
     let suggest = ["Codice fiscale non corretto",
@@ -207,4 +210,13 @@ function check(form){
 
 }
 
-
+function hideShowUrn(changeEvent) {
+    let urnLine = document.getElementById("urnLine");
+    if (changeEvent.target.id == "nocremazione"){
+        urnLineDefaultVisibility = urnLine.style.visibility;
+        urnLine.style.visibility = "hidden";
+    }
+    else{
+        urnLine.style.visibility=urnLineDefaultVisibility;
+    }
+}
