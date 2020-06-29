@@ -9,7 +9,7 @@ window.addEventListener('load',(event)=>{
 });
 
 function check(form){
-    let suggest = ["Codice fiscale non corretto",
+    let suggestions = ["Codice fiscale non corretto",
         "Il nome cliente vuoto o contiene una cifra, riprova",
         'Il cognome cliente vuoto o contiene una cifra, riprova',
         'Il nome defunto/a vuoto o contiene una cifra, riprova',
@@ -64,7 +64,7 @@ function check(form){
     form.removeAttribute("action");
     console.log("function");
     if(!expCf.test(cf)){
-        document.getElementById('cfp').innerHTML=suggest[0];
+        document.getElementById('cfp').innerHTML=suggestions[0];
         form.preventDefault=true;
     }
     else {
@@ -73,7 +73,7 @@ function check(form){
         form.submit();
     }
     if(!expChar.test(nomeC)){
-        document.getElementById('ncp').innerHTML=suggest[1];
+        document.getElementById('ncp').innerHTML=suggestions[1];
         form.preventDefault=true;
     }
     else {
@@ -82,7 +82,7 @@ function check(form){
         form.submit();
     }
     if(!expChar.test(cognomeC)){
-        document.getElementById('ccp').innerHTML=suggest[2];
+        document.getElementById('ccp').innerHTML=suggestions[2];
         form.preventDefault=true;
     }
     else {
@@ -91,7 +91,7 @@ function check(form){
         form.submit();
     }
     if(!expChar.test(nomeD)){
-        document.getElementById('ndp').innerHTML=suggest[3];
+        document.getElementById('ndp').innerHTML=suggestions[3];
         form.preventDefault=true;
     }
     else {
@@ -100,7 +100,7 @@ function check(form){
         form.submit();
     }
     if(!expChar.test(cognomeD)){
-        document.getElementById('cdp').innerHTML=suggest[4];
+        document.getElementById('cdp').innerHTML=suggestions[4];
         form.preventDefault=true;
     }
     else {
@@ -109,7 +109,7 @@ function check(form){
         form.submit();
     }
     if(!expDate.test(nascita)){
-        document.getElementById('np').innerHTML=suggest[5];
+        document.getElementById('np').innerHTML=suggestions[5];
         form.preventDefault=true;
     }
     else {
@@ -118,7 +118,7 @@ function check(form){
         form.submit();
     }
     if(!expDate.test(decesso)){
-        document.getElementById('dp').innerHTML=suggest[5];
+        document.getElementById('dp').innerHTML=suggestions[5];
         form.preventDefault=true;
     }
     else {
@@ -127,7 +127,7 @@ function check(form){
         form.submit();
     }
     if(!via){
-        document.getElementById('vp').innerHTML=suggest[6];
+        document.getElementById('vp').innerHTML=suggestions[6];
         form.preventDefault=true;
     }
     else {
@@ -136,7 +136,7 @@ function check(form){
         form.submit();
     }
     if(!expChar.test(citta)){
-        document.getElementById('cp').innerHTML=suggest[7];
+        document.getElementById('cp').innerHTML=suggestions[7];
         form.preventDefault=true;
     }
     else {
@@ -145,7 +145,7 @@ function check(form){
         form.submit();
     }
     if(!expChar.test(provincia)){
-        document.getElementById('pp').innerHTML=suggest[8];
+        document.getElementById('pp').innerHTML=suggestions[8];
         form.preventDefault=true;
     }
     else {
@@ -154,7 +154,7 @@ function check(form){
         form.submit();
     }
     if(!expNumb.test(cerimonia)){
-        document.getElementById('clp').innerHTML=suggest[9];
+        document.getElementById('clp').innerHTML=suggestions[9];
         form.preventDefault=true;
     }
     else {
@@ -163,7 +163,7 @@ function check(form){
         form.submit();
     }
     if(cerimonia==="---"){
-        document.getElementById('cerp').innerHTML=suggest[10];
+        document.getElementById('cerp').innerHTML=suggestions[10];
         form.preventDefault=true;
     }
     else {
@@ -172,7 +172,7 @@ function check(form){
         form.submit();
     }
     if(bara==="---"){
-        document.getElementById('barap').innerHTML=suggest[11];
+        document.getElementById('barap').innerHTML=suggestions[11];
         form.preventDefault=true;
     }
     else {
@@ -181,7 +181,7 @@ function check(form){
         form.submit();
     }
     if(urna==="---"){
-        document.getElementById('up').innerHTML=suggest[13];
+        document.getElementById('up').innerHTML=suggestions[13];
         form.preventDefault=true;
     }
     else {
@@ -190,7 +190,7 @@ function check(form){
         form.submit();
     }
     if(auto==="---"){
-        document.getElementById('autop').innerHTML=suggest[14];
+        document.getElementById('autop').innerHTML=suggestions[14];
         form.preventDefault=true;
     }
     else {
@@ -199,7 +199,7 @@ function check(form){
         form.submit();
     }
     if(fiori==="---"){
-        document.getElementById('fp').innerHTML=suggest[15];
+        document.getElementById('fp').innerHTML=suggestions[15];
         form.preventDefault=true;
     }
     else {
