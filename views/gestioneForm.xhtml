@@ -48,18 +48,31 @@
     <p>
         Qui è possibile gestire i prodotti offerti dall'azienda, aggiungendone di nuovi o rimuovendo quelli non più disponibili.
     </p>
-
+    <form action="gestioneForm.php" method="post" id="frmauto">
+        <fieldset class="contenitore">
+            <legend>Aggiungi auto</legend>
+            <div class="linea">
+                <label for="nomeP">Nome:</label>
+                <input name="nomeP" id="nomeP" maxlength="40"/>
+            </div>
+            <div class="linea">
+                <label for="prezzoP">Prezzo:</label>
+                <input name="prezzoP" id="prezzoP" maxlength="9"/>
+            </div>
+            <input type="submit" onclick="checkInsert()" value="Aggiungi"/>
+        </fieldset>
+    </form>
     <form action="gestioneForm.php" method="post" id="frmadd">
         <fieldset class="contenitore">
             <legend>Aggiungi prodotto</legend>
             <div class="linea">
                 <label for="tipoAddP">Tipo prodotto:</label>
                 <select name="tipoAddP" id="tipoAddP">
-                    <option selected="selected">---</option>
-                    <option value="modBara">Bara</option>
-                    <option value="modUrna">Urna</option>
-                    <option value="modAuto">Auto</option>
-                    <option value="modComp">Composizione floreale</option>
+                    <option value="1">Bara</option>
+                    <option value="2">Urna</option>
+                    <option value="0">Auto</option>
+                    <option value="3">Composizione floreale</option>
+                    <option value="4">Cerimonia </option>
                 </select>
             </div>
             <div class="linea">
@@ -84,6 +97,7 @@
                     <elementlist/>
                 </select>
             </div>
+            <p><deleteerror/></p>
             <input type="submit" onclick="checkRemove()" value="Rimuovi"/>
         </fieldset>
     </form>

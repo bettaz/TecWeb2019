@@ -9,8 +9,34 @@ if(isset($_POST['tipoAddP'])){
 	echo '';
 }
 if(isset($_POST['nomeRemoveP'])){
-	// TODO remove the product
-	echo '';
+	$full_qualifier= $_POST['nomeRemoveP'];
+	$split = explode('-',$full_qualifier);
+	$table='';
+	switch ($split[0]){
+		case '0':
+			$table='auto';
+			break;
+		case '1':
+			$table='bare';
+			break;
+		case '2':
+			$table='urne';
+			break;
+		case '3':
+			$table='composizioni';
+			break;
+		case '4':
+			$table='cerimonie';
+			break;
+	}
+	$id=$split[1];
+	$del_res=$connection->Query("
+		DELETE FROM $table WHERE id='$id'
+	");
+	$del_error ="Rimozione effettuata con successo";
+	if(!$del_res){
+		$del_error="Errore di rimozione";
+	}
 }
 require_once 'bin/Connection.php';
 $connection = new Connection();
@@ -38,4 +64,8 @@ while ($row = $funeral_res->fetch_assoc()){
 $management_file = fopen('views/gestioneForm.xhtml','r');
 $man_content = fread($management_file,filesize('views/gestioneForm.xhtml'));
 $man_content = str_replace('<elementlist/>',$option_list,$man_content);
+$man_content = str_replace('<deleteerror/>',isset($del_error)
+	?$del_error:'',$man_content);
+$man_content = str_replace('<adderror/>',isset($add_error)
+	?$add_error:'',$man_content);
 echo $man_content;
