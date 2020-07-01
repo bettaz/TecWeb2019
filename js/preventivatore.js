@@ -7,13 +7,14 @@ window.addEventListener('load',()=>{
     );
     document.getElementsByName("cremazione").forEach(element => element.addEventListener("change", event => hideShowUrn(event)));
 });
-const textRegex = new RegExp("^([A-Z]|[a-z])+$");
+const textRegex = new RegExp("^([A-Z]|[a-z]|\ )+$");
 const dateRegex = new RegExp("^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$");
-const selectRegex = new RegExp("^d+$");
-const telRegex = new RegExp("/^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/");
-const cfRegex = new RegExp("^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$");
+const selectRegex = new RegExp("^\\d+$");
+const telRegex = new RegExp("^[+]?[0-9]+$");
+const cfRegex = new RegExp("^([A-Z]|[a-z]){6}[0-9]{2}([A-Z]|[a-z])[0-9]{2}([A-Z]|[a-z])[0-9]{3}([A-Z]|[a-z])$");
 const boolRegex = new RegExp("^(true|false)$");
-const provRegex = new RegExp("^[A-Z]+[A-Z]+$");
+const provRegex = new RegExp("^[A-Z]{2}$");
+const roadRegex = new RegExp("^([a-z]|[A-Z]|[0-9]|\ )+");
 const suggestions = {
     "cf": {
         "regex": cfRegex,
@@ -40,8 +41,8 @@ const suggestions = {
         "suggestion": "La data del decesso deve avere formato AAAA-MM-GG"
     },
     "via": {
-        "regex": textRegex,
-        "suggestion": "Nome della via vuoto o contenente una cifra"
+        "regex": roadRegex,
+        "suggestion": "Nome della via vuoto o contenente caratteri speciali"
     },
     "citta": {
         "regex": textRegex,
