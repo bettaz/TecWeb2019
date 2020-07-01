@@ -32,10 +32,10 @@
 <div id="menu">
     <ul>
         <li><a href="index.php" xml:lang="en" tabindex="1" accesskey="H">Home</a></li>
-        <li><a href="azienda.xhtml" tabindex="2" accesskey="A">Azienda</a></li>
+        <li><a href="azienda.xhtml" tabindex="1" accesskey="A">Azienda</a></li>
         <li>Preventivatore</li>
-        <li><a href="contatti.xhtml" tabindex="3" accesskey="C">Contatti</a></li>
-<!--        <li><a href="login.xhtml" tabindex="5" accesskey="A">Accedi come admin</a></li>-->
+        <li><a href="contatti.xhtml" tabindex="1" accesskey="C">Contatti</a></li>
+<!--        <li><a href="login.xhtml" tabindex="1" accesskey="A">Accedi come admin</a></li>-->
 <!--        <li><a href="xhtml/gestioneForm.xhtml" tabindex="6" accesskey="G">Gestione Form</a></li>-->
 <!--        <li><a href="xhtml/quotationList.xhtml" tabindex="7" accesskey="L">Lista preventivi</a></li>-->
 <!--        <li><a href="index.php" tabindex="8" accesskey="E">Esci</a></li>-->
@@ -48,66 +48,59 @@
             Qui puoi inserire i dati per formulare il tuo preventivo.
         </p>
         <form method="post" id="frmpreventivo" action="quotator.php">
+            <div id="errors" class="linea" tabindex="-1">
+                <globalerr/>
+            </div>
             <fieldset class="contenitore">
                 <legend>Dati Generali</legend>
-                <globalerr/>
                 <div class="linea">
                     <label for="cf">Codice fiscale defunto:</label>
-                    <input name="cf" id="cf" maxlength="16" tabindex="4"/>
+                    <input name="cf" id="cf" maxlength="16" tabindex="1"/>
                     <p id="cfp"></p>
                 </div>
-                <cferr/>
                 <div class="linea">
                     <label for="nomeD">Nome defunto/a:</label>
-                    <input name="nomeD" id="nomeD" maxlength="30" tabindex="5"/>
+                    <input name="nomeD" id="nomeD" maxlength="30" tabindex="1"/>
                     <p id="ndp"></p>
                 </div>
-                <nomederr/>
                 <div class="linea">
                     <label for="cognomeD">Cognome defunto/a:</label>
-                    <input name="cognomeD" id="cognomeD" maxlength="40" tabindex="6"/>
+                    <input name="cognomeD" id="cognomeD" maxlength="40" tabindex="1"/>
                     <p id="cdp"></p>
                 </div>
-                <cognomederr/>
                 <div class="linea">
                     <label for="nascita">Data nascita defunto/a:</label>
-                    <input name="nascita" id="nascita" maxlength="10" tabindex="7"/>
+                    <input name="nascita" id="nascita" maxlength="10" tabindex="1"/>
                     <p id="np"></p>
                 </div>
-                <nascitaerr/>
                 <div class="linea">
                     <label for="decesso">Data decesso:</label>
-                    <input name="decesso" id="decesso" maxlength="10" tabindex="8"/>
+                    <input name="decesso" id="decesso" maxlength="10" tabindex="1"/>
                     <p id="dp"></p>
                 </div>
-                <decessoerr/>
                 <div class="linea">
                     <label for="nomeC">Nome cliente:</label>
-                    <input name="nomeC" id="nomeC" maxlength="30" tabindex="9"/>
+                    <input name="nomeC" id="nomeC" maxlength="30" tabindex="1"/>
                     <p id="ncp"></p>
                 </div>
-                <nomecerr/>
                 <div class="linea">
                     <label for="cognomeC">Cognome cliente:</label>
-                    <input name="cognomeC" id="cognomeC" maxlength="40" tabindex="10"/>
+                    <input name="cognomeC" id="cognomeC" maxlength="40" tabindex="1"/>
                     <p id="ccp"></p>
                 </div>
-                <cognomecerr/>
                 <div class="linea">
                     <label for="via">Indirizzo cliente:</label>
-                    <input name="via" id="via" maxlength="80" tabindex="11"/>
+                    <input name="via" id="via" maxlength="80" tabindex="1"/>
                     <p id="vp"></p>
                 </div>
-                <viaerr/>
                 <div class="linea">
                     <label for="citta">Città cliente:</label>
-                    <input name="citta" id="citta" maxlength="60" tabindex="12"/>
+                    <input name="citta" id="citta" maxlength="60" tabindex="1"/>
                     <p id="cp"></p>
                 </div>
-                <cittaerr/>
                 <div class="linea">
                     <label for="provincia">Provincia:</label>
-                    <select name="provincia" id="provincia" tabindex="13">
+                    <select name="provincia" id="provincia" tabindex="1">
                         <option value="false" selected="selected">---</option>
                         <optgroup label="Valle d'Aosta">
                             <option value="AO">AOSTA</option>
@@ -284,74 +277,66 @@
                     </select>
                     <p id="pp"></p>
                 </div>
-                <proverr/>
                 <div class="linea">
-                    <label for="cell">Numero di telefono:</label>
-                    <input name="cell" id="cell" maxlength="10" tabindex="14"/>
+                    <label for="tel">Numero di telefono:</label>
+                    <input name="tel" id="tel" maxlength="10" tabindex="1"/>
                     <p id="clp"></p>
                 </div>
-                <cellerr/>
             </fieldset>
 
             <fieldset class="contenitore">
                 <legend>Dati acquisto</legend>
                 <div class="linea">
                     <label for="cerimonia">Cerimonia:</label>
-                    <select name="cerimonia" id="cerimonia" tabindex="15">
+                    <select name="cerimonia" id="cerimonia" tabindex="1">
                         <option value="false" selected="selected">---</option>
                         <cerimoniaoptions/>
                     </select>
                     <p id="cerp"></p>
                 </div>
-                <cerimoniaerr/>
                 <div class="linea">
                     <label for="bara">Modello bara:</label>
-                    <select name="bara" id="bara" tabindex="16">
+                    <select name="bara" id="bara" tabindex="1">
                         <option value="false" selected="selected" >---</option>
                         <baraoptions/>
                     </select>
                     <p id="barap"></p>
                 </div>
-                <baraerr/>
                 <div class="linea">
                     <label for="sicremazione">Desidero la cremazione </label>
-                    <input name="cremazione" id="sicremazione" value="true" type="radio" checked="checked" tabindex="17"/>
+                    <input name="cremazione" id="sicremazione" value="true" type="radio" checked="checked" tabindex="1"/>
                     <br/>
                     <label for="nocremazione">Non desidero la cremazione </label>
-                    <input name="cremazione" id="nocremazione" value="false" type="radio" tabindex="18"/>
+                    <input name="cremazione" id="nocremazione" value="false" type="radio" tabindex="1"/>
                 </div>
-                <coerenzaerr/>
                 <div class="linea" id="urnLine">
                     <label for="urna">Modello urna:</label>
-                    <select name="urna" id="urna" tabindex="19">
+                    <select name="urna" id="urna" tabindex="1">
                         <option value="false" selected="selected" >---</option>
                         <urnaoptions/>
                     </select>
                     <p id="up"></p>
                 </div>
-                <urnaerr/>
                 <div class="linea">
-                    <label for="auto">Modello auto:</label>
-                    <select name="auto" id="auto" tabindex="20">
+                    <label for="auto">Modello carro funebre:</label>
+                    <select name="auto" id="auto" tabindex="1">
                         <option value="false" selected="selected">---</option>
                         <autooptions/>
                     </select>
                     <p id="autop"></p>
                 </div>
-                <autoerr/>
                 <div class="linea">
                     <label for="fiori">Composizione floreale:</label>
-                    <select name="fiori" id="fiori" tabindex="21">
+                    <select name="fiori" id="fiori" tabindex="1">
                         <option selected="selected" value="false">---</option>
                         <fiorioptions/>
                     </select>
                     <p id="fp"></p>
                 </div>
-                <fiorierr/>
             </fieldset>
             <fieldset class="contenitore">
                 <legend>Inoltra</legend>
-                <input type="submit" value="Invia preventivo" tabindex="22"/>
+                <input type="submit" value="Invia preventivo" tabindex="1"/>
             </fieldset>
         </form>
     </div>

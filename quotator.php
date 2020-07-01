@@ -2,7 +2,7 @@
 session_start();
 require_once 'bin/Connection.php';
 $connection = new Connection();
-$auto_error= $incoerenza=$urna_error = $bara_error= $cell_error= $prov_error=
+$auto_error= $incoerenza=$urna_error = $bara_error= $tel_error= $prov_error=
 	$citta_error= $via_error= $surD_error= $namD_error= $surC_error=$namC_error=
 	$cf_error=$nascita_error=$decesso_error=$cerimonia_error= $global_error=
 	$fiori_error= false;
@@ -17,7 +17,7 @@ if(isset($_POST['cf'])){
 	$via =$connection->escape($_POST['via']);
 	$citta =$connection->escape( $_POST['citta']);
 	$provincia=$connection->escape($_POST['provincia']);
-	$cell=$connection->escape($_POST['cell']);
+	$tel=$connection->escape($_POST['tel']);
 	$bara = $connection->escape($_POST['bara']);
 	$cremazione =$connection->escape($_POST['cremazione']);
 	$urna = $connection->escape($_POST['urna']);
@@ -28,7 +28,7 @@ if(isset($_POST['cf'])){
 	$incoerenza = $cremazione=='false' && $urna!='false';
 	$urna_error= $cremazione!='false' && $urna=='false';
 	$bara_error= $bara=='false';
-	$cell_error= $cell=='';
+	$tel_error= $tel=='';
 	$prov_error= $provincia=='false';
 	$citta_error= $citta=='';
 	$via_error= $via=='';
@@ -43,7 +43,7 @@ if(isset($_POST['cf'])){
 	$namC_error=$nomeC=='';
 	$cf_error=!preg_match("/^([A-Z]||[a-z]){6}[0-9]{2}([A-Z]||[a-z])(0[1-9]|[1-2][0-9]|3[0-1])([A-Z]||[a-z])[0-9]{3}([A-Z||[a-z])$/",$cf);
 	$cerimonia_error=$cerimonia=='false';
-	if(!$auto_error&&!$incoerenza&&!$urna_error&&!$bara_error&&!$cell_error
+	if(!$auto_error&&!$incoerenza&&!$urna_error&&!$bara_error&&!$tel_error
 		&&!$prov_error&&!$citta_error&&!$via_error&&!$surD_error
 		&&!$surC_error&&!$namC_error&&!$surC_error&&!$nascita_error
 		&&!$decesso_error&&!$cerimonia_error&&!$fiori_error){
@@ -57,7 +57,7 @@ if(isset($_POST['cf'])){
                        `isPublic`, `proposta`, `idFiori`)
                        VALUES ('$cf', '$nomeD', '$cognomeD', '$nascita', '$decesso',
                                '$indirizzo', '$nomeC', '$cognomeC',
-                               '$cell', $cerimonia, $bara, $urna, $auto,
+                               '$tel', $cerimonia, $bara, $urna, $auto,
                                '0', NULL, $fiori)");
 		if($res){
 			$_SESSION['cf']= $cf;
@@ -140,7 +140,7 @@ $quot_content = str_replace('<cittaerr/>',$citta_error?'Impostare una citta\'':'
 $quot_content);
 $quot_content = str_replace('<proverr/>',$prov_error?'Impostare la provincia':'',
 	$quot_content);
-$quot_content = str_replace('<cellerr/>',$cell_error?'Impostare un numero di telefono':'',
+$quot_content = str_replace('<telerr/>',$tel_error?'Impostare un numero di telefono':'',
 	$quot_content);
 $quot_content = str_replace('<cerimoniaerr/>',$cerimonia_error?'Impostare una
 cerimonia':'',

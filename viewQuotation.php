@@ -8,7 +8,7 @@ $cf = $_SESSION['cf'];
 $base_record= $connection->Query("
 SELECT cf, nomeDefunto AS namD, cognomeDefunto AS surD, dataNascita AS born,
        dataDecesso AS death, residenza AS via, nomeCliente AS namC,
-       cognomeCliente AS surC, numeroTelefono AS cell,
+       cognomeCliente AS surC, numeroTelefono AS tel,
        cerimonie.tipologia AS cerimD, cerimonie.costoBase AS cerimP,
        auto.marca AS carB, auto.modello AS carM, auto.cilindrata AS carCC,
        auto.costoBase AS carP, bare.versione AS cofV,
@@ -30,7 +30,7 @@ if ($dead_data=$base_record->fetch_assoc()){
 	$namC = $dead_data['namC'];
 	$surC= $dead_data['surC'];
 	$via=$dead_data['via'];
-	$cell=$dead_data['cell'];
+	$tel=$dead_data['tel'];
 	$cerimonia=sprintf("%s - %.02f€",$dead_data['cerimD'],$dead_data['cerimP']);
 	$auto=sprintf("%s - %s %s cc - %.02f€",$dead_data['carB'],$dead_data['carM'],$dead_data['carCC'],$dead_data['carP']);
 	$bara=sprintf("%s - %s - %.02f€",$dead_data['cofV'],$dead_data['cofM'],
@@ -59,7 +59,7 @@ $view = str_replace('<deathdate/>',$death,$view);
 $view = str_replace('<namC/>',$namC,$view);
 $view = str_replace('<surC/>',$surD,$view);
 $view = str_replace('<viavalue/>',$via,$view);
-$view = str_replace('<cellvalue/>',$cell,$view);
+$view = str_replace('<telvalue/>',$tel,$view);
 $view = str_replace('<cerimoniaoptions/>',$cerimonia,$view);
 $view = str_replace('<baraoptions/>',$bara,$view);
 $view = str_replace('<cremazioneval/>',$urna_flag?"Con cremazione":"Senza Cremazione",$view);
