@@ -6,7 +6,7 @@ $auto_error= $incoerenza=$urna_error = $bara_error= $tel_error= $prov_error=
 	$citta_error= $via_error= $surD_error= $namD_error= $surC_error=$namC_error=
 	$cf_error=$nascita_error=$decesso_error=$cerimonia_error= $global_error=
 	$fiori_error= false;
-if(isset($_POST['cf'])){
+if(isset($_POST['submit'])){
 	$cf = $connection->escape($_POST['cf']);
 	$nomeC =$connection->escape($_POST['nomeC']);
 	$cognomeC = $connection->escape($_POST['cognomeC']);
