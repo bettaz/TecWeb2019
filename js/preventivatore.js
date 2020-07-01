@@ -101,14 +101,16 @@ function check(form){
                     error = true;
                     errorsDiv.innerHTML = "";
                 }
-                errorsDiv.innerHTML += "<p><a href=\"#"+element.id+"\">"+suggestions[name].suggestion+"</a></p>";
+                errorsDiv.innerHTML += "<p><a tabindex=\"1\" rel=\"tag\" href=\"#"+name+"\" \">"+suggestions[name].suggestion+"</a></p>";
+                //TODO ask howto put all the things ok (if href it's ok or if we need to define the onkeyup and the onclick or move all the messages after every field and focus on the first wrong
             }
         }
     }
     if (!error)
         form.submit();
-    else
+    else{
         errorsDiv.focus();
+    }
 }
 
 function hideShowUrn(changeEvent) {
