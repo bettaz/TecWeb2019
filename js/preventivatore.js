@@ -69,15 +69,15 @@ const suggestions = {
     },
     "urna": {
         "regex": selectRegex,
-        "suggestion": "Selezionare un urna"
+        "suggestion": "Selezionare un'urna"
     },
     "auto": {
         "regex": selectRegex,
-        "suggestion": "Indicare il modello di carro funebre desiderato"
+        "suggestion": "Selezionare un carro funebre"
     },
     "fiori": {
         "regex": selectRegex,
-        "suggestion": "Indicare la composizione floreale desiderata"
+        "suggestion": "Selezionare una composizione floreale"
     },
     "cremazione": {
         "regex": boolRegex,
