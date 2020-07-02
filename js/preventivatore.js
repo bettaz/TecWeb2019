@@ -1,12 +1,11 @@
 let urnLineDefaultVisibility;
-window.addEventListener('load',()=>{
-    document.getElementById("frmpreventivo").addEventListener("submit",(event)=> {
+window.onload= ()=>{
+    document.getElementById("frmpreventivo").onsubmit = event => {
             event.preventDefault();
             check(event.target);
-        }
-    );
-    document.getElementsByName("cremazione").forEach(element => element.addEventListener("change", event => hideShowUrn(event)));
-});
+    };
+    document.getElementsByName("cremazione").forEach(element => element.onchange = event => hideShowUrn(event));
+};
 const textRegex = new RegExp("^([A-Z]|[a-z]|\ )+$");
 const dateRegex = new RegExp("^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$");
 const selectRegex = new RegExp("^\\d+$");
@@ -87,8 +86,13 @@ const suggestions = {
 }
 
 function check(form){
-    let error = false;
     let errorsDiv = document.getElementById("errors");
+    if(errorsDiv)
+        errorsDiv.remove();
+    errorsDiv= document.createElement("div");
+    errorsDiv.id ="errors";
+    errorsDiv.className= "linea";
+    errorsDiv.tabIndex = 0;
     const elementList = form.elements;
     for(let i = 0; i< elementList.length; i++){
         let element =elementList[i];
@@ -98,20 +102,24 @@ function check(form){
             let name = elementList[i].name;
             let value = elementList[i].value;
             if(!suggestions[name]['regex'].test(value)){
-                if(!error) {
-                    error = true;
-                    errorsDiv.innerHTML = "";
-                }
-                errorsDiv.innerHTML += "<p><a tabindex=\"1\" rel=\"tag\" href=\"#"+name+"\" \">"+suggestions[name].suggestion+"</a></p>";
-                //TODO ask howto put all the things ok (if href it's ok or if we need to define the onkeyup and the onclick or move all the messages after every field and focus on the first wrong
+                let errorAnchor = document.createElement("a");
+                errorAnchor.id = name+"error";
+                errorAnchor.innerHTML= suggestions[name].suggestion;
+                errorAnchor.onkeydown = event => keyEventFocus(event, name);
+                errorAnchor.onclick = event => clickFocus(name);
+                errorAnchor.tabIndex=0;
+                let paragraph = document.createElement("p");
+                paragraph.appendChild(errorAnchor);
+                errorsDiv.appendChild(paragraph);
             }
         }
     }
-    if (!error)
-        form.submit();
-    else{
+    if (errorsDiv.hasChildNodes()){
+        document.getElementById("content").insertBefore(errorsDiv,form);
         errorsDiv.focus();
     }
+    else
+        form.submit();
 }
 
 function hideShowUrn(changeEvent) {
@@ -124,4 +132,14 @@ function hideShowUrn(changeEvent) {
     else{
         urnLine.style.visibility=urnLineDefaultVisibility;
     }
+}
+
+function keyEventFocus(keyEvent, name) {
+    if (keyEvent.key === "Enter"){
+        keyEvent.preventDefault();
+        clickFocus(name);
+    }
+}
+function clickFocus(name) {
+    document.getElementById(name).focus();
 }
