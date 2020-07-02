@@ -2,11 +2,98 @@
 session_start();
 require_once 'bin/Connection.php';
 $connection = new Connection();
-$auto_error= $incoerenza=$urna_error = $bara_error= $tel_error= $prov_error=
-	$citta_error= $via_error= $surD_error= $namD_error= $surC_error=$namC_error=
-	$cf_error=$nascita_error=$decesso_error=$cerimonia_error= $global_error=
-	$fiori_error= false;
+$errors='';
+$quot_file = fopen('./views/preventivatore.xhtml','r');
+$quot_content = fread($quot_file,filesize('./views/preventivatore.xhtml'));
 if(isset($_POST['submit'])){
+	$textRegex = '^([A-Z]|[a-z]|\ )+^';
+	$dateRegex = '^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])^';
+	$selectRegex = '^\\d+^';
+	$telRegex = '^[+]?[0-9]+^';
+	$cfRegex = '^([A-Z]|[a-z]){6}[0-9]{2}([A-Z]|[a-z])[0-9]{2}([A-Z]|[a-z])[0-9]{3}([A-Z]|[a-z])^';
+	$boolRegex = '^(true|false)^';
+	$provRegex = '^[A-Z]{2}^';
+	$roadRegex = '^([a-z]|[A-Z]|[0-9]|\ )+^';
+	$suggestions = [
+		"cf" => [
+			"regex" => $cfRegex,
+			"suggestion" => "Codice fiscale non corretto"
+		],
+		"nomeC" => [
+			"regex" => $textRegex,
+			"suggestion" => "Nome cliente vuoto o contenente una cifra"
+		],
+		"cognomeC" => [
+			"regex" => $textRegex,
+			"suggestion" => "Cognome cliente vuoto o contenente una cifra"
+		],
+		"nomeD" => [
+			"regex" => $textRegex,
+			"suggestion" => "Nome defunto vuoto o contenente una cifra"
+		],
+		"cognomeD" => [
+			"regex" => $textRegex,
+			"suggestion" => "Cognome defunto vuoto o contenente una cifra"
+		],
+		"decesso" => [
+			"regex" => $dateRegex,
+			"suggestion" => "La data del decesso deve avere formato AAAA-MM-GG"
+		],
+		"via" => [
+			"regex" => $roadRegex,
+			"suggestion" => "Nome della via vuoto o contenente caratteri speciali"
+		],
+		"citta" => [
+			"regex" => $textRegex,
+			"suggestion" => "Nome della città vuoto o contenente una cifra"
+		],
+		"provincia" => [
+			"regex" => $provRegex,
+			"suggestion" => "Non è stata selezionata la provincia"
+		],
+		"tel" => [
+			"regex" => $telRegex,
+			"suggestion" => "Numero di telefono non inserito o contenente caratteri non numerici non appartenenti al prefisso internazionale"
+		],
+		"nascita" => [
+			"regex" => $dateRegex,
+			"suggestion" => "La data di nascita deve avere formato AAAA-MM-GG"
+		],
+		"cerimonia" => [
+			"regex" => $selectRegex,
+			"suggestion" => "Selezionare una cerimonia"
+		],
+		"bara" => [
+			"regex" => $selectRegex,
+			"suggestion" => "Selezionare una bara"
+		],
+		"urna" => [
+			"regex" => $selectRegex,
+			"suggestion" => "Selezionare un'urna"
+		],
+		"auto" => [
+			"regex" => $selectRegex,
+			"suggestion" => "Selezionare un carro funebre"
+		],
+		"fiori" => [
+			"regex" => $selectRegex,
+			"suggestion" => "Selezionare una composizione floreale"
+		],
+		"cremazione" => [
+			"regex" => $boolRegex,
+			"suggestion" => "Scegliere se si desidera o meno la cremazione"
+		]
+	];
+	$errors ="";
+	foreach($_POST as $key => $input){
+		if($key!= "submit" && !preg_match($suggestions[$key]['regex'],$input)){
+			$suggestion = $suggestions[$key]['suggestion'];
+			$errors .= "<p><a href=\"#$key\" rel=\"tag\">$suggestion</a></p>";
+			error_log("errore in ".$key);
+		}
+	}
+	$errors .= $_POST['cremazione']=='true'&&$_POST['urna']!='false'?
+		"<p><a href=\"#cremazione\" rel=\"tag\">E' stata selezionata un'urna ma non la cremazione</a></p>":"";
 	$cf = $connection->escape($_POST['cf']);
 	$nomeC =$connection->escape($_POST['nomeC']);
 	$cognomeC = $connection->escape($_POST['cognomeC']);
@@ -24,49 +111,35 @@ if(isset($_POST['submit'])){
 	$auto = $connection->escape($_POST['auto']);
 	$fiori=$connection->escape($_POST['fiori']);
 	$cerimonia = $connection->escape($_POST['cerimonia']);
-	$auto_error= ($auto=='false');
-	$incoerenza = $cremazione=='false' && $urna!='false';
-	$urna_error= $cremazione!='false' && $urna=='false';
-	$bara_error= $bara=='false';
-	$tel_error= $tel=='';
-	$prov_error= $provincia=='false';
-	$citta_error= $citta=='';
-	$via_error= $via=='';
-	$fiori_error = $fiori=='false';
-	error_log($nascita);
-	$nascita_error= !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$nascita);
-	error_log($nascita_error?"true":"false");
-	$decesso_error= !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$decesso);
-	$surD_error= $cognomeD=='';
-	$namD_error= $nomeD=='';
-	$surC_error=$cognomeC=='';
-	$namC_error=$nomeC=='';
-	$cf_error=!preg_match("/^([A-Z]||[a-z]){6}[0-9]{2}([A-Z]||[a-z])(0[1-9]|[1-2][0-9]|3[0-1])([A-Z]||[a-z])[0-9]{3}([A-Z||[a-z])$/",$cf);
-	$cerimonia_error=$cerimonia=='false';
-	if(!$auto_error&&!$incoerenza&&!$urna_error&&!$bara_error&&!$tel_error
-		&&!$prov_error&&!$citta_error&&!$via_error&&!$surD_error
-		&&!$surC_error&&!$namC_error&&!$surC_error&&!$nascita_error
-		&&!$decesso_error&&!$cerimonia_error&&!$fiori_error){
-		$indirizzo= sprintf("%s - %s (%s)",$via,$citta,$provincia);
+	if($errors=="") {
+		$indirizzo = sprintf("%s - %s (%s)", $via, $citta, $provincia);
 		error_log("received_quotator_data");
-		$res=$connection->Query("INSERT INTO `defunti` (`cf`,
-                       `nomeDefunto`, `cognomeDefunto`, `dataNascita`,
-                       `dataDecesso`, `residenza`, `nomeCliente`,
-                       `cognomeCliente`, `numeroTelefono`,
-                       `idCerimonia`, `idBara`, `idUrna`, `idAuto`,
-                       `isPublic`, `proposta`, `idFiori`)
-                       VALUES ('$cf', '$nomeD', '$cognomeD', '$nascita', '$decesso',
-                               '$indirizzo', '$nomeC', '$cognomeC',
-                               '$tel', $cerimonia, $bara, $urna, $auto,
-                               '0', NULL, $fiori)");
-		if($res){
-			$_SESSION['cf']= $cf;
+		$res = $connection->Query("INSERT INTO `defunti` (`cf`,
+	                       `nomeDefunto`, `cognomeDefunto`, `dataNascita`,
+	                       `dataDecesso`, `residenza`, `nomeCliente`,
+	                       `cognomeCliente`, `numeroTelefono`,
+	                       `idCerimonia`, `idBara`, `idUrna`, `idAuto`,
+	                       `isPublic`, `proposta`, `idFiori`)
+	                       VALUES ('$cf', '$nomeD', '$cognomeD', '$nascita', '$decesso',
+	                               '$indirizzo', '$nomeC', '$cognomeC',
+	                               '$tel', $cerimonia, $bara, $urna, $auto,
+	                               '0', NULL, $fiori)");
+		if ($res) {
+			$_SESSION['cf'] = $cf;
 			header("Location: viewQuotation.php");
 		}
-		else
-			$global_error=true;
+		else {
+			$errors .= "<p>Impossibile inserire il preventivo</p>";
+		}
 	}
 }
+$selectStatement = 'selected="selected"';
+$province_file = fopen('views/partials/province.xml','r');
+$province_content = fread($province_file, filesize('views/partials/province.xml'));
+if(isset($_POST['provincia'])){
+	$province_content = str_replace("value=\"$provincia\"","value=\"$provincia\" selected=\"selected\"",$province_content);
+}
+
 $bara_res = $connection->Query("SELECT * FROM bare");
 $urna_res = $connection->Query("SELECT * FROM urne");
 $auto_res = $connection->Query("SELECT * FROM auto");
@@ -77,7 +150,8 @@ while($row= $cer_res->fetch_assoc()){
 	$id=$row['id'];
 	$tipo = $row['tipologia'];
 	$prezzo=$row['costoBase'];
-	$cerimonie.="<option value=\"$id\">$tipo - $prezzo €</option>";
+	$cerimonie.="<option value=\"$id\"".((isset($_POST['cerimonia'])
+			&&$_POST['cerimonia']==$id)?$selectStatement:'').">$tipo - $prezzo €</option>";
 }
 $bare='';
 while($row = $bara_res->fetch_assoc()){
@@ -85,7 +159,8 @@ while($row = $bara_res->fetch_assoc()){
 	$desc = $row['versione'];
 	$prezzo = $row['costoBase'];
 	$mat = $row['materiale'];
-	$bare.="<option value=\"$id\">$desc - $mat - $prezzo €</option>";
+	$bare.="<option value=\"$id\"".((isset($_POST['bara'])
+			&&$_POST['bara']==$id)?$selectStatement:'').">$desc - $mat - $prezzo €</option>";
 }
 $urne='';
 while($row = $urna_res->fetch_assoc()){
@@ -93,7 +168,8 @@ while($row = $urna_res->fetch_assoc()){
 	$desc = $row['versione'];
 	$prezzo = $row['costoBase'];
 	$mat = $row['materiale'];
-	$urne.="<option value=\"$id\">$desc - $mat - $prezzo €</option>";
+	$urne.="<option value=\"$id\"".((isset($_POST['urna'])
+			&&$_POST['urna']==$id)?$selectStatement:'').">$desc - $mat - $prezzo €</option>";
 }
 $autos='';
 while($row = $auto_res->fetch_assoc()){
@@ -102,61 +178,44 @@ while($row = $auto_res->fetch_assoc()){
 	$prezzo = $row['costoBase'];
 	$marca = $row['marca'];
 	$cilindrata = $row['cilindrata'];
-	$autos.="<option value=\"$id\">$marca - $modello - $cilindrata cc - $prezzo €</option>";
+	$autos.="<option value=\"$id\"".((isset($_POST['auto'])
+		&&$_POST['auto']==$id)?$selectStatement:'').">$marca - $modello - $cilindrata cc - $prezzo €</option>";
 }
-$fiori ='';
-while($row = $fiori_res->fetch_assoc()){
-	$id=$row['id'];
-	$desc = $row['nome'];
-	$prezzo = $row['costoBase'];
-	$fiori.="<option value=\"$id\">$desc - $prezzo €</option>";
-}
-$quot_file = fopen('./views/preventivatore.xhtml','r');
-$quot_content = fread($quot_file,filesize('./views/preventivatore.xhtml'));
-$quot_content=str_replace('<cerimoniaoptions/>',$cerimonie,$quot_content);
-$quot_content=str_replace('<baraoptions/>',$bare,$quot_content);
-$quot_content=str_replace('<autooptions/>',$autos,$quot_content);
-$quot_content=str_replace('<urnaoptions/>',$urne,$quot_content);
-$quot_content=str_replace('<fiorioptions/>',$fiori,$quot_content);
-$quot_content = str_replace('<cferr/>',$cf_error?'Il codice
-fiscale inserito non e\' corretto':'', $quot_content);
-$quot_content = str_replace('<nomecerr/>',$namC_error?'Impostare il nome cliente':'',
+
+$quot_content = str_replace("<provinciaoptions/>",$province_content,
 	$quot_content);
-$quot_content = str_replace('<cognomecerr/>',$surC_error?'Impostare il cognome cliente':'',
+$quot_content = str_replace("<cerimoniaoptions/>",$cerimonie,$quot_content);
+$quot_content = str_replace("<baraoptions/>",$bare,$quot_content);
+$quot_content = str_replace("<urnaoptions/>",$urne,$quot_content);
+$quot_content = str_replace("<autooptions/>",$autos,$quot_content);
+$quot_content = str_replace("<cfvalue/>",isset($_POST['cf'])?$_POST['cf']:'', $quot_content);
+$quot_content = str_replace("<nomeDvalue/>",isset($_POST['nomeD'])
+	?$_POST['nomeD']:'', $quot_content);
+$quot_content = str_replace("<cognomeDvalue/>",isset($_POST['cognomeD'])
+	?$_POST['cognomeD']:'', $quot_content);
+$quot_content = str_replace("<nascitavalue/>",isset($_POST['nascita'])
+	?$_POST['nascita']:'', $quot_content);
+$quot_content = str_replace("<decessovalue/>",isset($_POST['decesso'])
+	?$_POST['decesso']:'', $quot_content);
+$quot_content = str_replace("<decessovalue/>",isset($_POST['decesso'])
+	?$_POST['decesso']:'', $quot_content);
+$quot_content = str_replace("<nomeCvalue/>",isset($_POST['nomeC'])
+	?$_POST['nomeC']:'', $quot_content);
+$quot_content = str_replace("<cognomeCvalue/>",isset($_POST['cognomeC'])
+	?$_POST['cognomeC']:'', $quot_content);
+$quot_content = str_replace("<viavalue/>",isset($_POST['via'])
+	?$_POST['via']:'', $quot_content);
+$quot_content = str_replace("<cittavalue/>",isset($_POST['citta'])
+	?$_POST['citta']:'', $quot_content);
+$quot_content = str_replace("<telvalue/>",isset($_POST['tel'])
+	?$_POST['tel']:'', $quot_content);
+$infocremazione = $quot_content = str_replace('id="nocremazione"',
+	(isset($_POST['cremazione'])&&$_POST['cremazione']==='false')?'id="nocremazione"
+	checked="checked"':'id="nocremazione"',
+		$quot_content);
+if(!isset($_POST['cremazione'])||$_POST['cremazione']==='true')
+	$quot_content = str_replace('id="sicremazione"','id="sicremazione" checked="checked"',
 	$quot_content);
-$quot_content = str_replace('<nomederr/>',$namD_error?'Impostare il nome del defunto':'',
-	$quot_content);
-$quot_content = str_replace('<cognomederr/>',$surD_error?'Impostare il cognome del defunto':'',
-	$quot_content);
-$quot_content = str_replace('<nacsitaerr/>',$nascita_error?'La data di
-nascita deve essere nel formato AAAA-MM-GG':'',
-	$quot_content);
-$quot_content = str_replace('<decessoerr/>',$decesso_error?'La data di
-decesso deve essere nel formato AAAA-MM-GG':'',
-	$quot_content);
-$quot_content = str_replace('<viaerr/>',$via_error?'Impostare l\'indirizzo':'',
-$quot_content);
-$quot_content = str_replace('<cittaerr/>',$citta_error?'Impostare una citta\'':'',
-$quot_content);
-$quot_content = str_replace('<proverr/>',$prov_error?'Impostare la provincia':'',
-	$quot_content);
-$quot_content = str_replace('<telerr/>',$tel_error?'Impostare un numero di telefono':'',
-	$quot_content);
-$quot_content = str_replace('<cerimoniaerr/>',$cerimonia_error?'Impostare una
-cerimonia':'',
-	$quot_content);
-$quot_content = str_replace('<baraerr/>',$bara_error?'Impostare una bara':'',
-$quot_content);
-$quot_content = str_replace('<coerenzaerr/>',$incoerenza?'Non e\' stata selezionata la cremazione ma e\' stata scelta un\'urna':'',
-	$quot_content);
-$quot_content = str_replace('<urnaerr/>',$urna_error?'Impostare un urna':'',
-	$quot_content);
-$quot_content = str_replace('<autoerr/>',$auto_error?'Impostare un\'auto':'',
-$quot_content);
-$quot_content = str_replace('<globalerr/>',$global_error?'Impossibile
-inserire un preventivo':'',
-	$quot_content);
-$quot_content = str_replace('<fiorierr/>',$fiori_error?'Impostare una
-composizione floreale':'',
-	$quot_content);
+$quot_content = str_replace('<globalerr/>',$errors==''?'':"<div id=\"errors\" class=\"linea\">$errors</div>
+",$quot_content);
 echo $quot_content;

@@ -43,238 +43,55 @@
         <p>
             Qui puoi inserire i dati per formulare il tuo preventivo.
         </p>
+        <globalerr/>
         <form method="post" id="frmpreventivo" action="quotator.php">
-            <globalerr/>
             <fieldset class="contenitore">
                 <legend>Dati Generali</legend>
                 <div class="linea">
                     <label for="cf">Codice fiscale defunto:</label>
-                    <input name="cf" id="cf" maxlength="16" tabindex="0"/>
-                    <p id="cfp"></p>
+                    <input name="cf" id="cf" maxlength="16" tabindex="0" value="<cfvalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="nomeD">Nome defunto/a:</label>
-                    <input name="nomeD" id="nomeD" maxlength="30" tabindex="0"/>
-                    <p id="ndp"></p>
+                    <input name="nomeD" id="nomeD" maxlength="30" tabindex="0" value="<nomeDvalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="cognomeD">Cognome defunto/a:</label>
-                    <input name="cognomeD" id="cognomeD" maxlength="40" tabindex="0"/>
-                    <p id="cdp"></p>
+                    <input name="cognomeD" id="cognomeD" maxlength="40" tabindex="0" value="<cognomeDvalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="nascita">Data nascita defunto/a:</label>
-                    <input name="nascita" id="nascita" maxlength="10" tabindex="0"/>
-                    <p id="np"></p>
+                    <input name="nascita" id="nascita" maxlength="10" tabindex="0" value="<nascitavalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="decesso">Data decesso:</label>
-                    <input name="decesso" id="decesso" maxlength="10" tabindex="0"/>
-                    <p id="dp"></p>
+                    <input name="decesso" id="decesso" maxlength="10" tabindex="0" value="<decessovalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="nomeC">Nome cliente:</label>
-                    <input name="nomeC" id="nomeC" maxlength="30" tabindex="0"/>
-                    <p id="ncp"></p>
+                    <input name="nomeC" id="nomeC" maxlength="30" tabindex="0" value="<nomeCvalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="cognomeC">Cognome cliente:</label>
-                    <input name="cognomeC" id="cognomeC" maxlength="40" tabindex="0"/>
-                    <p id="ccp"></p>
+                    <input name="cognomeC" id="cognomeC" maxlength="40" tabindex="0" value="<cognomeCvalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="via">Indirizzo cliente:</label>
-                    <input name="via" id="via" maxlength="80" tabindex="0"/>
-                    <p id="vp"></p>
+                    <input name="via" id="via" maxlength="80" tabindex="0" value="<viavalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="citta">Città cliente:</label>
-                    <input name="citta" id="citta" maxlength="60" tabindex="0"/>
-                    <p id="cp"></p>
+                    <input name="citta" id="citta" maxlength="60" tabindex="0" value="<cittavalue/>"/>
                 </div>
                 <div class="linea">
                     <label for="provincia">Provincia:</label>
                     <select name="provincia" id="provincia" tabindex="0">
-                        <option value="false" selected="selected">---</option>
-                        <optgroup label="Valle d'Aosta">
-                            <option value="AO">AOSTA</option>
-                        </optgroup>
-
-                        <optgroup label="Piemonte">
-                            <option value="AL">ALESSANDRIA</option>
-                            <option value="AT">ASTI</option>
-                            <option value="BI">BIELLA</option>
-                            <option value="CN">CUNEO</option>
-                            <option value="NO">NOVARA</option>
-                            <option value="TO">TORINO</option>
-                            <option value="VB">VERBANO-CUSIO-OSSOLA</option>
-                            <option value="VC">VERCELLI</option>
-
-                        </optgroup>
-
-                        <optgroup label="Liguria">
-                            <option value="GE">GENOVA</option>
-                            <option value="IM">IMPERIA</option>
-                            <option value="SP">LA SPEZIA</option>
-                            <option value="SV">SAVONA</option>
-                        </optgroup>
-
-                        <optgroup label="Lombardia">
-                            <option value="BG">BERGAMO</option>
-                            <option value="BS">BRESCIA</option>
-                            <option value="CO">COMO</option>
-                            <option value="CR">CREMONA</option>
-                            <option value="LC">LECCO</option>
-                            <option value="LO">LODI</option>
-                            <option value="MN">MANTOVA</option>
-                            <option value="MI">MILANO</option>
-                            <option value="MB">MONZA - BRIANZA</option>
-                            <option value="PV">PAVIA</option>
-                            <option value="SO">SONDRIO</option>
-                            <option value="VA">VARESE</option>
-                        </optgroup>
-
-                        <optgroup label="Trentino-Alto Adige">
-                            <option value="BZ">BOLZANO</option>
-                            <option value="TN">TRENTO</option>
-                        </optgroup>
-
-                        <optgroup label="Veneto">
-                            <option value="BL">BELLUNO</option>
-                            <option value="PD">PADOVA</option>
-                            <option value="RO">ROVIGO</option>
-                            <option value="TV">TREVISO</option>
-                            <option value="VE">VENEZIA</option>
-                            <option value="VR">VERONA</option>
-                            <option value="VI">VICENZA</option>
-                        </optgroup>
-
-                        <optgroup label="Friuli-Venezia Giulia">
-                            <option value="GO">GORIZIA</option>
-                            <option value="PN">PORDENONE</option>
-                            <option value="TS">TRIESTE</option>
-                            <option value="UD">UDINE</option>
-                        </optgroup>
-
-                        <optgroup label="Emilia-Romagna">
-                            <option value="BO">BOLOGNA</option>
-                            <option value="FE">FERRARA</option>
-                            <option value="FC">FORLI'-CESENA</option>
-                            <option value="MO">MODENA</option>
-                            <option value="PR">PARMA</option>
-                            <option value="PC">PIACENZA</option>
-                            <option value="RA">RAVENNA</option>
-                            <option value="RE">REGGIO NELL'EMILIA</option>
-                            <option value="RN">RIMINI</option>
-                        </optgroup>
-
-                        <optgroup label="Toscana">
-                            <option value="AR">AREZZO</option>
-                            <option value="FI">FIRENZE</option>
-                            <option value="GR">GROSSETO</option>
-                            <option value="LI">LIVORNO</option>
-                            <option value="LU">LUCCA</option>
-                            <option value="MS">MASSA-CARRARA</option>
-                            <option value="PI">PISA</option>
-                            <option value="PT">PISTOIA</option>
-                            <option value="PO">PRATO</option>
-                            <option value="SI">SIENA</option>
-                        </optgroup>
-
-                        <optgroup label="Umbria">
-                            <option value="PG">PERUGIA</option>
-                            <option value="TR">TERNI</option>
-                        </optgroup>
-
-                        <optgroup label="Marche">
-                            <option value="AN">ANCONA</option>
-                            <option value="AP">ASCOLI PICENO</option>
-                            <option value="FM">FERMO</option>
-                            <option value="MC">MACERATA</option>
-                            <option value="PU">PESARO E URBINO</option>
-                        </optgroup>
-
-                        <optgroup label="Lazio">
-                            <option value="FR">FROSINONE</option>
-                            <option value="LT">LATINA</option>
-                            <option value="RM">ROMA</option>
-                            <option value="RI">RIETI</option>
-                            <option value="VT">VITERBO</option>
-                        </optgroup>
-
-                        <optgroup label="Abruzzo">
-                            <option value="CH">CHIETI</option>
-                            <option value="AQ">L'AQUILA</option>
-                            <option value="PE">PESCARA</option>
-                            <option value="TE">TERAMO</option>
-
-                        </optgroup>
-
-                        <optgroup label="Molise">
-                            <option value="CB">CAMPOBASSO</option>
-                            <option value="IS">ISERNIA</option>
-                        </optgroup>
-
-                        <optgroup label="Campania">
-                            <option value="AV">AVELLINO</option>
-                            <option value="BN">BENEVENTO</option>
-                            <option value="CE">CASERTA</option>
-                            <option value="NA">NAPOLI</option>
-                            <option value="SA">SALERNO</option>
-                        </optgroup>
-
-                        <optgroup label="Puglia">
-                            <option value="BA">BARI</option>
-                            <option value="BT">BARLETTA-ANDRIA-TRANI</option>
-                            <option value="BR">BRINDISI</option>
-                            <option value="FG">FOGGIA</option>
-                            <option value="LE">LECCE</option>
-                            <option value="TA">TARANTO</option>
-                        </optgroup>
-
-                        <optgroup label="Basilicata">
-                            <option value="MT">MATERA</option>
-                            <option value="PZ">POTENZA</option>
-                        </optgroup>
-
-                        <optgroup label="Calabria">
-                            <option value="CZ">CATANZARO</option>
-                            <option value="CS">COSENZA</option>
-                            <option value="KR">CROTONE</option>
-                            <option value="RC">REGGIO DI CALABRIA</option>
-                            <option value="VV">VIBO VALENTIA</option>
-                        </optgroup>
-
-                        <optgroup label="Sicilia">
-                            <option value="AG">AGRIGENTO</option>
-                            <option value="CL">CALTANISSETTA</option>
-                            <option value="CT">CATANIA</option>
-                            <option value="EN">ENNA</option>
-                            <option value="ME">MESSINA</option>
-                            <option value="PA">PALERMO</option>
-                            <option value="RG">RAGUSA</option>
-                            <option value="SR">SIRACUSA</option>
-                            <option value="TP">TRAPANI</option>
-
-                        </optgroup>
-
-                        <optgroup label="Sardegna">
-                            <option value="CA">CAGLIARI</option>
-                            <option value="CI">CARBONIA - IGLESIAS</option>
-                            <option value="VS">MEDIO CAMPIDANO</option>
-                            <option value="NU">NUORO</option>
-                            <option value="OG">OGLIASTRA</option>
-                            <option value="OT">OLBIA - TEMPIO</option>
-                            <option value="OR">ORISTANO</option>
-                            <option value="SS">SASSARI</option>
-                        </optgroup>
+                        <provinciaoptions/>
                     </select>
-                    <p id="pp"></p>
                 </div>
                 <div class="linea">
                     <label for="tel">Numero di telefono:</label>
-                    <input name="tel" id="tel" maxlength="10" tabindex="0"/>
-                    <p id="clp"></p>
+                    <input name="tel" id="tel" maxlength="10" tabindex="0" value="<telvalue/>"/>
                 </div>
             </fieldset>
 
@@ -283,41 +100,37 @@
                 <div class="linea">
                     <label for="cerimonia">Cerimonia:</label>
                     <select name="cerimonia" id="cerimonia" tabindex="0">
-                        <option value="false" selected="selected">---</option>
+                        <option value="false">---</option>
                         <cerimoniaoptions/>
                     </select>
-                    <p id="cerp"></p>
                 </div>
                 <div class="linea">
                     <label for="bara">Modello bara:</label>
                     <select name="bara" id="bara" tabindex="0">
-                        <option value="false" selected="selected" >---</option>
+                        <option value="false">---</option>
                         <baraoptions/>
                     </select>
-                    <p id="barap"></p>
                 </div>
                 <div class="linea">
                     <label for="sicremazione">Desidero la cremazione </label>
-                    <input name="cremazione" id="sicremazione" value="true" type="radio" checked="checked" tabindex="0"/>
-                    <br/>
+                    <input name="cremazione" id="sicremazione" value="true" type="radio" tabindex="0"/>
                     <label for="nocremazione">Non desidero la cremazione </label>
                     <input name="cremazione" id="nocremazione" value="false" type="radio" tabindex="0"/>
+                    <!-- TODO add style for display block (removed br) -->
                 </div>
                 <div class="linea" id="urnLine">
                     <label for="urna">Modello urna:</label>
                     <select name="urna" id="urna" tabindex="0">
-                        <option value="false" selected="selected" >---</option>
+                        <option value="false">---</option>
                         <urnaoptions/>
                     </select>
-                    <p id="up"></p>
                 </div>
                 <div class="linea">
                     <label for="auto">Modello carro funebre:</label>
                     <select name="auto" id="auto" tabindex="0">
-                        <option value="false" selected="selected">---</option>
+                        <option value="false">---</option>
                         <autooptions/>
                     </select>
-                    <p id="autop"></p>
                 </div>
                 <div class="linea">
                     <label for="fiori">Composizione floreale:</label>
@@ -325,12 +138,11 @@
                         <option selected="selected" value="false">---</option>
                         <fiorioptions/>
                     </select>
-                    <p id="fp"></p>
                 </div>
             </fieldset>
             <fieldset class="contenitore">
                 <legend>Inoltra</legend>
-                <input type="submit" value="Invia preventivo" tabindex="0"/>
+                <input type="submit" name="submit" value="Invia preventivo" tabindex="0"/>
             </fieldset>
         </form>
     </div>
