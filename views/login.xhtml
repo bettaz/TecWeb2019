@@ -29,24 +29,20 @@
 </div>
 
 
-<div class="container">
+<div class="container" id="content">
+    <error/>
 	<form action="login.php" method="post" id="frmLogin">
-        <error/>
         <fieldset>
             <div class="linea">
-                <label for="uname" id="username">Username</label>
-                <input name="uname" id="uname" type="text" value="<olduname/>"/>
-                <p id="usernamep"></p>
+                <label for="uname">Username</label>
+                <input name="uname" id="uname" tabindex="0" type="text" value="<olduname/>"/>
             </div>
-
             <div class="linea">
                 <label for="password">Password</label>
-                <input name="password" id="password" type="password"/>
-                <p id="passwordp"></p>
+                <input name="password" tabindex="0" id="password" type="password"/>
             </div>
-            <div>
-
-                <button type="submit" value="Enter" id="enter" onclick="check()">Enter</button>
+            <div class="linea">
+                <button type="submit" value="Enter" id="submit">Enter</button>
             </div>
         </fieldset>
     </form>
