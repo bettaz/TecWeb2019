@@ -92,8 +92,8 @@ if(isset($_POST['submit'])){
 			error_log("errore in ".$key);
 		}
 	}
-	$errors .= $_POST['cremazione']=='true'&&$_POST['urna']!='false'?
-		"<p><a href=\"#cremazione\" rel=\"tag\">E' stata selezionata un'urna ma non la cremazione</a></p>":"";
+	$errors .= $_POST['cremazione']=='false'&&$_POST['urna']!='false'?
+		"<p><a href=\"#sicremazione\" rel=\"tag\">E' stata selezionata un'urna ma non la cremazione</a></p>":"";
 	$cf = $connection->escape($_POST['cf']);
 	$nomeC =$connection->escape($_POST['nomeC']);
 	$cognomeC = $connection->escape($_POST['cognomeC']);
@@ -181,13 +181,21 @@ while($row = $auto_res->fetch_assoc()){
 	$autos.="<option value=\"$id\"".((isset($_POST['auto'])
 		&&$_POST['auto']==$id)?$selectStatement:'').">$marca - $modello - $cilindrata cc - $prezzo €</option>";
 }
-
+$fiori = '';
+while($row = $fiori_res->fetch_assoc()){
+	$id=$row['id'];
+	$nome = $row['nome'];
+	$prezzo = $row['costoBase'];
+	$fiori.="<option value=\"$id\"".((isset($_POST['fiori'])
+			&&$_POST['fiori']==$id)?$selectStatement:'').">$nome - $prezzo €</option>";
+}
 $quot_content = str_replace("<provinciaoptions/>",$province_content,
 	$quot_content);
 $quot_content = str_replace("<cerimoniaoptions/>",$cerimonie,$quot_content);
 $quot_content = str_replace("<baraoptions/>",$bare,$quot_content);
 $quot_content = str_replace("<urnaoptions/>",$urne,$quot_content);
 $quot_content = str_replace("<autooptions/>",$autos,$quot_content);
+$quot_content = str_replace("<fiorioptions/>",$fiori,$quot_content);
 $quot_content = str_replace("<cfvalue/>",isset($_POST['cf'])?$_POST['cf']:'', $quot_content);
 $quot_content = str_replace("<nomeDvalue/>",isset($_POST['nomeD'])
 	?$_POST['nomeD']:'', $quot_content);

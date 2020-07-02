@@ -47,7 +47,7 @@ if ($dead_data=$base_record->fetch_assoc()){
 			$urna_flag['materiale'], $urna_flag['costoBase']);
 		$totale += $urna_flag['costoBase'];
 	}
-	$scontato=$dead_data['proposta'];
+	$scontato=isset($dead_data['proposta'])?$dead_data['proposta'].'€':'Ancora da valutare';
 }
 $view_file=fopen('views/preventivatoreAnteprima.xhtml','r');
 $view = fread($view_file,filesize('views/preventivatoreAnteprima.xhtml'));
