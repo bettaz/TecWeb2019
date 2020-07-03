@@ -67,6 +67,11 @@
     <h2>Totale</h2>
     <ul>
         <li>Totale da listino: <quotation/></li>
+        <li>Quotazione inserita: <customquotation/></li>
+    </ul>
+    <h2>Pubblicazione su necrologio</h2>
+    <ul>
+        <li>Stato: <publicdeath/></li>
     </ul>
 
     <form action="viewDetail.php?code=<idquotation/>" method="post" id="frmupdate">
@@ -80,7 +85,7 @@
                 <label for="publicNecro">Pubblica su necrologio:</label>
                 <input name="publicNecro" id="publicNecro" type="checkbox" tabindex="0" <necroCheck/>/>
             </div>
-            <input type="submit" name="submitbtn" value="Aggiorna" />
+            <input type="submit" name="submitbtn" value="Salva preventivo" tabindex="0"/>
         </fieldset>
     </form>
 </div>

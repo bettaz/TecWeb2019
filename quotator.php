@@ -5,7 +5,7 @@ $connection = new Connection();
 $errors='';
 $quot_file = fopen('./views/preventivatore.xhtml','r');
 $quot_content = fread($quot_file,filesize('./views/preventivatore.xhtml'));
-if(isset($_POST['submitbtn'])){
+if(isset($_POST['cf'])){
 	$textRegex = '^([A-Z]|[a-z]|\ )+^';
 	$dateRegex = '^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])^';
 	$selectRegex = '^\\d+^';
