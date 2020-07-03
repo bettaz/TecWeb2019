@@ -6,22 +6,11 @@
 -- Creato il: Giu 25, 2020 alle 14:32
 -- Versione del server: 10.1.40-MariaDB
 -- Versione PHP: 7.3.5
-INSERT INTO `defunti` (`cf`,
-                       `nomeDefunto`, `cognomeDefunto`, `dataNascita`,
-                       `dataDecesso`, `residenza`, `nomeCliente`,
-                       `cognomeCliente`, `numeroTelefono`,
-                       `idCerimonia`, `idBara`, `idUrna`, `idAuto`,
-                       `isPublic`, `proposta`)
-VALUES ('ASDDSA92G26Z224N', 'asdf', 'asdf', '2020-12-11', '2020-12-11',
-        'kjhgjh - kjhgkjhg (AT)', 'gjhg', 'kjhgkjjhg',
-        '7658765', 2, 1, false, 2,
-        '0', NULL);
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -170,6 +159,7 @@ CREATE TABLE IF NOT EXISTS `defunti` (
 INSERT INTO `defunti` (`cf`, `nomeDefunto`, `cognomeDefunto`, `dataNascita`, `dataDecesso`, `residenza`, `nomeCliente`, `cognomeCliente`, `numeroTelefono`, `data`, `idCerimonia`, `idBara`, `idUrna`, `idAuto`, `isPublic`, `proposta`, `idFiori`) VALUES
 ('BTTLSS91H02A459X', 'Alessio', 'Bettarello', '1991-06-02', '2020-06-20', 'Padova', 'Mattia', 'Gottardello', '3098754671', '2020-06-24 15:01:32', 1, 2, 1, 1, 1, '10022.00', 0),
 ('DNOBRN57H22A459X', 'Don', 'Barbano', '1957-06-22', '2020-05-13', 'Via della Speranza - S.Maria di Sala', 'Widspots', 'Pacchettino', '1234134123', '2020-06-23 13:13:47', 3, 4, NULL, 2, 1, NULL, 0);
+
 
 -- --------------------------------------------------------
 
