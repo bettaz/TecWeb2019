@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/singleQuotationMobile.css" media="screen and (max-width:720px)" />
     <link rel="stylesheet" href="css/singleQuotationDesktop.css" media="screen and (min-width: 721px)" />
     <link rel="stylesheet" href="css/singleQuotationPrint.css" media="print"/>
+    <script type="text/javascript" src="js/focusLib.js"></script>
+    <script type="text/javascript" src="js/singleQuotation.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -67,18 +69,18 @@
         <li>Totale da listino: <quotation/></li>
     </ul>
 
-    <form action="./viewDetail.php?code=<idquotation/>" method="post">
+    <form action="viewDetail.php?code=<idquotation/>" method="post" id="frmupdate">
         <fieldset class="contenitore">
             <legend>Gestione preventivo</legend>
             <div class="linea">
                 <label for="finalTot">Totale finale:</label>
-                <input name="finalTot" id="finalTot" maxlength="30" value="<finalquotation/>"/>
+                <input name="finalTot" id="finalTot" maxlength="30" tabindex="0" value="<finalquotation/>"/>
             </div>
             <div class="linea">
                 <label for="publicNecro">Pubblica su necrologio:</label>
-                <input name="publicNecro" id="publicNecro" type="checkbox" <necroCheck/>/>
+                <input name="publicNecro" id="publicNecro" type="checkbox" tabindex="0" <necroCheck/>/>
             </div>
-            <input type="submit" value="Aggiorna" />
+            <input type="submit" name="submitbtn" value="Aggiorna" />
         </fieldset>
     </form>
 </div>

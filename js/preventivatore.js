@@ -105,7 +105,7 @@ function check(form){
                 let errorAnchor = document.createElement("a");
                 errorAnchor.id = name+"error";
                 errorAnchor.innerHTML= suggestions[name].suggestion;
-                errorAnchor.onkeydown = event => keyEventFocus(event, name);
+                errorAnchor.onkeydown = event => keyFocus(event, name);
                 errorAnchor.onclick = event => clickFocus(name);
                 errorAnchor.tabIndex=0;
                 let paragraph = document.createElement("p");
@@ -132,14 +132,4 @@ function hideShowUrn(changeEvent) {
     else{
         urnLine.style.visibility=urnLineDefaultVisibility;
     }
-}
-
-function keyEventFocus(keyEvent, name) {
-    if (keyEvent.key === "Enter"){
-        keyEvent.preventDefault();
-        clickFocus(name);
-    }
-}
-function clickFocus(name) {
-    document.getElementById(name).focus();
 }

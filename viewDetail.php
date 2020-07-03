@@ -7,7 +7,7 @@ if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
 require_once('bin/Connection.php');
 $connection = new Connection();
 $clean_input = $connection->escape($_GET['code']);
-if(isset($_POST['finalTot'])){
+if(isset($_POST['submitbtn'])){
 	$finalToSet = $connection->escape($_POST['finalTot']);
 	$isPublished = isset($_POST['publicNecro']);
 	$connection->Query("
@@ -33,7 +33,7 @@ $content = str_replace('<coffin/>',$data['idBara'],$content);
 $content = str_replace('<cremation/>',$data['idUrna']!=null?$data['idUrna']:'senza cremazione',$content);
 $content = str_replace('<car/>',$data['idAuto'],$content);
 // TODO add flower, funeral, quotation calc and stored quotation fetch and print
-$calculated = 0;
+$calculated = 0.0;
 $content = str_replace('<funeral/>',$data['idCerimonia'],$content);
 $content = str_replace('<flowers/>','',$content);
 $content = str_replace('<quotation/>',$calculated,$content);
