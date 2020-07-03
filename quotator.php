@@ -5,7 +5,7 @@ $connection = new Connection();
 $errors='';
 $quot_file = fopen('./views/preventivatore.xhtml','r');
 $quot_content = fread($quot_file,filesize('./views/preventivatore.xhtml'));
-if(isset($_POST['submit'])){
+if(isset($_POST['submitbtn'])){
 	$textRegex = '^([A-Z]|[a-z]|\ )+^';
 	$dateRegex = '^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])^';
 	$selectRegex = '^\\d+^';
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])){
 	];
 	$errors ="";
 	foreach($_POST as $key => $input){
-		if($key!= "submit" && !preg_match($suggestions[$key]['regex'],$input)){
+		if($key!= "submitbtn" && !preg_match($suggestions[$key]['regex'],$input)){
 			$suggestion = $suggestions[$key]['suggestion'];
 			$errors .= "<p><a href=\"#$key\" rel=\"tag\">$suggestion</a></p>";
 			error_log("errore in ".$key);
