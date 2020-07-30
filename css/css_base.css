@@ -19,8 +19,6 @@ input{
     width: 50%;
     margin-top: 2%;
     font-size: 100%;
-    float: right;
-    clear: both;
 }
 
 input[type=radio]{

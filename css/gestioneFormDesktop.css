@@ -26,6 +26,11 @@
     margin: 3%;
 }
 
+.linea input{
+    float: right;
+    clear: both;
+}
+
 #tipoAddP{
     margin-left: 1%;
 }

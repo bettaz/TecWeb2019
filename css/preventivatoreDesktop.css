@@ -35,6 +35,11 @@ h2 {
     clear: both;
 }
 
+select{
+    float: right;
+    clear: both;
+}
+
 #cf{
     margin-left: 10%;
 }
@@ -88,15 +93,6 @@ h2 {
     margin-left: 11%;
 }
 
-#sicremazione{
-    margin-right: 20%;
-    margin-left: 5.7%;
-}
-
-#nocremazione{
-    margin-left: 1%;
-}
-
 #urna{
     margin-left: 11.3%;
 }
@@ -130,4 +126,8 @@ h2 {
 
 [hidden] {
     display: none;
+}
+
+input [type='checkbox']{
+    padding-top: 50%;
 }

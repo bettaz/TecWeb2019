@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Rimozione elementi</title>
+    <title>Aggiungi cerimonia</title>
 
     <meta name="title" content="SleekParadise, sito di onoranze funebri" />
     <meta name="description" content="Pagina che fornisce la lista dei preventivi richiesti dai clienti" />
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/gestioneFormDesktop.css" media="screen and (min-width: 721px)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script type="text/javascript" src="js/gestioneForm.js"></script>
+    <script type="text/javascript" src="js/gestioneCerimonia.js"></script>
 </head>
 <body>
 <div id="header">
@@ -26,7 +26,7 @@
 </div>
 
 <div id="breadcrumb">
-    <p>Ti trovi in: Rimozione elementi </p>
+    <p>Ti trovi in: Aggiungi cerimonia </p>
 </div>
 
 <div id="menu">
@@ -37,9 +37,9 @@
 <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
 <!--        <li>Accedi come admin</li>-->
         <li><a href="admin.php" tabindex="7" accesskey="L">Lista Preventivi</a></li>
-        <li>Rimozione elementi</li>
+        <li><a href="gestioneForm.php" tabindex="0" accesskey="G">Rimozione elementi</a></li>
         <li><a href="gestioneAuto.php" tabindex="0" accesskey="A">Aggiungi auto</a></li>
-        <li><a href="gestioneCerimonia.php" tabindex="0" accesskey="C">Aggiungi cerimonia</a></li>
+        <li>Aggiungi cerimonia</li>
         <li><a href="gestioneBare.php" tabindex="0" accesskey="B">Aggiungi bara</a></li>
         <li><a href="gestioneUrne.php" tabindex="0" accesskey="N">Aggiungi urna</a></li>
         <li><a href="gestioneFiori.php" tabindex="0" accesskey="F">Aggiungi fiori</a></li>
@@ -49,64 +49,24 @@
 </div>
 
 <div id="content">
-    <h2>Rimuovi elementi</h2>
+    <h2>Inserimento cerimonia</h2>
     <p>
-        Qui è possibile rimuovere i prodotti offerti dall'azienda non più disponibili.
+        Qui è possibile aggiungere nuovi tipi di cerimonia offerti dall'azioneda.
     </p>
-    <!---<form action="gestioneForm.php" method="post" id="frmauto">
+    <form action="gestioneCerimonia.php" method="post" id="frmauto">
         <fieldset class="contenitore">
-            <legend>Aggiungi auto</legend>
+            <legend>Aggiungi cerimonia</legend>
             <div class="linea">
-                <label for="nomeP">Nome:</label>
-                <input name="nomeP" id="nomeP" maxlength="40"/>
+                <label for="tipolog">Tipologia:</label>
+                <input name="tipolog" id="tipolog" maxlength="150"/>
             </div>
             <div class="linea">
-                <label for="prezzoP">Prezzo:</label>
-                <input name="prezzoP" id="prezzoP" maxlength="9"/>
+                <label for="prezzoC">Prezzo:</label>
+                <input name="prezzoC" id="prezzoC" maxlength="9"/>
             </div>
             <input type="submit" onclick="checkInsert()" value="Aggiungi"/>
         </fieldset>
     </form>
-    <form action="gestioneForm.php" method="post" id="frmadd">
-        <fieldset class="contenitore">
-            <legend>Aggiungi prodotto</legend>
-            <div class="linea">
-                <label for="tipoAddP">Tipo prodotto:</label>
-                <select name="tipoAddP" id="tipoAddP">
-                    <option value="1">Bara</option>
-                    <option value="2">Urna</option>
-                    <option value="0">Auto</option>
-                    <option value="3">Composizione floreale</option>
-                    <option value="4">Cerimonia </option>
-                </select>
-            </div>
-            <div class="linea">
-                <label for="nomeP">Nome:</label>
-                <input name="nomeP" id="nomeP" maxlength="40"/>
-            </div>
-            <div class="linea">
-                <label for="prezzoP">Prezzo:</label>
-                <input name="prezzoP" id="prezzoP" maxlength="9"/>
-            </div>
-            <input type="submit" onclick="checkInsert()" value="Aggiungi"/>
-        </fieldset>
-    </form>--->
-
-    <form action="gestioneForm.php" method="post">
-        <fieldset class="contenitore">
-            <legend>Rimuovi prodotto</legend>
-            <div class="linea">
-                <label for="nomeRemoveP">Nome:</label>
-                <select name="nomeRemoveP" id="nomeRemoveP">
-                    <option selected="selected">---</option>
-                    <elementlist/>
-                </select>
-            </div>
-            <p><deleteerror/></p>
-            <input type="submit" onclick="checkRemove()" value="Rimuovi"/>
-        </fieldset>
-    </form>
-
 </div>
 
 <div id="footer">
