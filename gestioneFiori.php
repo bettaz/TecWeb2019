@@ -6,16 +6,37 @@ if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
 }
 require_once 'bin/Connection.php';
 $connection = new Connection();
-$flower_res = $connection->Query("SELECT * FROM composizioni");
-$option_list = '';
-while ($row = $flower_res->fetch_assoc()){
-	$option_list .= "<option value=\"3-".$row['id']."\">".sprintf("fiori %s", $row['nome'])."</option>";
+$error = '';
+
+# TODO controllare
+
+if(isset($_POST['nomeF'])){
+	if($_POST['nomeF'] == ''){
+		$error = '<div class="error">Inserire il nome della composizione!</div>';
+	} else {
+		if($_POST['prezzoF'] == ''){
+			$error = '<div class="error">Inserire il prezzo della composizione!</div>';
+		} else {
+			$nomeF = $_POST['nomeF'];
+			$prezzoF = $_POST['prezzoF'];
+			$rows = $connection->Query("SELECT `nome`, `costoBase` FROM `composizioni` WHERE `nome` = '$nomeF'");
+			if($rows->num_rows == 0){
+				$res = $connection->Query("INSERT INTO  `composizioni`(`nome`, `costoBase`) VALUES ('$nomeF', '$prezzoF')");
+			} else {
+				$res = $connection->Query("UPDATE `composizioni` SET `costoBase`= '$prezzoF' WHERE `nome` = '$nomeF'");
+			}
+			if($res){
+				$error = '<div class="message">Composizione inserita correttamente</div>';
+			}
+			else{
+				$error = '<div class="error">Impossibile inserire la composizione</div>';
+			}
+		}
+	}
 }
-$management_file = fopen('views/gestioneFiori.xhtml','r');
-$man_content = fread($management_file,filesize('views/gestioneFiori.xhtml'));
-$man_content = str_replace('<elementlist/>',$option_list,$man_content);
-$man_content = str_replace('<deleteerror/>',isset($del_error)
-	?$del_error:'',$man_content);
-$man_content = str_replace('<adderror/>',isset($add_error)
-	?$add_error:'',$man_content);
-echo $man_content;
+
+$usr_mng_file= fopen('views/gestioneFiori.xhtml','r');
+$mng_content = fread($usr_mng_file,filesize('views/gestioneFiori.xhtml'));
+$mng_content = str_replace('<message/>', $error, $mng_content);
+echo $mng_content;
+

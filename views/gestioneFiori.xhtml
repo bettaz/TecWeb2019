@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/gestioneFormDesktop.css" media="screen and (min-width: 721px)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script type="text/javascript" src="js/focusLib.js"></script>
     <script type="text/javascript" src="js/gestioneFiori.js"></script>
 </head>
 <body>
@@ -38,7 +39,7 @@
 <!--        <li>Accedi come admin</li>-->
         <li><a href="admin.php" tabindex="7" accesskey="L">Lista Preventivi</a></li>
         <li><a href="gestioneForm.php" tabindex="0" accesskey="G">Rimozione elementi</a></li>
-        <li><a href="gestioneAuto.php" tabindex="0" accesskey="A">Aggiungi Auto</a></li>
+        <li><a href="gestioneAuto.php" tabindex="0" accesskey="A">Aggiungi auto</a></li>
         <li><a href="gestioneCerimonia.php" tabindex="0" accesskey="C">Aggiungi cerimonia</a></li>
         <li><a href="gestioneBare.php" tabindex="0" accesskey="B">Aggiungi bara</a></li>
         <li><a href="gestioneUrne.php" tabindex="0" accesskey="N">Aggiungi urna</a></li>
@@ -53,18 +54,19 @@
     <p>
         Qui è possibile aggiungere nuove composizioni floreali offerte dall'azioneda.
     </p>
-    <form action="gestioneFiori.php" method="post" id="frmauto">
+    <message/>
+    <form action="gestioneFiori.php" method="post" id="frmFiori">
         <fieldset class="contenitore">
             <legend>Aggiungi composizione</legend>
             <div class="linea">
                 <label for="nomeF">Nome:</label>
-                <input name="nomeF" id="nomeF" maxlength="40"/>
+                <input name="nomeF" id="nomeF" maxlength="40" tabindex="0"/>
             </div>
             <div class="linea">
                 <label for="prezzoF">Prezzo:</label>
-                <input name="prezzoF" id="prezzoF" maxlength="9"/>
+                <input name="prezzoF" id="prezzoF" maxlength="9" tabindex="0"/>
             </div>
-            <input type="submit" onclick="checkInsert()" value="Aggiungi"/>
+            <input type="submit" tabindex="0" value="Aggiungi"/>
         </fieldset>
     </form>
 </div>

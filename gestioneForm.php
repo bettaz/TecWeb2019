@@ -8,6 +8,7 @@ if(isset($_POST['tipoAddP'])){
 	// TODO insert checks and add record to the table
 	echo '';
 }
+// TODO verificare errore in rimozione
 if(isset($_POST['nomeRemoveP'])){
 	$full_qualifier= $_POST['nomeRemoveP'];
 	$split = explode('-',$full_qualifier);

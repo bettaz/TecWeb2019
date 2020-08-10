@@ -6,16 +6,42 @@ if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
 }
 require_once 'bin/Connection.php';
 $connection = new Connection();
-$coffin_res = $connection->Query("SELECT * FROM bare");
-$option_list = '';
-while ($row = $coffin_res->fetch_assoc()){
-	$option_list .= "<option value=\"1-".$row['id']."\">".sprintf("bara %s in %s",$row['versione'],$row['materiale'])."</option>";
+$error = '';
+
+# TODO controllare
+
+if(isset($_POST['nomeB'])){
+	if($_POST['nomeB'] == ''){
+		$error = '<div class="error">Inserire il nome della bara!</div>';
+	} else {
+		if($_POST['nomeMatB'] == ''){
+			$error = '<div class="error">Inserire il materiale della bara!</div>';
+		} else {
+			if($_POST['prezzoB'] == ''){
+				$error = '<div class="error">Inserire il prezzo della bara!</div>';
+			} else {
+				$nomeB = $_POST['nomeB'];
+				$materiale = $_POST['nomeMatB'];
+				$prezzoB = $_POST['prezzoB'];
+				$rows = $connection->Query("SELECT `versione`, `materiale` , `costoBase` FROM `bare` WHERE `versione` = '$nomeB'");
+				if($rows->num_rows == 0){
+					$res = $connection->Query("INSERT INTO  `bare`(`versione`, `materiale` , `costoBase`) VALUES ('$nomeB', '$materiale', '$prezzoB')");
+				} else {
+					$res = $connection->Query("UPDATE `bare` SET `costoBase`= '$prezzoB', `materiale`='$materiale' WHERE `versione` = '$nomeB'");
+				}
+				if($res){
+					$error = '<div class="message">Bara inserita correttamente</div>';
+				}
+				else{
+					$error = '<div class="error">Impossibile inserire la bara</div>';
+				}
+			}
+		}
+	}
 }
-$management_file = fopen('views/gestioneBare.xhtml','r');
-$man_content = fread($management_file,filesize('views/gestioneBare.xhtml'));
-$man_content = str_replace('<elementlist/>',$option_list,$man_content);
-$man_content = str_replace('<deleteerror/>',isset($del_error)
-	?$del_error:'',$man_content);
-$man_content = str_replace('<adderror/>',isset($add_error)
-	?$add_error:'',$man_content);
-echo $man_content;
+
+$usr_mng_file= fopen('views/gestioneBare.xhtml','r');
+$mng_content = fread($usr_mng_file,filesize('views/gestioneBare.xhtml'));
+$mng_content = str_replace('<message/>', $error, $mng_content);
+echo $mng_content;
+

@@ -1,21 +1,60 @@
-function checkInsert(){
-    let tipoSelect = document.getElementById('tipoAddU');
-    let tipo = tipoSelect.options[tipoSelect.selectedIndex].text;
+window.onload = () => {
+    document.getElementById("frmUrne").onsubmit = event => {
+        event.preventDefault();
+        checkInsert(event.target);
+    };
+};
 
-    let nome = document.getElementById('nomeU').value;
-    let materiale = document.getElementById('nomeMatU').value;
-    let prezzo = document.getElementById('prezzoU');
+// TODO da controllare
 
-    let expChar= new RegExp('^[a-z]+$','i');
-    let expNumb = new RegExp('^[0-9]+$');
+function checkInsert(form){
+    const nome = document.getElementById('nomeU').value;
+    const materiale =  document.getElementById('nomeMatU').value;
+    const prezzo = document.getElementById('prezzoU').value;
+    // TODO migliorare la regex aggiungendo punto e virgola
+    let expNumb = new RegExp('[0-9]+$');
 
-    if(!expChar.test(nome)){
-        alert("Il nome dell'urna non è stata inserito o contiene delle cifre");
+    let errorDiv = document.getElementById("errors");
+    if(errorDiv)
+        document.getElementById("errors").remove();
+    errorDiv = document.createElement("div");
+    errorDiv.id = "errors";
+    errorDiv.className = "linea";
+    errorDiv.tabIndex = -1;
+    let errorAnchor = document.createElement("a");
+    errorAnchor.tabIndex = 0;
+    if(nome == ''){
+        errorAnchor.innerText = "Inserire il nome del'urna";
+        errorAnchor.onclick = () => clickFocus("nomeU");
+        errorAnchor.onkeyup = event => keyFocus(event,"nomeU");
+        errorDiv.appendChild(errorAnchor);
+    } else {
+        if(materiale == ''){
+            errorAnchor.innerText = "Inserire il materiale del'urna";
+            errorAnchor.onclick = () => clickFocus("nomeMatU");
+            errorAnchor.onkeyup = event => keyFocus(event,"nomeMatU");
+            errorDiv.appendChild(errorAnchor);
+        } else {
+            if(prezzo == ''){
+                errorAnchor.innerText = "Inserire il prezzo del'urna";
+                errorAnchor.onclick = () => clickFocus("prezzoU");
+                errorAnchor.onkeyup = event => keyFocus(event,"prezzoU");
+                errorDiv.appendChild(errorAnchor);
+            } else {
+                if(!expNumb.test(prezzo)){
+                    errorAnchor.innerText = "Il prezzo inserito non e' corretto";
+                    errorAnchor.onclick = () => clickFocus("prezzoU");
+                    errorAnchor.onkeyup = event => keyFocus(event,"prezzoU");
+                    errorDiv.appendChild(errorAnchor);
+                }
+            }
+        }
     }
-    if(!expChar.test(materiale)){
-        alert("Il materiale dell'urna non è stata inserito o contiene delle cifre");
+    if(errorDiv.hasChildNodes()){
+        form.prepend(errorDiv);
+        errorDiv.focus();
     }
-    if(!expNumb.test(prezzo)){
-        alert("Il prezzo dell'urna non è stato inserito o contiene delle lettere");
+    else{
+        form.submit();
     }
 }

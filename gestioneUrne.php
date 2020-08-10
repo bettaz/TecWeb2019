@@ -6,16 +6,42 @@ if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
 }
 require_once 'bin/Connection.php';
 $connection = new Connection();
-$urn_res = $connection->Query("SELECT * FROM urne");
-$option_list = '';
-while ($row = $urn_res->fetch_assoc()){
-	$option_list .= "<option value=\"2-".$row['id']."\">".sprintf("urna %s in %s",$row['versione'],$row['materiale'])."</option>";
+$error = '';
+
+# TODO controllare
+
+if(isset($_POST['nomeU'])){
+	if($_POST['nomeU'] == ''){
+		$error = '<div class="error">Inserire il nome dell\'urna!</div>';
+	} else {
+		if($_POST['nomeMatU'] == ''){
+			$error = '<div class="error">Inserire il materiale dell\'urna!</div>';
+		} else {
+			if($_POST['prezzoU'] == ''){
+				$error = '<div class="error">Inserire il prezzo dell\'urna!</div>';
+			} else {
+				$nomeU = $_POST['nomeU'];
+				$materiale = $_POST['nomeMatU'];
+				$prezzoU = $_POST['prezzoU'];
+				$rows = $connection->Query("SELECT `versione`, `materiale` , `costoBase` FROM `urne` WHERE `versione` = '$nomeU'");
+				if($rows->num_rows == 0){
+					$res = $connection->Query("INSERT INTO  `urne`(`versione`, `materiale` , `costoBase`) VALUES ('$nomeU', '$materiale', '$prezzoU')");
+				} else {
+					$res = $connection->Query("UPDATE `urne` SET `costoBase`= '$prezzoU', `materiale`='$materiale' WHERE `versione` = '$nomeU'");
+				}
+				if($res){
+					$error = '<div class="message">Urna inserita correttamente</div>';
+				}
+				else{
+					$error = '<div class="error">Impossibile inserire l\'urna</div>';
+				}
+			}
+		}
+	}
 }
-$management_file = fopen('views/gestioneUrne.xhtml','r');
-$man_content = fread($management_file,filesize('views/gestioneUrne.xhtml'));
-$man_content = str_replace('<elementlist/>',$option_list,$man_content);
-$man_content = str_replace('<deleteerror/>',isset($del_error)
-	?$del_error:'',$man_content);
-$man_content = str_replace('<adderror/>',isset($add_error)
-	?$add_error:'',$man_content);
-echo $man_content;
+
+$usr_mng_file= fopen('views/gestioneUrne.xhtml','r');
+$mng_content = fread($usr_mng_file,filesize('views/gestioneUrne.xhtml'));
+$mng_content = str_replace('<message/>', $error, $mng_content);
+echo $mng_content;
+
