@@ -23,25 +23,27 @@
     </head>
     <body>
         <div id="header">
-            <h1 xml:lang="en">SleekParadise</h1>
+            <h1 xml:lang="en" tabindex="0">SleekParadise</h1>
         </div>
 
-    <div id="breadcrumb">
+    <div id="breadcrumb" tabindex="0">
         <p>Ti trovi in: Preventivatore</p>
     </div>
+
+    <a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
 
 <div id="menu">
     <ul>
         <li><a href="index.php" xml:lang="en" tabindex="0" accesskey="H">Home</a></li>
         <li><a href="azienda.xhtml" tabindex="0" accesskey="A">Azienda</a></li>
-        <li>Preventivatore</li>
+        <li tabindex="0">Preventivatore</li>
         <li><a href="contatti.xhtml" tabindex="0" accesskey="C">Contatti</a></li>
     </ul>
 </div>
 
     <div id="content">
-        <h2>Preventivatore</h2>
-        <p>
+        <h2 tabindex="0">Preventivatore</h2>
+        <p tabindex="0">
             Qui puoi inserire i dati per formulare il tuo preventivo.
         </p>
         <globalerr/>
@@ -150,6 +152,8 @@
             </fieldset>
         </form>
     </div>
+
+    <a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
 
     <div id="footer">
         <img src="img/valid-xhtml10.png" alt="XHTML valido"/>

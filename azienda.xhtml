@@ -22,19 +22,21 @@
 </head>
 <body>
 <div id="header">
-    <h1 xml:lang="en">SleekParadise</h1>
+    <h1 xml:lang="en" tabindex="0">SleekParadise</h1>
 </div>
 
-<div id="breadcrumb">
-    <p>Ti trovi in: Azienda </p>
+<div id="breadcrumb" tabindex="0">
+    <p >Ti trovi in: Azienda </p>
 </div>
+
+<a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
 
 <div id="menu">
     <ul>
-        <li><a href="index.php" xml:lang="en" tabindex="2" accesskey="H">Home</a></li>
-        <li>Azienda</li>
-        <li><a href="quotator.php" tabindex="3" accesskey="P">Preventivatore</a></li>
-        <li><a href="contatti.xhtml" tabindex="4" accesskey="C">Contatti</a></li>
+        <li><a href="index.php" xml:lang="en" tabindex="0" accesskey="H">Home</a></li>
+        <li tabindex="0">Azienda</li>
+        <li><a href="quotator.php" tabindex="0" accesskey="P">Preventivatore</a></li>
+        <li><a href="contatti.xhtml" tabindex="0" accesskey="C">Contatti</a></li>
 <!--        <li><a href="login.xhtml" tabindex="5" accesskey="A">Accedi come admin</a></li>-->
 <!--        <li><a href="xhtml/gestioneForm.xhtml" tabindex="6" accesskey="G">Gestione Form</a></li>-->
 <!--        <li><a href="xhtml/quotationList.xhtml" tabindex="7" accesskey="L">Lista preventivi</a></li>-->
@@ -43,23 +45,27 @@
 </div>
 
 <div id="content">
-    <h2>La nostra azienda</h2>
-    <p>
-        L'impresa funebre SleekParadise è una realtà giovane nata nel 1970,
-        che in poco tempo è riuscita a ricoprire un ruolo di rilievo nel mercato.
-        L'azienda si basa sull'ampia esperienza dei propri collaboratori in ambito
-        artigianale ed manageriale, garantendo un alta qualità di prodotto e di
-        servizio offerti. Questo ha fatto si che la compagine potesse ampliare
-        rapidamente la propria offerta sia nel territorio Veneto che nazionale.
-        Inoltre nel corso degli anni SleekParadise ha saputo rinnovarsi, restando
-        al passo con i tempi e con le nuove metodologie, pur restando fedeli alle
-        proprie origini ed usanze.
-    </p>
+    <div class="text">
+        <h2 tabindex="0">La nostra azienda</h2>
+        <p tabindex="0">
+            L'impresa funebre SleekParadise è una realtà giovane nata nel 1970,
+            che in poco tempo è riuscita a ricoprire un ruolo di rilievo nel mercato.
+            L'azienda si basa sull'ampia esperienza dei propri collaboratori in ambito
+            artigianale ed manageriale, garantendo un alta qualità di prodotto e di
+            servizio offerti. Questo ha fatto si che la compagine potesse ampliare
+            rapidamente la propria offerta sia nel territorio Veneto che nazionale.
+            Inoltre nel corso degli anni SleekParadise ha saputo rinnovarsi, restando
+            al passo con i tempi e con le nuove metodologie, pur restando fedeli alle
+            proprie origini ed usanze.
+        </p>
+    </div>
 
     <p id="noi">
-       <img src="img/siamonoi.jpg" alt="dipendenti"/>
+       <img src="img/siamonoi.jpg" alt="immagine dei dipendenti"/>
     </p>
 </div>
+
+<a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
 
 <div id="footer">
     <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
