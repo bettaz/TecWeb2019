@@ -31,3 +31,9 @@ select{
     margin-top: 1%;
     font-size: 100%;
 }
+
+.hidden {
+    position:absolute;
+    height:0;
+    overflow:hidden;
+}
