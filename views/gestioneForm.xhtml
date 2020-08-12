@@ -21,13 +21,15 @@
     <script type="text/javascript" src="js/gestioneForm.js"></script>
 </head>
 <body>
-<div id="header">
+<div id="header" tabindex="0">
     <h1 xml:lang="en">SleekParadise</h1>
 </div>
 
-<div id="breadcrumb">
+<div id="breadcrumb" tabindex="0">
     <p>Ti trovi in: Rimozione elementi </p>
 </div>
+
+<a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
 
 <div id="menu">
     <ul>
@@ -36,21 +38,21 @@
 <!--        <li><a href="../preventivatore.xhtml" tabindex="5" accesskey="P">Preventivatore</a></li>-->
 <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
 <!--        <li>Accedi come admin</li>-->
-        <li><a href="admin.php" tabindex="7" accesskey="L">Lista Preventivi</a></li>
-        <li>Rimozione elementi</li>
-        <li><a href="gestioneAuto.php" tabindex="0" accesskey="A">Aggiungi auto</a></li>
-        <li><a href="gestioneCerimonia.php" tabindex="0" accesskey="C">Aggiungi cerimonia</a></li>
-        <li><a href="gestioneBare.php" tabindex="0" accesskey="B">Aggiungi bara</a></li>
-        <li><a href="gestioneUrne.php" tabindex="0" accesskey="N">Aggiungi urna</a></li>
-        <li><a href="gestioneFiori.php" tabindex="0" accesskey="F">Aggiungi fiori</a></li>
-        <li><a href="manageUsers.php" tabindex="8" accesskey="U">Cambio Password</a> </li>
-        <li><a href="bin/logout.php" tabindex="9" accesskey="E">Esci</a> </li>
+        <li><a href="admin.php" tabindex="0" accesskey="L">Lista Preventivi</a></li>
+        <li class="subMenu" tabindex="0">- Rimozione elementi</li>
+        <li class="subMenu"><a href="gestioneAuto.php" tabindex="0" accesskey="A">- Aggiungi auto</a></li>
+        <li class="subMenu"><a href="gestioneCerimonia.php" tabindex="0" accesskey="C">- Aggiungi cerimonia</a></li>
+        <li class="subMenu"><a href="gestioneBare.php" tabindex="0" accesskey="B">- Aggiungi bara</a></li>
+        <li class="subMenu"><a href="gestioneUrne.php" tabindex="0" accesskey="N">- Aggiungi urna</a></li>
+        <li class="subMenu"><a href="gestioneFiori.php" tabindex="0" accesskey="F">- Aggiungi fiori</a></li>
+        <li><a href="manageUsers.php" tabindex="0" accesskey="U">Cambio Password</a> </li>
+        <li><a href="bin/logout.php" tabindex="0" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
 <div id="content">
-    <h2>Rimuovi elementi</h2>
-    <p>
+    <h2 tabindex="0">Rimuovi elementi</h2>
+    <p tabindex="0">
         Qui è possibile rimuovere i prodotti offerti dall'azienda non più disponibili.
     </p>
     <!---<form action="gestioneForm.php" method="post" id="frmauto">
@@ -94,7 +96,7 @@
 
     <form action="gestioneForm.php" method="post">
         <fieldset class="contenitore">
-            <legend>Rimuovi prodotto</legend>
+            <legend tabindex="0">Rimuovi prodotto</legend>
             <div class="linea">
                 <label for="nomeRemoveP">Nome:</label>
                 <select name="nomeRemoveP" id="nomeRemoveP">
@@ -108,6 +110,9 @@
     </form>
 
 </div>
+
+
+<a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
 
 <div id="footer">
     <img src="img/valid-xhtml10.png" alt="XHTML valido"/>

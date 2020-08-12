@@ -17,10 +17,10 @@ if($res = $connection->Query("SELECT cf code, nomeCliente name, cognomeCliente s
 			<form action='viewDetail.php'>
 				<div class=\"linea\">
 			        <ul>
-			            <li>Codice cliente: $code</li>
-			            <li>Nome cliente: $name</li>
-			            <li>Cognome cliente: $surname</li>
-			            <li>Data preventivo: $date</li>
+			            <li tabindex=\"0\">Codice cliente: $code</li>
+			            <li tabindex=\"0\">Nome cliente: $name</li>
+			            <li tabindex=\"0\">Cognome cliente: $surname</li>
+			            <li tabindex=\"0\">Data preventivo: $date</li>
 			        </ul>
 			        <input type=\"hidden\" value=\"$code\" name=\"code\"/>
 		            <input type=\"submit\" value=\"Visualizza\"/>

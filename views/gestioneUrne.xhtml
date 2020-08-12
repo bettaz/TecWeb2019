@@ -22,13 +22,15 @@
     <script type="text/javascript" src="js/gestioneUrne.js"></script>
 </head>
 <body>
-<div id="header">
+<div id="header" tabindex="0">
     <h1 xml:lang="en">SleekParadise</h1>
 </div>
 
-<div id="breadcrumb">
+<div id="breadcrumb" tabindex="0">
     <p>Ti trovi in: Aggiungi urna </p>
 </div>
+
+<a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
 
 <div id="menu">
     <ul>
@@ -37,27 +39,27 @@
 <!--        <li><a href="../preventivatore.xhtml" tabindex="5" accesskey="P">Preventivatore</a></li>-->
 <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
 <!--        <li>Accedi come admin</li>-->
-        <li><a href="admin.php" tabindex="7" accesskey="L">Lista Preventivi</a></li>
-        <li><a href="gestioneForm.php" tabindex="0" accesskey="G">Rimozione elementi</a></li>
-        <li><a href="gestioneAuto.php" tabindex="0" accesskey="A">Aggiungi auto</a></li>
-        <li><a href="gestioneCerimonia.php" tabindex="0" accesskey="C">Aggiungi cerimonia</a></li>
-        <li><a href="gestioneBare.php" tabindex="0" accesskey="B">Aggiungi bara</a></li>
-        <li>Aggiungi urna</li>
-        <li><a href="gestioneFiori.php" tabindex="0" accesskey="F">Aggiungi fiori</a></li>
-        <li><a href="manageUsers.php" tabindex="8" accesskey="U">Cambio Password</a> </li>
-        <li><a href="bin/logout.php" tabindex="9" accesskey="E">Esci</a> </li>
+        <li><a href="admin.php" tabindex="0" accesskey="L">Lista Preventivi</a></li>
+        <li><a href="gestioneForm.php" tabindex="0" accesskey="G">- Rimozione elementi</a></li>
+        <li><a href="gestioneAuto.php" tabindex="0" accesskey="A">- Aggiungi auto</a></li>
+        <li><a href="gestioneCerimonia.php" tabindex="0" accesskey="C">- Aggiungi cerimonia</a></li>
+        <li><a href="gestioneBare.php" tabindex="0" accesskey="B">- Aggiungi bara</a></li>
+        <li tabindex="0">- Aggiungi urna</li>
+        <li><a href="gestioneFiori.php" tabindex="0" accesskey="F">- Aggiungi fiori</a></li>
+        <li><a href="manageUsers.php" tabindex="0" accesskey="U">Cambio Password</a> </li>
+        <li><a href="bin/logout.php" tabindex="0" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
 <div id="content">
-    <h2>Inserimento urna</h2>
-    <p>
+    <h2 tabindex="0">Inserimento urna</h2>
+    <p tabindex="0">
         Qui è possibile aggiungere nuovi modelli di urne offerti dall'azioneda.
     </p>
     <message/>
     <form action="gestioneUrne.php" method="post" id="frmUrne">
         <fieldset class="contenitore">
-            <legend>Aggiungi urna</legend>
+            <legend tabindex="0">Aggiungi urna</legend>
             <div class="linea">
                 <label for="nomeU">Nome:</label>
                 <input name="nomeU" id="nomeU" maxlength="40"/>
@@ -74,6 +76,8 @@
         </fieldset>
     </form>
 </div>
+
+<a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
 
 <div id="footer">
     <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
