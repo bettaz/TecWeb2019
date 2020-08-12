@@ -22,15 +22,17 @@
     <script type="text/javascript" src="js/gestioneAuto.js"></script>
 </head>
 <body>
-<div id="header" tabindex="0">
+<div id="header">
     <h1 xml:lang="en">SleekParadise</h1>
 </div>
 
-<div id="breadcrumb" tabindex="0">
+<div id="breadcrumb">
     <p>Ti trovi in: Aggiungi auto </p>
+
+    <a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
 </div>
 
-<a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
+
 
 <div id="menu">
     <ul>
@@ -41,7 +43,7 @@
 <!--        <li>Accedi come admin</li>-->
         <li><a href="admin.php" tabindex="0" accesskey="L">Lista Preventivi</a></li>
         <li><a href="gestioneForm.php" tabindex="0" accesskey="G">- Rimozione elementi</a></li>
-        <li tabindex="0">- Aggiungi auto</li>
+        <li>- Aggiungi auto</li>
         <li><a href="gestioneCerimonia.php" tabindex="0" accesskey="C">- Aggiungi cerimonia</a></li>
         <li><a href="gestioneBare.php" tabindex="0" accesskey="B">- Aggiungi bara</a></li>
         <li><a href="gestioneUrne.php" tabindex="0" accesskey="N">- Aggiungi urna</a></li>
@@ -52,14 +54,14 @@
 </div>
 
 <div id="content">
-    <h2 tabindex="0">Inserimento auto</h2>
-    <p tabindex="0">
+    <h2>Inserimento auto</h2>
+    <p>
         Qui è possibile ingrandire il parco auto offerto dall'azienda aggiungendo nuove auto.
     </p>
     <message/>
     <form action="gestioneAuto.php" method="post" id="frmAuto">
         <fieldset class="contenitore">
-            <legend tabindex="0">Aggiungi auto</legend>
+            <legend>Aggiungi auto</legend>
             <div class="linea">
                 <label for="nomeMarca">Marca:</label>
                 <input name="nomeMarca" id="nomeMarca" maxlength="40" tabindex="0"/>
@@ -79,9 +81,11 @@
             <input type="submit" tabindex="0" value="Aggiungi"/>
         </fieldset>
     </form>
+
+    <a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
 </div>
 
-<a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
+
 
 <div id="footer">
     <img src="img/valid-xhtml10.png" alt="XHTML valido"/>

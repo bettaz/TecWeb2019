@@ -22,15 +22,15 @@
     <script type="text/javascript" src="js/gestioneFiori.js"></script>
 </head>
 <body>
-<div id="header" tabindex="0">
+<div id="header">
     <h1 xml:lang="en">SleekParadise</h1>
 </div>
 
-<div id="breadcrumb" tabindex="0">
+<div id="breadcrumb">
     <p>Ti trovi in: Aggiungi fiori </p>
-</div>
 
-<a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
+    <a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
+</div>
 
 <div id="menu">
     <ul>
@@ -45,21 +45,21 @@
         <li><a href="gestioneCerimonia.php" tabindex="0" accesskey="C">- Aggiungi cerimonia</a></li>
         <li><a href="gestioneBare.php" tabindex="0" accesskey="B">- Aggiungi bara</a></li>
         <li><a href="gestioneUrne.php" tabindex="0" accesskey="N">- Aggiungi urna</a></li>
-        <li tabindex="0">- Aggiungi fiori</li>
+        <li>- Aggiungi fiori</li>
         <li><a href="manageUsers.php" tabindex="0" accesskey="U">Cambio Password</a> </li>
         <li><a href="bin/logout.php" tabindex="0" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
 <div id="content">
-    <h2 tabindex="0">Inserimento composizioni floreali</h2>
-    <p tabindex="0">
+    <h2>Inserimento composizioni floreali</h2>
+    <p>
         Qui è possibile aggiungere nuove composizioni floreali offerte dall'azioneda.
     </p>
     <message/>
     <form action="gestioneFiori.php" method="post" id="frmFiori">
         <fieldset class="contenitore">
-            <legend tabindex="0">Aggiungi composizione</legend>
+            <legend>Aggiungi composizione</legend>
             <div class="linea">
                 <label for="nomeF">Nome:</label>
                 <input name="nomeF" id="nomeF" maxlength="40" tabindex="0"/>
@@ -71,9 +71,9 @@
             <input type="submit" tabindex="0" value="Aggiungi"/>
         </fieldset>
     </form>
-</div>
 
-<a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
+    <a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
+</div>
 
 <div id="footer">
     <img src="img/valid-xhtml10.png" alt="XHTML valido"/>

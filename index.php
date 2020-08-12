@@ -6,10 +6,11 @@ $news = '<div id="news">';
 if($result){
     $news .= ' <h3 id="tnews" tabindex="0">Necrologi</h3> <ul>';
     while ($row = $result->fetch_assoc()){
-        $news .= sprintf('<li tabindex="0">%s %s %s</li>', $row['nome'], $row['cognome'],
+        $news .= sprintf('<li>%s %s %s</li>', $row['nome'], $row['cognome'],
 	        $row['data']);
     }
     $news .= '</ul>';
+    $news .= '<a class="hidden" href="#breadcrumb" tabindex="0">torna all\'inizio</a>';
     $result->free_result();
 }
 else
