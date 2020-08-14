@@ -95,3 +95,9 @@ img{
     visibility: hidden;
     display: none;
 }
+
+.hidden {
+    position:absolute;
+    height:0;
+    overflow:hidden;
+}

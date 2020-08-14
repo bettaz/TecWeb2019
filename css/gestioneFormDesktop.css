@@ -71,3 +71,16 @@
     width: 32%;
     font-size: 140%;
 }
+
+#content ul{
+    padding-top: 2%;
+    padding-left: 10%;
+}
+
+#content li{
+    padding-top: 2%;
+}
+
+#content p{
+    padding-top: 2%;
+}

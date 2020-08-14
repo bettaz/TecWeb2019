@@ -16,7 +16,7 @@ p{
 
 #content ul{
     margin-left: 2%;
-    line-height: 130%;
+    line-height: 170%;
 }
 
 input[type='text'] {
@@ -32,4 +32,5 @@ input[type='submit']{
     width: 100%;
     margin-top: 5%;
     margin-bottom: 3%;
+    font-size: 140%;
 }
