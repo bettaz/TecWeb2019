@@ -4,7 +4,7 @@ $connection = new Connection();
 $result = $connection->Query("SELECT nomeDefunto AS nome, cognomeDefunto AS cognome, dataDecesso AS data  FROM defunti WHERE isPublic IS TRUE LIMIT 0,3");
 $news = '<div id="news">';
 if($result){
-    $news .= ' <h3 id="tnews" tabindex="0">Necrologi</h3> <ul>';
+    $news .= ' <h3 id="tnews">Necrologi</h3> <ul>';
     while ($row = $result->fetch_assoc()){
         $news .= sprintf('<li>%s %s %s</li>', $row['nome'], $row['cognome'],
 	        $row['data']);
