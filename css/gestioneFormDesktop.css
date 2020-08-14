@@ -3,6 +3,10 @@
 @import "menu.css";
 @import "footer.css";
 
+#content p{
+    margin-top: 2%;
+}
+
 #content{
     top: 100%;
     float: left;

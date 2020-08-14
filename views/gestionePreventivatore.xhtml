@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Aggiungi bara</title>
+    <title>Gestione Preventivatore</title>
 
     <meta name="title" content="SleekParadise, sito di onoranze funebri" />
     <meta name="description" content="Pagina che fornisce la lista dei preventivi richiesti dai clienti" />
@@ -15,11 +15,11 @@
     <meta name="author" content="Alessio Bettarello, Mattia Gottardello, Olivier Utshudi, Nicolo Sartor" />
     <!-- link dei css -->
     <link rel="stylesheet" href="css/gestioneFormMobile.css" media="screen and (max-width:720px)" />
-    <link rel="stylesheet" href="css/gestioneFormDesktop.css" media="screen and (min-width: 721px)" />
+    <link rel="stylesheet" href="css/gestionePreventivatoreDesktop.css" media="screen and (min-width: 721px)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script type="text/javascript" src="js/focusLib.js"></script>
-    <script type="text/javascript" src="js/gestioneBare.js"></script>
+   <!-- <script type="text/javascript" src="js/gestioneUtenti.js"></script> -->
+
 </head>
 <body>
 <div id="header">
@@ -27,7 +27,7 @@
 </div>
 
 <div id="breadcrumb">
-    <p>Ti trovi in: Aggiungi bara </p>
+    <p>Ti trovi in: Gestione Preventivatore </p>
 
     <a class="hidden" href="#content" tabindex="0"> Vai al contenuto</a>
 </div>
@@ -41,45 +41,29 @@
 <!--        <li><a href="../preventivatore.xhtml" tabindex="5" accesskey="P">Preventivatore</a></li>-->
 <!--        <li><a href="../contatti.xhtml" accesskey="C" tabindex="6">Contatti</a></li>-->
 <!--        <li>Accedi come admin</li>-->
-        <li>Gestione Preventivatore
-            <ul>
-                <li>Aggiungi bara</li>
-                <li><a href="gestionePreventivatore.php" tabindex="0" accesskey="U">Torna in dietro</a> </li>
-                <li><a href="bin/logout.php" tabindex="0" accesskey="E">Esci</a> </li>   
-            </ul>
-        </li>
+        <li><a href="admin.php" tabindex="0" accesskey="L">Lista Preventivi</a></li>
+        <li>Gestione Preventivatore</li>
+        <li><a href="manageUsers.php" tabindex="0" accesskey="U">Cambio Password</a> </li>
+        <li><a href="bin/logout.php" tabindex="0" accesskey="E">Esci</a> </li>
     </ul>
 </div>
 
 <div id="content">
-    <h2 >Inserimento bara</h2>
+    <h2>Gestione Preventivatore</h2>
     <p>
-        Qui è possibile aggiungere nuovi modelli di bare offerti dall'azienda.
+        Tramite queste pagine è possibile modificare le entità visualizzate nella pagina del preventivatore, rimuovendo o aggiungendo un elemento in quelli visualizzati.
     </p>
-    <message/>
-    <form action="gestioneBare.php" method="post" id="frmBare">
-        <fieldset class="contenitore">
-            <legend>Aggiungi bara</legend>
-            <div class="linea">
-                <label for="nomeB">Nome:</label>
-                <input name="nomeB" id="nomeB" maxlength="40" tabindex="0"/>
-            </div>
-            <div class="linea">
-                <label for="nomeMatB">Materiale:</label>
-                <input name="nomeMatB" id="nomeMatB" maxlength="40" tabindex="0"/>
-            </div>
-            <div class="linea">
-                <label for="prezzoB">Prezzo:</label>
-                <input name="prezzoB" id="prezzoB" maxlength="9" tabindex="0"/>
-            </div>
-            <input type="submit" tabindex="0" value="Aggiungi"/>
-        </fieldset>
-    </form>
+    <ul>
+        <li><a href="gestioneForm.php" tabindex="0" accesskey="G">Rimozione elementi</a></li>
+        <li><a href="gestioneCerimonia.php" tabindex="0" accesskey="A">Aggiungi cerimonia</a></li>
+        <li><a href="gestioneAuto.php" tabindex="0" accesskey="A">Aggiungi auto</a></li>
+        <li><a href="gestioneBare.php" tabindex="0" accesskey="B">Aggiungi bara</a></li>
+        <li><a href="gestioneUrne.php" tabindex="0" accesskey="N">Aggiungi urna</a></li>
+        <li><a href="gestioneFiori.php" tabindex="0" accesskey="F">Aggiungi fiori</a></li>
+    </ul>
 
     <a class="hidden" href="#breadcrumb" tabindex="0">torna all'inizio</a>
 </div>
-
-
 
 <div id="footer">
     <img src="img/valid-xhtml10.png" alt="XHTML valido"/>
