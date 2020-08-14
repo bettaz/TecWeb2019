@@ -63,3 +63,7 @@ button {
 fieldset {
 	border: 0;
 }
+
+.error {
+	margin-right: 5%;
+}

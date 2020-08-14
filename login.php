@@ -25,7 +25,7 @@ if(isset($_POST['uname'])) {
 					}
 					else {
 						$_SESSION['logged'] = false;
-						$error = '<div class="error">Log-in invalido</div>';
+						$error = '<div class="error">Log-in non corretto</div>';
 					}
 				}
 			}
