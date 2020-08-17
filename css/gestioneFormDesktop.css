@@ -84,3 +84,7 @@
 #content p{
     padding-top: 2%;
 }
+
+.selected{
+    padding-left: 6%;
+}
