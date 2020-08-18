@@ -8,9 +8,10 @@
 #menu ul{
     margin-top: 5%;
     padding:1%;
-    list-style-type:none;
+    
 }
 
 #menu li{
     margin-top: 5%;
+    list-style-type:none;
 }
