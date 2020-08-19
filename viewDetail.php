@@ -34,7 +34,7 @@ FROM defunti d
     LEFT JOIN urne u ON d.idUrna=u.id
 WHERE cf = '$clean_input'");
 
-if($data = $resource->fetch_assoc()){
+if($data = $resource?$resource->fetch_assoc():false){
     $cerimonia=sprintf("%s - %.02f€",$data['tipoCerim'],$data['costoCerim']);
     $auto=sprintf("%s - %s %s cc - %.02f€",$data['marcaCarro'],
         $data['modelloCarro'],$data['cilindrataCarro'],$data['costoCarro']);

@@ -146,7 +146,7 @@ $auto_res = $connection->Query("SELECT * FROM auto");
 $fiori_res = $connection->Query("SELECT * FROM composizioni");
 $cer_res = $connection->Query("SELECT * FROM cerimonie");
 $cerimonie = '';
-while($row= $cer_res->fetch_assoc()){
+while($row= $cer_res?$cer_res->fetch_assoc():false){
 	$id=$row['id'];
 	$tipo = $row['tipologia'];
 	$prezzo=$row['costoBase'];
@@ -154,7 +154,7 @@ while($row= $cer_res->fetch_assoc()){
 			&&$_POST['cerimonia']==$id)?$selectStatement:'').">$tipo - $prezzo €</option>";
 }
 $bare='';
-while($row = $bara_res->fetch_assoc()){
+while($row = $bara_res?$bara_res->fetch_assoc():false){
 	$id=$row['id'];
 	$desc = $row['versione'];
 	$prezzo = $row['costoBase'];
@@ -163,7 +163,7 @@ while($row = $bara_res->fetch_assoc()){
 			&&$_POST['bara']==$id)?$selectStatement:'').">$desc - $mat - $prezzo €</option>";
 }
 $urne='';
-while($row = $urna_res->fetch_assoc()){
+while($row = $urna_res?$urna_res->fetch_assoc():false){
 	$id=$row['id'];
 	$desc = $row['versione'];
 	$prezzo = $row['costoBase'];
@@ -172,7 +172,7 @@ while($row = $urna_res->fetch_assoc()){
 			&&$_POST['urna']==$id)?$selectStatement:'').">$desc - $mat - $prezzo €</option>";
 }
 $autos='';
-while($row = $auto_res->fetch_assoc()){
+while($row = $auto_res?$auto_res->fetch_assoc():false){
 	$id=$row['id'];
 	$modello = $row['modello'];
 	$prezzo = $row['costoBase'];
@@ -182,7 +182,7 @@ while($row = $auto_res->fetch_assoc()){
 		&&$_POST['auto']==$id)?$selectStatement:'').">$marca - $modello - $cilindrata cc - $prezzo €</option>";
 }
 $fiori = '';
-while($row = $fiori_res->fetch_assoc()){
+while($row = $fiori_res?$fiori_res->fetch_assoc():false){
 	$id=$row['id'];
 	$nome = $row['nome'];
 	$prezzo = $row['costoBase'];
