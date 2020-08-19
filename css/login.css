@@ -64,6 +64,6 @@ fieldset {
 	border: 0;
 }
 
-.error {
+#error {
 	margin-right: 5%;
 }

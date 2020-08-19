@@ -12,13 +12,13 @@ $error = '';
 
 if(isset($_POST['nomeB'])){
 	if($_POST['nomeB'] == ''){
-		$error = '<div class="error">Inserire il nome della bara!</div>';
+		$error = '<div id="errors">Inserire il nome della bara!</div>';
 	} else {
 		if($_POST['nomeMatB'] == ''){
-			$error = '<div class="error">Inserire il materiale della bara!</div>';
+			$error = '<div id="errors">Inserire il materiale della bara!</div>';
 		} else {
 			if($_POST['prezzoB'] == ''){
-				$error = '<div class="error">Inserire il prezzo della bara!</div>';
+				$error = '<div id="errors">Inserire il prezzo della bara!</div>';
 			} else {
 				$nomeB = $_POST['nomeB'];
 				$materiale = $_POST['nomeMatB'];
@@ -33,7 +33,7 @@ if(isset($_POST['nomeB'])){
 					$error = '<div class="message">Bara inserita correttamente</div>';
 				}
 				else{
-					$error = '<div class="error">Impossibile inserire la bara</div>';
+					$error = '<div id="errors">Impossibile inserire la bara</div>';
 				}
 			}
 		}

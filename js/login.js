@@ -17,10 +17,13 @@ function check(form){
             tag="uname";
         else
             tag="password";
-        let errors = document.createElement("div");
-        errors.id = "errors";
-        errors.className = "linea";
-        errors.tabIndex=0;
+        let errorDiv = document.getElementById("errors");
+        if(errorDiv)
+            document.getElementById("errors").remove();
+        errorDiv = document.createElement("div");
+        errorDiv.id = "errors";
+        errorDiv.className = "linea";
+        errorDiv.tabIndex=0;
         let paragraph = document.createElement("p");
         let anchor = document.createElement("a");
         anchor.tabIndex = 0;
@@ -28,11 +31,11 @@ function check(form){
         anchor.onkeyup = event => keyFocus(event,tag);
         anchor.innerText = suggestions[tag];
         paragraph.appendChild(anchor);
-        errors.appendChild(paragraph);
+        errorDiv.appendChild(paragraph);
         if (document.getElementById("errors"))
             document.getElementById("errors").remove();
-        document.getElementById("content").insertBefore(errors,form);
-        errors.focus();
+        document.getElementById("content").insertBefore(errorDiv,form);
+        errorDiv.focus();
     }
     else {
         form.submit();

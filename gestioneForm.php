@@ -4,10 +4,9 @@ if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
 	error_log('non auth user trying to access admin, redirected to login');
 	header('Location: login.php');
 }
-if(isset($_POST['tipoAddP'])){
-	// TODO insert checks and add record to the table
-	echo '';
-}
+require_once 'bin/Connection.php';
+$connection = new Connection();
+
 // TODO verificare errore in rimozione
 if(isset($_POST['nomeRemoveP'])){
 	$full_qualifier= $_POST['nomeRemoveP'];
