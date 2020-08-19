@@ -8,7 +8,10 @@ function check(form) {
     const oldPwd = document.getElementById("passwordAttuale").value;
     const newPwd = document.getElementById("passwordNuova").value;
     const confirmPwd = document.getElementById("confirmPassword").value;
-    let errorDiv = document.createElement("div");
+    let errorDiv = document.getElementById("errors");
+    if(errorDiv)
+        document.getElementById("errors").remove();
+    errorDiv = document.createElement("div");
     errorDiv.id = "errors";
     errorDiv.className = "linea";
     errorDiv.tabIndex = -1;
