@@ -5,6 +5,7 @@ $connection = new Connection();
 $errors='';
 $quot_file = fopen('./views/preventivatore.xhtml','r');
 $quot_content = fread($quot_file,filesize('./views/preventivatore.xhtml'));
+fclose($quot_file);
 if(isset($_POST['cf'])){
 	$textRegex = '^([A-Z]|[a-z]|\ )+^';
 	$dateRegex = '^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])^';
@@ -136,6 +137,7 @@ if(isset($_POST['cf'])){
 $selectStatement = 'selected="selected"';
 $province_file = fopen('views/partials/province.xml','r');
 $province_content = fread($province_file, filesize('views/partials/province.xml'));
+fclose($province_file);
 if(isset($_POST['provincia'])){
 	$province_content = str_replace("value=\"$provincia\"","value=\"$provincia\" selected=\"selected\"",$province_content);
 }

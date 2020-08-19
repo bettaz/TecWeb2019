@@ -42,6 +42,7 @@ if(isset($_POST['nomeU'])){
 
 $usr_mng_file= fopen('views/gestioneUrne.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneUrne.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;
 

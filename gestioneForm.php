@@ -63,6 +63,7 @@ while ($row = $funeral_res?$funeral_res->fetch_assoc():false){
 }
 $management_file = fopen('views/gestioneForm.xhtml','r');
 $man_content = fread($management_file,filesize('views/gestioneForm.xhtml'));
+fclose($management_file);
 $man_content = str_replace('<elementlist/>',$option_list,$man_content);
 $man_content = str_replace('<deleteerror/>',isset($del_error)
 	?$del_error:'',$man_content);

@@ -39,6 +39,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
 try {
 	$file = fopen('views/login.xhtml','r');
 	$content = fread($file,filesize('views/login.xhtml'));
+	fclose($file);
 	$loginpage_errored = str_replace('<error/>',isset($error)?$error:'',
 		$content);
 	$loginpage = str_replace('<olduname/>',isset($_POST['uname'])?$_POST['uname']:'',$loginpage_errored);

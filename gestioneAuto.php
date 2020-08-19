@@ -48,5 +48,6 @@ if(isset($_POST['nomeMarca'])){
 
 $usr_mng_file= fopen('views/gestioneAuto.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneAuto.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;

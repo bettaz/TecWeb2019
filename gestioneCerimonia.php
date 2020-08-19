@@ -37,6 +37,7 @@ if(isset($_POST['tipolog'])){
 
 $usr_mng_file= fopen('views/gestioneCerimonia.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneCerimonia.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;
 

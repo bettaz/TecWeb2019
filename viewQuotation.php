@@ -53,6 +53,7 @@ if ($dead_data=$base_record?$base_record->fetch_assoc():false){
 }
 $view_file=fopen('views/preventivatoreAnteprima.xhtml','r');
 $view = fread($view_file,filesize('views/preventivatoreAnteprima.xhtml'));
+fclose($view_file);
 $view = str_replace('<cf/>',$cf,$view);
 $view = str_replace('<namD/>',$namD,$view);
 $view = str_replace('<surD/>',$surD,$view);

@@ -51,6 +51,7 @@ if($data = $resource?$resource->fetch_assoc():false){
     $scontato=isset($data['proposta'])?$data['proposta']."€":'Ancora da valutare';
     $detail_file = fopen('views/singleQuotation.xhtml','r');
     $detail_content = fread($detail_file,filesize('views/singleQuotation.xhtml'));
+    fclose($detail_file);
     $content = str_replace('<idquotation/>',$data['cf'],$detail_content);
     $content = str_replace('<rdate/>',$data['data'],$content);
     $content = str_replace('<ncustomer/>',$data['nomeCliente'],$content);

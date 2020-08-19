@@ -50,5 +50,6 @@ if(isset($_POST['passwordAttuale'])) {
 }
 $usr_mng_file= fopen('views/gestioneUtenti.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneUtenti.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;

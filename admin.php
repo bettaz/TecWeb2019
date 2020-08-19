@@ -31,5 +31,6 @@ if($res = $connection->Query("SELECT cf code, nomeCliente name, cognomeCliente s
 $list .= "</div>";
 $view_file = fopen('views/quotationList.xhtml','r');
 $placeholded = fread($view_file, filesize('views/quotationList.xhtml'));
+fclose($view_file);
 $content = str_replace('<prevlist/>',$list,$placeholded);
 echo $content;
