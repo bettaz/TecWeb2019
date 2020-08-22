@@ -9,23 +9,23 @@ $connection = new Connection();
 $error ='';
 if(isset($_POST['passwordAttuale'])) {
 	if ($_POST['passwordAttuale'] == '')
-		$error = '<div class="error">Inserire la vecchia password!</div>';
+		$error = '<div id="errors">Inserire la vecchia password!</div>';
 	else{
 		if ($_POST['passwordNuova'] == '')
-			$error = '<div class="error">Inserire la nuova password!</div>';
+			$error = '<div id="errors">Inserire la nuova password!</div>';
 		else{
 			if ($_POST['confirmPassword'] == '')
-				$error = '<div class="error">Inserire la conferma password!</div>';
+				$error = '<div id="errors">Inserire la conferma password!</div>';
 			else {
 				if ($_POST['passwordAttuale'] != $connection->escape($_POST['passwordAttuale']))
-					$error ='<div class="error">La vecchia password inserita puo\' violare il database</div>';
+					$error ='<div id="errors">La vecchia password inserita puo\' violare il database</div>';
 				else {
 					if ($_POST['passwordNuova'] != $connection->escape
 						($_POST['passwordNuova']))
-						$error ='<div class="error">La nuova password inserita puo\' violare il database</div>';
+						$error ='<div id="errors">La nuova password inserita puo\' violare il database</div>';
 					else{
 						if($_POST['passwordNuova']!=$_POST['confirmPassword'])
-							$error = '<div class="error">Le password immesse non coincidono</div>';
+							$error = '<div id="errors">Le password immesse non coincidono</div>';
 						else{
 							$username = $_SESSION['user'];
 							$password = $connection->escape($_POST['passwordAttuale']);
@@ -37,10 +37,10 @@ if(isset($_POST['passwordAttuale'])) {
 								if($res)
 									$error = '<div class="message">Password modificata correttamente</div>';
 								else
-									$error = '<div class="error">Impossibile cambiare la password</div>';
+									$error = '<div id="errors">Impossibile cambiare la password</div>';
 							}
 							else
-								$error = '<div class="error">La vecchia password non e\' corretta</div>';
+								$error = '<div id="errors">La vecchia password non e\' corretta</div>';
 						}
 					}
 				}
@@ -50,5 +50,6 @@ if(isset($_POST['passwordAttuale'])) {
 }
 $usr_mng_file= fopen('views/gestioneUtenti.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneUtenti.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;

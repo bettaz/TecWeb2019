@@ -12,10 +12,10 @@ $error = '';
 
 if(isset($_POST['nomeF'])){
 	if($_POST['nomeF'] == ''){
-		$error = '<div class="error">Inserire il nome della composizione!</div>';
+		$error = '<div id="errors">Inserire il nome della composizione!</div>';
 	} else {
 		if($_POST['prezzoF'] == ''){
-			$error = '<div class="error">Inserire il prezzo della composizione!</div>';
+			$error = '<div id="errors">Inserire il prezzo della composizione!</div>';
 		} else {
 			$nomeF = $_POST['nomeF'];
 			$prezzoF = $_POST['prezzoF'];
@@ -29,7 +29,7 @@ if(isset($_POST['nomeF'])){
 				$error = '<div class="message">Composizione inserita correttamente</div>';
 			}
 			else{
-				$error = '<div class="error">Impossibile inserire la composizione</div>';
+				$error = '<div id="errors">Impossibile inserire la composizione</div>';
 			}
 		}
 	}
@@ -37,6 +37,7 @@ if(isset($_POST['nomeF'])){
 
 $usr_mng_file= fopen('views/gestioneFiori.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneFiori.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;
 

@@ -13,16 +13,16 @@ $error = '';
 
 if(isset($_POST['nomeMarca'])){
 	if($_POST['nomeMarca'] == ''){
-		$error = '<div class="error">Inserire il nome della marca dell\'auto!</div>';
+		$error = '<div id="errors">Inserire il nome della marca dell\'auto!</div>';
 	} else {
 		if($_POST['nomeModello'] == ''){
-			$error = '<div class="error">Inserire il nome del modello dell\'auto!</div>';
+			$error = '<div id="errors">Inserire il nome del modello dell\'auto!</div>';
 		} else {
 			if($_POST['prezzoA'] == ''){
-				$error = '<div class="error">Inserire il prezzo dell\'utilizzo dell\'auto!</div>';
+				$error = '<div id="errors">Inserire il prezzo dell\'utilizzo dell\'auto!</div>';
 			} else {
 				if($_POST['cilindr'] == ''){
-					$error = '<div class="error">Inserire il prezzo dell\'utilizzo dell\'auto!</div>';
+					$error = '<div id="errors">Inserire il prezzo dell\'utilizzo dell\'auto!</div>';
 				} else {
 					$marca = $_POST['nomeMarca'];
 					$modello = $_POST['nomeModello'];
@@ -38,7 +38,7 @@ if(isset($_POST['nomeMarca'])){
 						$error = '<div class="message">Auto inserita correttamente</div>';
 					}
 					else{
-						$error = '<div class="error">Impossibile inserire l\'auto</div>';
+						$error = '<div id="errors">Impossibile inserire l\'auto</div>';
 					}
 				}
 			}
@@ -48,5 +48,6 @@ if(isset($_POST['nomeMarca'])){
 
 $usr_mng_file= fopen('views/gestioneAuto.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneAuto.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;

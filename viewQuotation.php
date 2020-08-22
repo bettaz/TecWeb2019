@@ -21,7 +21,7 @@ FROM defunti JOIN cerimonie ON defunti.idCerimonia=cerimonie.id
 	    		ORDER BY data DESC limit 0,1");
 $urna_flag = $scontato_flag=false;
 
-if ($dead_data=$base_record->fetch_assoc()){
+if ($dead_data=$base_record?$base_record->fetch_assoc():false){
 	$cf=$dead_data['cf'];
 	$namD=$dead_data['namD'];
 	$surD=$dead_data['surD'];
@@ -42,15 +42,18 @@ if ($dead_data=$base_record->fetch_assoc()){
 		$urna_res = $connection->Query("
 		SELECT * FROM urne WHERE id='$idUrna'
 		");
-		$urna_flag=$urna_res->fetch_assoc();
-		$urna = sprintf("%s - %s - %.02f€",$urna_flag['versione'],
-			$urna_flag['materiale'], $urna_flag['costoBase']);
-		$totale += $urna_flag['costoBase'];
+		if($urna_res){
+            $urna_flag=$urna_res->fetch_assoc();
+            $urna = sprintf("%s - %s - %.02f€",$urna_flag['versione'],
+                $urna_flag['materiale'], $urna_flag['costoBase']);
+            $totale += $urna_flag['costoBase'];
+        }
 	}
 	$scontato=isset($dead_data['proposta'])?$dead_data['proposta'].'€':'Ancora da valutare';
 }
 $view_file=fopen('views/preventivatoreAnteprima.xhtml','r');
 $view = fread($view_file,filesize('views/preventivatoreAnteprima.xhtml'));
+fclose($view_file);
 $view = str_replace('<cf/>',$cf,$view);
 $view = str_replace('<namD/>',$namD,$view);
 $view = str_replace('<surD/>',$surD,$view);

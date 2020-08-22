@@ -8,7 +8,10 @@ function check(form){
     let totale = document.getElementById('finalTot').value;
     let expNumb = new RegExp('^[0-9]+.[0-9]{2}$');
     if(!expNumb.test(totale)){
-        let errorDiv = document.createElement("div");
+        let errorDiv = document.getElementById("errors");
+        if(errorDiv)
+            document.getElementById("errors").remove();
+        errorDiv = document.createElement("div");
         errorDiv.className = "linea";
         errorDiv.id = "errors";
         errorDiv.tabIndex = -1;

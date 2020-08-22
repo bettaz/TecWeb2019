@@ -12,13 +12,13 @@ $error = '';
 
 if(isset($_POST['nomeU'])){
 	if($_POST['nomeU'] == ''){
-		$error = '<div class="error">Inserire il nome dell\'urna!</div>';
+		$error = '<div id="errors">Inserire il nome dell\'urna!</div>';
 	} else {
 		if($_POST['nomeMatU'] == ''){
-			$error = '<div class="error">Inserire il materiale dell\'urna!</div>';
+			$error = '<div id="errors">Inserire il materiale dell\'urna!</div>';
 		} else {
 			if($_POST['prezzoU'] == ''){
-				$error = '<div class="error">Inserire il prezzo dell\'urna!</div>';
+				$error = '<div id="errors">Inserire il prezzo dell\'urna!</div>';
 			} else {
 				$nomeU = $_POST['nomeU'];
 				$materiale = $_POST['nomeMatU'];
@@ -33,7 +33,7 @@ if(isset($_POST['nomeU'])){
 					$error = '<div class="message">Urna inserita correttamente</div>';
 				}
 				else{
-					$error = '<div class="error">Impossibile inserire l\'urna</div>';
+					$error = '<div id="errors">Impossibile inserire l\'urna</div>';
 				}
 			}
 		}
@@ -42,6 +42,7 @@ if(isset($_POST['nomeU'])){
 
 $usr_mng_file= fopen('views/gestioneUrne.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneUrne.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;
 

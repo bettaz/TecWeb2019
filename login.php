@@ -4,16 +4,16 @@ require_once 'bin/Connection.php';
 $connection = new Connection();
 if(isset($_POST['uname'])) {
 	if ($_POST['uname'] == '')
-		$error = '<div class="error">Inserire lo username!</div>';
+		$error = '<div id="errors">Inserire lo username!</div>';
 	else{
 		if ($_POST['password'] == '')
-			$error = '<div class="error">Inserire la password!</div>';
+			$error = '<div id="errors">Inserire la password!</div>';
 		else{
 			if ($_POST['uname'] != $connection->escape($_POST['uname']))
-				$error ='<div class="error">Lo username inserito puo\' violare il database</div>';
+				$error ='<div id="errors">Lo username inserito puo\' violare il database</div>';
 			else {
 				if ($_POST['password'] != $connection->escape($_POST['password']))
-					$error ='<div class="error">La password inserita puo\' violare il database</div>';
+					$error ='<div id="errors">La password inserita puo\' violare il database</div>';
 				else{
 					$username = $connection->escape($_POST['uname']);
 					$password = $connection->escape($_POST['password']);
@@ -25,7 +25,7 @@ if(isset($_POST['uname'])) {
 					}
 					else {
 						$_SESSION['logged'] = false;
-						$error = '<div class="error">Log-in non corretto</div>';
+						$error = '<div id="errors">Log-in non corretto</div>';
 					}
 				}
 			}
@@ -39,6 +39,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
 try {
 	$file = fopen('views/login.xhtml','r');
 	$content = fread($file,filesize('views/login.xhtml'));
+	fclose($file);
 	$loginpage_errored = str_replace('<error/>',isset($error)?$error:'',
 		$content);
 	$loginpage = str_replace('<olduname/>',isset($_POST['uname'])?$_POST['uname']:'',$loginpage_errored);

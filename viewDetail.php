@@ -34,7 +34,7 @@ FROM defunti d
     LEFT JOIN urne u ON d.idUrna=u.id
 WHERE cf = '$clean_input'");
 
-if($data = $resource->fetch_assoc()){
+if($data = $resource?$resource->fetch_assoc():false){
     $cerimonia=sprintf("%s - %.02f€",$data['tipoCerim'],$data['costoCerim']);
     $auto=sprintf("%s - %s %s cc - %.02f€",$data['marcaCarro'],
         $data['modelloCarro'],$data['cilindrataCarro'],$data['costoCarro']);
@@ -51,6 +51,7 @@ if($data = $resource->fetch_assoc()){
     $scontato=isset($data['proposta'])?$data['proposta']."€":'Ancora da valutare';
     $detail_file = fopen('views/singleQuotation.xhtml','r');
     $detail_content = fread($detail_file,filesize('views/singleQuotation.xhtml'));
+    fclose($detail_file);
     $content = str_replace('<idquotation/>',$data['cf'],$detail_content);
     $content = str_replace('<rdate/>',$data['data'],$content);
     $content = str_replace('<ncustomer/>',$data['nomeCliente'],$content);

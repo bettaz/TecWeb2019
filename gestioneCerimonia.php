@@ -12,10 +12,10 @@ $error = '';
 
 if(isset($_POST['tipolog'])){
 	if($_POST['tipolog'] == ''){
-		$error = '<div class="error">Inserire i dettagli del tipo di cerimonia!</div>';
+		$error = '<div id="errors">Inserire i dettagli del tipo di cerimonia!</div>';
 	} else {
 		if($_POST['prezzoC'] == ''){
-			$error = '<div class="error">Inserire il prezzo della cerimonia!</div>';
+			$error = '<div id="errors">Inserire il prezzo della cerimonia!</div>';
 		} else {
 			$tipo = $_POST['tipolog'];
 			$prezzoC = $_POST['prezzoC'];
@@ -29,7 +29,7 @@ if(isset($_POST['tipolog'])){
 				$error = '<div class="message">Cerimonia inserita correttamente</div>';
 			}
 			else{
-				$error = '<div class="error">Impossibile inserire la cerimonia</div>';
+				$error = '<div id="errors">Impossibile inserire la cerimonia</div>';
 			}
 		}
 	}
@@ -37,6 +37,7 @@ if(isset($_POST['tipolog'])){
 
 $usr_mng_file= fopen('views/gestioneCerimonia.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestioneCerimonia.xhtml'));
+fclose($usr_mng_file);
 $mng_content = str_replace('<message/>', $error, $mng_content);
 echo $mng_content;
 

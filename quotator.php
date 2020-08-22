@@ -5,6 +5,7 @@ $connection = new Connection();
 $errors='';
 $quot_file = fopen('./views/preventivatore.xhtml','r');
 $quot_content = fread($quot_file,filesize('./views/preventivatore.xhtml'));
+fclose($quot_file);
 if(isset($_POST['cf'])){
 	$textRegex = '^([A-Z]|[a-z]|\ )+^';
 	$dateRegex = '^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])^';
@@ -136,6 +137,7 @@ if(isset($_POST['cf'])){
 $selectStatement = 'selected="selected"';
 $province_file = fopen('views/partials/province.xml','r');
 $province_content = fread($province_file, filesize('views/partials/province.xml'));
+fclose($province_file);
 if(isset($_POST['provincia'])){
 	$province_content = str_replace("value=\"$provincia\"","value=\"$provincia\" selected=\"selected\"",$province_content);
 }
@@ -146,7 +148,7 @@ $auto_res = $connection->Query("SELECT * FROM auto");
 $fiori_res = $connection->Query("SELECT * FROM composizioni");
 $cer_res = $connection->Query("SELECT * FROM cerimonie");
 $cerimonie = '';
-while($row= $cer_res->fetch_assoc()){
+while($row= $cer_res?$cer_res->fetch_assoc():false){
 	$id=$row['id'];
 	$tipo = $row['tipologia'];
 	$prezzo=$row['costoBase'];
@@ -154,7 +156,7 @@ while($row= $cer_res->fetch_assoc()){
 			&&$_POST['cerimonia']==$id)?$selectStatement:'').">$tipo - $prezzo €</option>";
 }
 $bare='';
-while($row = $bara_res->fetch_assoc()){
+while($row = $bara_res?$bara_res->fetch_assoc():false){
 	$id=$row['id'];
 	$desc = $row['versione'];
 	$prezzo = $row['costoBase'];
@@ -163,7 +165,7 @@ while($row = $bara_res->fetch_assoc()){
 			&&$_POST['bara']==$id)?$selectStatement:'').">$desc - $mat - $prezzo €</option>";
 }
 $urne='';
-while($row = $urna_res->fetch_assoc()){
+while($row = $urna_res?$urna_res->fetch_assoc():false){
 	$id=$row['id'];
 	$desc = $row['versione'];
 	$prezzo = $row['costoBase'];
@@ -172,7 +174,7 @@ while($row = $urna_res->fetch_assoc()){
 			&&$_POST['urna']==$id)?$selectStatement:'').">$desc - $mat - $prezzo €</option>";
 }
 $autos='';
-while($row = $auto_res->fetch_assoc()){
+while($row = $auto_res?$auto_res->fetch_assoc():false){
 	$id=$row['id'];
 	$modello = $row['modello'];
 	$prezzo = $row['costoBase'];
@@ -182,7 +184,7 @@ while($row = $auto_res->fetch_assoc()){
 		&&$_POST['auto']==$id)?$selectStatement:'').">$marca - $modello - $cilindrata cc - $prezzo €</option>";
 }
 $fiori = '';
-while($row = $fiori_res->fetch_assoc()){
+while($row = $fiori_res?$fiori_res->fetch_assoc():false){
 	$id=$row['id'];
 	$nome = $row['nome'];
 	$prezzo = $row['costoBase'];
