@@ -67,3 +67,7 @@ fieldset {
 #error {
 	margin-right: 5%;
 }
+
+legend{
+	margin-bottom: 5%;
+}
