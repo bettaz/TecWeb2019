@@ -7,5 +7,5 @@ if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
 
 $usr_mng_file= fopen('views/gestionePreventivatore.xhtml','r');
 $mng_content = fread($usr_mng_file,filesize('views/gestionePreventivatore.xhtml'));
-fclose($mng_content);
+fclose($usr_mng_file);
 echo $mng_content;
