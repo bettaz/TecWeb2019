@@ -8,8 +8,6 @@ require_once 'bin/Connection.php';
 $connection = new Connection();
 $error = '';
 
-# TODO controllare
-
 if(isset($_POST['nomeU'])){
 	if($_POST['nomeU'] == ''){
 		$error = '<div id="errors">Inserire il nome dell\'urna!</div>';

@@ -9,8 +9,6 @@ require_once 'bin/Connection.php';
 $connection = new Connection();
 $error = '';
 
-# TODO controllare
-
 if(isset($_POST['nomeMarca'])){
 	if($_POST['nomeMarca'] == ''){
 		$error = '<div id="errors">Inserire il nome della marca dell\'auto!</div>';

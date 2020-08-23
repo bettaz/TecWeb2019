@@ -8,8 +8,6 @@ require_once 'bin/Connection.php';
 $connection = new Connection();
 $error = '';
 
-# TODO controllare
-
 if(isset($_POST['nomeF'])){
 	if($_POST['nomeF'] == ''){
 		$error = '<div id="errors">Inserire il nome della composizione!</div>';
