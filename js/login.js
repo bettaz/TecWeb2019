@@ -34,7 +34,7 @@ function check(form){
         errorDiv.appendChild(paragraph);
         if (document.getElementById("errors"))
             document.getElementById("errors").remove();
-        document.getElementById("content").insertBefore(errorDiv,form);
+        document.getElementById("content").insertBefore(errorDiv,document.getElementById("usrdiv"));
         errorDiv.focus();
     }
     else {
