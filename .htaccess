@@ -1,1 +1,6 @@
-ErrorDocument 404 /tecweb/404.xhtml
+DirectoryIndex index.php
+ErrorDocument 404 http://tecweb.studenti.math.unipd.it/abettare/404.xhtml
+<Files ~ "\.ini$">
+  Order allow,deny
+  Deny from all
+</Files>

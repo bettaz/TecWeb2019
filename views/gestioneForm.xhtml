@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/gestioneFormDesktop.css" media="screen and (min-width: 721px)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script type="application/javascript" src="js/focusLib.js"></script>
     <script type="text/javascript" src="js/gestioneForm.js"></script>
 </head>
 <body>
@@ -49,47 +50,10 @@
     <p>
         Qui è possibile rimuovere i prodotti offerti dall'azienda non più disponibili.
     </p>
-    <!-- <form action="gestioneForm.php" method="post" id="frmauto">
-        <fieldset class="contenitore">
-            <legend>Aggiungi auto</legend>
-            <div class="linea">
-                <label for="nomeP">Nome:</label>
-                <input name="nomeP" id="nomeP" maxlength="40"/>
-            </div>
-            <div class="linea">
-                <label for="prezzoP">Prezzo:</label>
-                <input name="prezzoP" id="prezzoP" maxlength="9"/>
-            </div>
-            <input type="submit" onclick="checkInsert()" value="Aggiungi"/>
-        </fieldset>
-    </form>
-    <form action="gestioneForm.php" method="post" id="frmadd">
-        <fieldset class="contenitore">
-            <legend>Aggiungi prodotto</legend>
-            <div class="linea">
-                <label for="tipoAddP">Tipo prodotto:</label>
-                <select name="tipoAddP" id="tipoAddP">
-                    <option value="1">Bara</option>
-                    <option value="2">Urna</option>
-                    <option value="0">Auto</option>
-                    <option value="3">Composizione floreale</option>
-                    <option value="4">Cerimonia </option>
-                </select>
-            </div>
-            <div class="linea">
-                <label for="nomeP">Nome:</label>
-                <input name="nomeP" id="nomeP" maxlength="40"/>
-            </div>
-            <div class="linea">
-                <label for="prezzoP">Prezzo:</label>
-                <input name="prezzoP" id="prezzoP" maxlength="9"/>
-            </div>
-            <input type="submit" onclick="checkInsert()" value="Aggiungi"/>
-        </fieldset>
-    </form> -->
 
-    <form action="gestioneForm.php" method="post">
-        <fieldset class="contenitore">
+    <form action="gestioneForm.php" method="post" id="frmDeletion">
+        <deleteerror/>
+        <fieldset class="contenitore" id="removeField">
             <legend>Rimuovi prodotto</legend>
             <div class="linea">
                 <label for="nomeRemoveP">Nome:</label>
@@ -98,7 +62,6 @@
                     <elementlist/>
                 </select>
             </div>
-            <p><deleteerror/></p>
             <input type="submit" onclick="checkRemove()" value="Rimuovi"/>
         </fieldset>
     </form>

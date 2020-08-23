@@ -3,7 +3,7 @@ class Connection{
 	private $conn;
 	private $conf;
 	public function __construct(){
-		$this->conf=parse_ini_file('../credential.ini');
+		$this->conf=parse_ini_file('./credential.ini');
 		$this->conn=new mysqli($this->conf['hostname'],$this->conf['username'],
 		$this->conf['password']);
 		if ($this->conn->connect_error)
@@ -24,6 +24,8 @@ class Connection{
 			return $res;
 		}
 		else
+			error_log("Query failed: ".$this->conn->errno
+				.$this->conn->error);
 			return false;
 	}
 	public function escape($string){
