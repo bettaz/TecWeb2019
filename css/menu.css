@@ -13,5 +13,14 @@
 
 #menu li{
     margin-top: 5%;
-    list-style-type:none;
+}
+
+.mainMenu{
+    list-style-type: none;
+}
+
+.subMenu{
+    list-style-type: square;
+    position: relative;
+    right: -11%;
 }
