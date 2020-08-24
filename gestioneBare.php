@@ -8,7 +8,6 @@ require_once 'bin/Connection.php';
 $connection = new Connection();
 $error = '';
 
-# TODO controllare
 
 if(isset($_POST['nomeB'])){
 	if($_POST['nomeB'] == ''){

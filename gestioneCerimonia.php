@@ -8,8 +8,6 @@ require_once 'bin/Connection.php';
 $connection = new Connection();
 $error = '';
 
-# TODO controllare
-
 if(isset($_POST['tipolog'])){
 	if($_POST['tipolog'] == ''){
 		$error = '<div id="errors">Inserire i dettagli del tipo di cerimonia!</div>';

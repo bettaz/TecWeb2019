@@ -29,12 +29,12 @@
 </div>
 
 
-<div class="container" id="content">
-    <error/>
+<div class="container">
 	<form action="login.php" method="post" id="frmLogin">
-        <fieldset>
+        <fieldset id="content">
             <legend>Inserire dati di accesso</legend>
-            <div class="linea">
+            <error/>
+            <div class="linea" id="usrdiv">
                 <label for="uname">Username</label>
                 <input name="uname" id="uname" tabindex="0" type="text" value="<olduname/>"/>
             </div>
