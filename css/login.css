@@ -1,8 +1,5 @@
-/*@import "css_base.css"; */
 @import "header.css";
 @import "footer.css";
-
-/* TODO fix css errors div view */
 
 * {
 	padding: 0%;
@@ -70,4 +67,11 @@ fieldset {
 
 legend{
 	margin-bottom: 5%;
+}
+
+.linea a{
+	color: red;
+	font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
 }
