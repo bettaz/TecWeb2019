@@ -36,4 +36,10 @@ select{
     height:0;
     overflow:hidden;
 }
- 
+
+.linea a{
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
