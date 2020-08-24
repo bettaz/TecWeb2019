@@ -83,3 +83,13 @@
 #content p{
     padding-top: 2%;
 }
+
+.message {
+    margin-top: 4%;
+    margin-bottom: 3%
+}
+
+#errors{
+    margin-top: 3%;
+    margin-bottom: 3%
+}

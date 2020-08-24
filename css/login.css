@@ -75,3 +75,7 @@ legend{
     cursor: pointer;
     text-decoration: underline;
 }
+
+#errors {
+	margin-bottom: 5%;
+}
