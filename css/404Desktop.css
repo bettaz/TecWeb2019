@@ -8,11 +8,6 @@ html, body {
     margin: auto;
 }
 
-/* html {
-	background: rgb(29,25,101);
-	background: linear-gradient(90deg, rgba(29,25,101,1) 0%, rgba(75,75,172,1) 35%, rgba(95,95,157,1) 100%);
-} */
-
 #coffin {
 	padding-top: 15%;
 	height: 60%;
@@ -21,7 +16,6 @@ html, body {
 
 h1 {
 	color: black;
-	/* text-shadow: 0 0 1rem #fefefe; */
 	font-size: 6em; 
 	padding-bottom: 2%;
 }
