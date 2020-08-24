@@ -71,7 +71,7 @@ $management_file = fopen('views/gestioneForm.xhtml','r');
 $man_content = fread($management_file,filesize('views/gestioneForm.xhtml'));
 fclose($management_file);
 $man_content = str_replace('<elementlist/>',$option_list,$man_content);
-if(isset($del_res)&&!del_error)
+if(isset($del_res)&&!$del_error)
     $man_content = str_replace('<deleteerror/>','Rimozione eseguita con successo!');
 
 else
