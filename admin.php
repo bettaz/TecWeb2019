@@ -14,17 +14,19 @@ if($res = $connection->Query("SELECT cf code, nomeCliente name, cognomeCliente s
 		$code = $row['code'];
 		$date = $row['date'];
 		$list .= "
-			<form action='viewDetail.php'>
-				<div class=\"linea\">
-			        <ul>
-			            <li>Codice cliente: $code</li>
-			            <li>Nome cliente: $name</li>
-			            <li>Cognome cliente: $surname</li>
-			            <li>Data preventivo: $date</li>
-			        </ul>
-			        <input type=\"hidden\" value=\"$code\" name=\"code\"/>
-		            <input type=\"submit\" value=\"Visualizza\"/>
-		        </div>
+			<form action=\"viewDetail.php\">
+			    <fieldset class=\"contenitore\">
+			        <legend>$code</legend>
+			        <div class=\"linea\">
+                        <ul>
+                            <li>Nome cliente: $name</li>
+                            <li>Cognome cliente: $surname</li>
+                            <li>Data preventivo: $date</li>
+                        </ul>
+			            <input type=\"hidden\" value=\"$code\" name=\"code\"/>
+		                <input type=\"submit\" value=\"Visualizza\"/>
+		            </div>
+                </fieldset>
 		    </form>";
 	}
 }
