@@ -18,9 +18,9 @@ if(isset($_POST['nomeU'])){
 			if($_POST['prezzoU'] == ''){
 				$error = '<div id="errors">Inserire il prezzo dell\'urna!</div>';
 			} else {
-				$nomeU = $_POST['nomeU'];
-				$materiale = $_POST['nomeMatU'];
-				$prezzoU = $_POST['prezzoU'];
+				$nomeU = $connection->escape($_POST['nomeU']);
+				$materiale = $connection->escape($_POST['nomeMatU']);
+				$prezzoU = $connection->escape($_POST['prezzoU']);
 				$rows = $connection->Query("SELECT `versione`, `materiale` , `costoBase` FROM `urne` WHERE `versione` = '$nomeU'");
 				if($rows->num_rows == 0){
 					$res = $connection->Query("INSERT INTO  `urne`(`versione`, `materiale` , `costoBase`) VALUES ('$nomeU', '$materiale', '$prezzoU')");

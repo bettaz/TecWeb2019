@@ -22,10 +22,10 @@ if(isset($_POST['nomeMarca'])){
 				if($_POST['cilindr'] == ''){
 					$error = '<div id="errors">Inserire il prezzo dell\'utilizzo dell\'auto!</div>';
 				} else {
-					$marca = $_POST['nomeMarca'];
-					$modello = $_POST['nomeModello'];
-					$prezzoA = $_POST['prezzoA'];
-					$cilindrata = $_POST['cilindr'];
+					$marca = $connection->escape($_POST['nomeMarca']);
+					$modello = $connection->escape($_POST['nomeModello']);
+					$prezzoA = $connection->escape($_POST['prezzoA']);
+					$cilindrata = $connection->escape($_POST['cilindr']);
 					$rows = $connection->Query("SELECT `marca`, `modello`, `costoBase`, `cilindrata` FROM `auto` WHERE `marca` = '$marca' AND  `modello` = '$modello'");
 					if($rows->num_rows == 0){
 						$res = $connection->Query("INSERT INTO `auto`(`marca`, `modello`, `costoBase`, `cilindrata`) VALUES ('$marca', '$modello', '$prezzoA', '$cilindrata')");

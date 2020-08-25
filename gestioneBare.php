@@ -19,9 +19,9 @@ if(isset($_POST['nomeB'])){
 			if($_POST['prezzoB'] == ''){
 				$error = '<div id="errors">Inserire il prezzo della bara!</div>';
 			} else {
-				$nomeB = $_POST['nomeB'];
-				$materiale = $_POST['nomeMatB'];
-				$prezzoB = $_POST['prezzoB'];
+				$nomeB = $connection->escape($_POST['nomeB']);
+				$materiale = $connection->escape($_POST['nomeMatB']);
+				$prezzoB = $connection->escape($_POST['prezzoB']);
 				$rows = $connection->Query("SELECT `versione`, `materiale` , `costoBase` FROM `bare` WHERE `versione` = '$nomeB'");
 				if($rows->num_rows == 0){
 					$res = $connection->Query("INSERT INTO  `bare`(`versione`, `materiale` , `costoBase`) VALUES ('$nomeB', '$materiale', '$prezzoB')");

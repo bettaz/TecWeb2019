@@ -15,8 +15,8 @@ if(isset($_POST['tipolog'])){
 		if($_POST['prezzoC'] == ''){
 			$error = '<div id="errors">Inserire il prezzo della cerimonia!</div>';
 		} else {
-			$tipo = $_POST['tipolog'];
-			$prezzoC = $_POST['prezzoC'];
+			$tipo = $connection->escape($_POST['tipolog']);
+			$prezzoC = $connection->escape($_POST['prezzoC']);
 			$rows = $connection->Query("SELECT `tipologia`, `costoBase` FROM `cerimonie` WHERE `tipologia` = '$tipo'");
 			if($rows->num_rows == 0){
 				$res = $connection->Query("INSERT INTO  `cerimonie`(`tipologia`, `costoBase`) VALUES ('$tipo', '$prezzoC')");

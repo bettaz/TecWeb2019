@@ -15,8 +15,8 @@ if(isset($_POST['nomeF'])){
 		if($_POST['prezzoF'] == ''){
 			$error = '<div id="errors">Inserire il prezzo della composizione!</div>';
 		} else {
-			$nomeF = $_POST['nomeF'];
-			$prezzoF = $_POST['prezzoF'];
+			$nomeF = $connection->escape($_POST['nomeF']);
+			$prezzoF = $connection->escape($_POST['prezzoF']);
 			$rows = $connection->Query("SELECT `nome`, `costoBase` FROM `composizioni` WHERE `nome` = '$nomeF'");
 			if($rows->num_rows == 0){
 				$res = $connection->Query("INSERT INTO  `composizioni`(`nome`, `costoBase`) VALUES ('$nomeF', '$prezzoF')");
