@@ -1,4 +1,3 @@
-let urnLineDefaultVisibility;
 window.onload= ()=>{
     document.getElementById("frmpreventivo").onsubmit = event => {
             event.preventDefault();
@@ -6,6 +5,7 @@ window.onload= ()=>{
     };
     document.getElementsByName("cremazione").forEach(element => element.onchange = event => hideShowUrn(event));
 };
+let urnLineDefaultVisibility;
 const textRegex = new RegExp("^([A-Z]|[a-z]|\ )+$");
 const dateRegex = new RegExp("^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$");
 const selectRegex = new RegExp("^\\d+$");
@@ -98,7 +98,7 @@ function check(form){
         let element =elementList[i];
         if('name' in element
             && (element.tagName.toUpperCase() === "INPUT" || element.tagName.toUpperCase() === "SELECT")
-            && element.getAttribute("type") !== "submit"){
+            && element.getAttribute("type") !== "submit" && element.name!=="cremazione"&& element.name!=="urna"){
             let name = elementList[i].name;
             let value = elementList[i].value;
             if(!suggestions[name]['regex'].test(value)){
@@ -113,6 +113,18 @@ function check(form){
                 errorsDiv.appendChild(paragraph);
             }
         }
+    }
+    if(document.getElementById("cremazione")=='true' &&
+        !suggestions['urna']['regex'].test(document.getElementById('urna').value)){
+        let errorAnchor = document.createElement("a");
+        errorAnchor.id = name+"error";
+        errorAnchor.innerHTML= suggestions['urna'].suggestion;
+        errorAnchor.onkeydown = event => keyFocus(event, 'urna');
+        errorAnchor.onclick = event => clickFocus('urna');
+        errorAnchor.tabIndex=0;
+        let paragraph = document.createElement("p");
+        paragraph.appendChild(errorAnchor);
+        errorsDiv.appendChild(paragraph);
     }
     if (errorsDiv.hasChildNodes()){
         document.getElementById("content").insertBefore(errorsDiv,form);
