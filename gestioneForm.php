@@ -6,13 +6,12 @@ if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
 }
 require_once 'bin/Connection.php';
 $connection = new Connection();
-
+$del_error= '';
 // TODO verificare errore in rimozione
 if(isset($_POST['nomeRemoveP'])){
 	$full_qualifier= $_POST['nomeRemoveP'];
-	$del_error='<div class="linea" id="errors"><a href="#nomeRemoveP">';
 	if($full_qualifier== '---'){
-	    $del_error .= 'Selezionare un prodotto da rimuovere';
+	    $del_error ='<div class="linea" id="errors">Selezionare un prodotto da rimuovere<a href="#nomeRemoveP">';
     }
 	else{
         $split = explode('-',$full_qualifier);
@@ -40,9 +39,10 @@ if(isset($_POST['nomeRemoveP'])){
 		    DELETE FROM $table WHERE id='$id'
 	    ");
         if(!$del_res)
-            $del_error .= 'Errore di rimozione';
+            $del_error = '<p>Errore di rimozione</p>';
+        else
+            $del_error = "<p>Rimozione da $table effettuata con successo</p>";
     }
-	$del_error.= '</a></div>';
 }
 require_once 'bin/Connection.php';
 $connection = new Connection();
@@ -71,10 +71,5 @@ $management_file = fopen('views/gestioneForm.xhtml','r');
 $man_content = fread($management_file,filesize('views/gestioneForm.xhtml'));
 fclose($management_file);
 $man_content = str_replace('<elementlist/>',$option_list,$man_content);
-if(isset($del_res)&&!$del_error)
-    $man_content = str_replace('<deleteerror/>','Rimozione eseguita con successo!');
-
-else
-    $man_content = str_replace('<deleteerror/>',isset($del_error)
-	    ?$del_error:'',$man_content);
+$man_content = str_replace('<deleteerror/>',$del_error,$man_content);
 echo $man_content;
