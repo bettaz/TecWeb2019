@@ -111,7 +111,7 @@ if(isset($_POST['cf'])){
 	$tel=$connection->escape($_POST['tel']);
 	$bara = $connection->escape($_POST['bara']);
 	$cremazione =$connection->escape($_POST['cremazione']);
-	$urna = $connection->escape($_POST['urna']);
+	$urna = $cremazione=='true'?$connection->escape($_POST['urna']):"NULL";
 	$auto = $connection->escape($_POST['auto']);
 	$fiori=$connection->escape($_POST['fiori']);
 	$cerimonia = $connection->escape($_POST['cerimonia']);
