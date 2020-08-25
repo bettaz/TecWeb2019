@@ -130,3 +130,7 @@ select{
 input [type='checkbox']{
     padding-top: 50%;
 }
+
+select {
+    margin: auto;
+}
