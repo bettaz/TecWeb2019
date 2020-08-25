@@ -98,8 +98,6 @@ if(isset($_POST['cf'])){
         $errors .= "<p><a href=\"#urna\" rel=\"tag\">$suggestion</a></p>";
         error_log("errore in urna");
     }
-    $errors .= $_POST['cremazione']=='false'&&$_POST['urna']!='---'?
-        "<p><a href=\"#sicremazione\" rel=\"tag\">E' stata selezionata un'urna ma non la cremazione</a></p>":"";
 	$cf = $connection->escape($_POST['cf']);
 	$nomeC =$connection->escape($_POST['nomeC']);
 	$cognomeC = $connection->escape($_POST['cognomeC']);
