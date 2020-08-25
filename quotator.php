@@ -87,14 +87,19 @@ if(isset($_POST['cf'])){
 	];
 	$errors ="";
 	foreach($_POST as $key => $input){
-		if($key!= "submitbtn" && !preg_match($suggestions[$key]['regex'],$input)){
+		if($key!= "submitbtn" && $key!= "urna" && !preg_match($suggestions[$key]['regex'],$input)){
 			$suggestion = $suggestions[$key]['suggestion'];
 			$errors .= "<p><a href=\"#$key\" rel=\"tag\">$suggestion</a></p>";
 			error_log("errore in ".$key);
 		}
 	}
-	$errors .= $_POST['cremazione']=='false'&&$_POST['urna']!='false'?
-		"<p><a href=\"#sicremazione\" rel=\"tag\">E' stata selezionata un'urna ma non la cremazione</a></p>":"";
+	if($_POST['cremazione']=='true' && !preg_match($suggestions['urna']['regex'],$_POST['urna'])){
+        $suggestion = $suggestions['urna']['suggestion'];
+        $errors .= "<p><a href=\"#urna\" rel=\"tag\">$suggestion</a></p>";
+        error_log("errore in urna");
+    }
+    $errors .= $_POST['cremazione']=='false'&&$_POST['urna']!='---'?
+        "<p><a href=\"#sicremazione\" rel=\"tag\">E' stata selezionata un'urna ma non la cremazione</a></p>":"";
 	$cf = $connection->escape($_POST['cf']);
 	$nomeC =$connection->escape($_POST['nomeC']);
 	$cognomeC = $connection->escape($_POST['cognomeC']);
