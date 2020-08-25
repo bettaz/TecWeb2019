@@ -114,8 +114,10 @@ function check(form){
             }
         }
     }
-    if(document.getElementById("cremazione")=='true' &&
+    console.log("document.getElementById(\"cremazione\")");
+    if(document.getElementById("sicremazione").checked &&
         !suggestions['urna']['regex'].test(document.getElementById('urna').value)){
+        console.log("Controllo effettuato");
         let errorAnchor = document.createElement("a");
         errorAnchor.id = name+"error";
         errorAnchor.innerHTML= suggestions['urna'].suggestion;
